@@ -1,0 +1,10 @@
+<% if obj.errors. presence: %>
+<div id="errors">
+  <h3>エラーがあります。</h3>
+  <ul>
+    <% obj.errors.full_massage.each do |msg| %>
+    <li><%= msg %><li>
+      <% end %>
+  </ul>
+</div>
+<% end %>
