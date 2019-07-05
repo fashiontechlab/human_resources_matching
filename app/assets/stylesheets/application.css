@@ -22,10 +22,31 @@ body{
     font-family: Meiryo, sans-serif;
 }
 
+/* ブロック要素 */
+p, h1, h2, h3, table, ul {
+  margin: 0 0 1em;
+}
+
+/* ナビゲーション */
+nav ul,
+ul.toolbar,
+ul.links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li,
+div.toolbar li,
+ul.toolbar li,
+ul.links li {
+  display: inline;
+}
+
 /* リンク */
-a: link { color: #00c; }
-a: visited { color: #00c; }
-a: hover { color: #f00; }
+a:link { color: #00c; }
+a:visited { color: #00c; }
+a:hover { color: #f00; }
 a img { border: none; }
 
 /* 全体の枠 */
@@ -38,20 +59,90 @@ div#container {
 /* 左の枠 (コンテンツを入れる) */
 main {
     float: left;
-    waidth: 530px;
+    width: 530px;
     padding: 10px 10px 10px 0;
 }
 
 /* 右の枠 (サイドバーを入れる ) */
 aside#sidebar {
-    float: left;
+    float: left; 
     width: 230px;
     background-color: #e8ffff;
     padding: 5px;
     font-size: 86%;
 }
 
+/* フッター */
+footer {
+  clear: both;
+  font: 11px Verdana;
+  color: #888;
+  padding: 8px 0;
+  border-top: 4px solid #6bb;
+  text-align: center;
+}
 
+/* メニューバー */
+nav.menubar {
+  padding: 2px;
+  background-color: #000;
+  color: #ccc;
+  font-size: 80%;
+  padding: 8px 16px;
+}
+
+nav.menubar ul li:not(:last-child):after {
+  color: #ccc;
+  content: " | ";
+  margin: 0 2px;
+}
+
+/* メニューバーのリンク */
+nav.menubar a { text-decoration: none; }
+
+/* メニューバーのリンク (未訪問) */
+nav.menubar a:link { color: #ccc; }
+
+/* メニューバーのリンク (訪問済) */
+nav.menubar a:visited { color: #ccc; }
+
+/* サイドバー */
+form#login-form {
+  font-size: 12px;
+}
+
+form#login-form div {
+  padding: 2px;
+  text-align: center;
+}
+
+form#login-form label {
+  display: inline-block;
+  width: 80px;
+  text-align: center;
+}
+
+form#login-form input[type="text"],
+form#login-form input[type="password"] {
+  width: 120px;
+}
+
+aside#sidebar h2 {
+  color: #080;
+  font-weight: bold;
+  border-bottom: 1px dotted #080;
+  margin-bottom: 0.5em;
+  font-size: 100%;
+}
+
+aside#sidebar ul {
+  padding-left: 1em;
+  list-style-type: none;
+}
+
+aside#sidebar li {
+  margin-bottom: 0.3em;
+}
 
 
 

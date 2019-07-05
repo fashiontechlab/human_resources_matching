@@ -1,6 +1,4 @@
 # coding: utf-8
-
-# coding: utf-8
 class LessonController < ApplicationController
   def step1
     render plain: "こんにちは#{params[:name]}さん"
@@ -47,9 +45,8 @@ class LessonController < ApplicationController
     @population = 704414
     @surface = 141.31
   end
- 
+
   def step12
-    
     @time = Time.current
   end
   def step13

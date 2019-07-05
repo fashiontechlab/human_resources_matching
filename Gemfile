@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -52,3 +52,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'email_validator', '~> 1.6'
 gem 'rails-i18n', '~> 5.1'
+gem 'kaminari'
+gem 'kaminari-i18n'
+gem 'jquery-rails'
+gem 'acts_as_list'

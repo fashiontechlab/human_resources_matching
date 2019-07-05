@@ -1,0 +1,1 @@
+    attrs << :password if params[:action] == "create"

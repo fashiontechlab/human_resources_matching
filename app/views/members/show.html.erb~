@@ -6,7 +6,7 @@
 
 <table class="attr">
   <tr>
-    <th width="150"></th>
+    <th width="150">背番号</th>
     <td><%= @member.name %></td>
   </tr>
   <tr>
@@ -31,7 +31,7 @@
   </tr>
   <tr>
     <th>管理者</th>
-    <td><%= @member.administrator? ? "○" : "-" %></td>
+    <td><%= @member.administrator? ? "○" : "ー" %></td>
   </tr>
  </table>
   
