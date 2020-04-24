@@ -20,7 +20,9 @@ class AccountsController < ApplicationController
     end
   end
   #ストロングパラメータ
-  private def account_params
+  private
+
+  def account_params
     params.riquire(:account).permit(
       :new_profile_picture,
       :remove_profile_picture,

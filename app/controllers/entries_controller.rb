@@ -63,7 +63,7 @@ class EntriesController < ApplicationController
       current_member.voted_entries << @entry
       redirect_to @entry, notice: "投票しました。"
     end
-    
+
       #投票削除
       def unlike
         current_member.votes_entries.destroy(Entry.find(params[:id]))
@@ -78,7 +78,9 @@ class EntriesController < ApplicationController
       end
 
     #ストロングパラメータ
-    private def entry_params
+      private
+
+      def entry_params
       params.require(:entry).permit(
         :member_id,
         :title,

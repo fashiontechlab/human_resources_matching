@@ -6,7 +6,7 @@ class CreateEntries < ActiveRecord::Migration[5.2]
       t.text :body
       t.datetime :posted_at, null: false
       t.string :status, null: false, default: "draft"
-      
+
       t.timestamps
     end
   end

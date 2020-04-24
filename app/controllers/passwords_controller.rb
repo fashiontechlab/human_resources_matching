@@ -5,7 +5,7 @@ class PasswordsController < ApplicationController
   def show
     redirect_to :account
   end
-  
+
   def edit
     @member = current_member
   end
@@ -32,7 +32,9 @@ class PasswordsController < ApplicationController
     end
   end
   #ストロングパラメータ
-  private def account_params
+  private
+
+  def account_params
     params.require(:account).permit(
       :current_password,
       :password,

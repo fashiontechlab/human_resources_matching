@@ -22,26 +22,26 @@
     <tr>
       <td><%= index + 1 %></td>
       <td>
-	<%= image_tag image.data.variant(resize: "100x>"),
-	    alt: image.alt_text %>
+        <%= image_tag image.data.variant(resize: "100x>"),
+            alt: image.alt_text %>
       </td>
       <td>
-	<%= image.alt_text %>
+        <%= image.alt_text %>
       </td>
       <td>
-	<div>
-	  <%= link_to "編集", edit_entry_image_path(@entry, image) %> |
-	  <%= link_to "削除", entry_image_path(@entry, image),
-	      method: :delete, data: { confirm: "本当に削除しますか？"} %>
-	</div>
-	<div>
-	  <%= link_to_unless image.first?, "上へ",
-	      move_higher_entry_image_path(@entry, image),
-	      method: :patch %> |
-	  <%= link_to_unless image.last?, "下へ",
-	      move_lower_entry_image_path(@entry, image),
-	      method: :patch %>
-	</div>
+        <div>
+          <%= link_to "編集", edit_entry_image_path(@entry, image) %> |
+          <%= link_to "削除", entry_image_path(@entry, image),
+              method: :delete, data: { confirm: "本当に削除しますか？"} %>
+        </div>
+        <div>
+          <%= link_to_unless image.first?, "上へ",
+              move_higher_entry_image_path(@entry, image),
+              method: :patch %> |
+          <%= link_to_unless image.last?, "下へ",
+              move_lower_entry_image_path(@entry, image),
+              method: :patch %>
+        </div>
       </td>
     </tr>
     <% end %>

@@ -1,5 +1,5 @@
 module EntriesHelper
-  
+
   def the_first_image(entry)
     image = entry.images.order(:position)[0]
 

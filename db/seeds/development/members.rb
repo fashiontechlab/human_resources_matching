@@ -26,8 +26,8 @@ end
     birthday: "1981-12-01",
     sex: 1,
     administrator: false,
-    password: "password",
-    password_confirmation: "password"
+    password: "asagao!",
+    password_confirmation: "asagao!"
   )
 end
 

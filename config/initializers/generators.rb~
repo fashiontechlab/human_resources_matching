@@ -1,6 +1,0 @@
-Rails applicartion.cofig.generators do |g|
-  g.helper false
-  g.assers false
-  g.skip_routes true
-  g.test_framework false
-end

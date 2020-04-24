@@ -16,8 +16,8 @@
     <td><%= @article.released_at.strftime("%Y/%m/%d %H:%M") %></td>
   </tr>
   <tr>
-  <th>掲載日時終了日</th>
-  <td><%= @article.expired_at.try(:strftime, "%Y/%m/%d %H:%M") %></td>
+    <th>掲載日時終了日</th>
+    <td><%= @article.expired_at.try(:strftime, "%Y/%m/%d %H:%M") %></td>
   </tr>
   <tr>
     <th>会員限定</th>
