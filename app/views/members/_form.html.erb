@@ -23,20 +23,20 @@
   </tr>
   <tr>
     <th><%= form.label :birthday, "誕生日",
-	    for: "member_birthday_1i" %></th>
+            for: "member_birthday_1i" %></th>
     <td><%= form.date_select :birthday,
-	    start_year: 1940, end_year: Time.current.year,
-	    use_month_mumbers: true %></td>
+            start_year: 1940, end_year: Time.current.year,
+            use_month_mumbers: true %></td>
   </tr>
   <tr>
     <th><%= form.label :email, "メールアドレス" %></th>
     <td><%= form.text_field :email %></td>
   </tr>
   <tr>
-  <th>管理者</th>
-  <td>
-    <%= form.check_box :administrator %>
-    <%= form.label :administrator, "管理者" %>
-  </td>
-</tr>
+    <th>管理者</th>
+    <td>
+      <%= form.check_box :administrator %>
+      <%= form.label :administrator, "管理者" %>
+    </td>
+  </tr>
 </table>

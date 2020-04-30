@@ -1,11 +1,4 @@
 # coding: utf-8
-
-# coding: utf-8
-
-# coding: utf-8
-
-# coding: utf-8
-
 class Admin::MembersController < Admin::Base
 
 
@@ -58,8 +51,11 @@ class Admin::MembersController < Admin::Base
                  .page(params[:page]).per(15)
     render "index"
   end
+
   #ストロングパラメータ
-  private def member_params
+  private
+
+  def member_params
     attrs = [
       :new_profile_picture,
       :remove_profile_picture,
