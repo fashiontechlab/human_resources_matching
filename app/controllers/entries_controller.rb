@@ -10,83 +10,83 @@ class EntriesController < ApplicationController
     else
       @entries = Entry.all
     end
-      @entries = @entries.readable_for(current_member)
-                   .order(posted_at: :desc).page(params[:page]).per(3)
+    @entries = @entries.readable_for(current_member)
+                 .order(posted_at: :desc).page(params[:page]).per(3)
+  end
+
+  #編集フォーム
+  def edit
+    @entry = current_member.entries.find(params[:id])
+  end
+
+  #記事詳細
+  def show
+    @entry = Entry.readable_for(current_member).find(params[:id])
+  end
+
+  #新規フォーム
+  def new
+    @entry = Entry.new(posted_at: Time.current)
+  end
+
+  #新規作成
+  def create
+    @entry = Entry.new(entry_params)
+    @entry.author = current_member
+    if @entry.save
+      redirect_to @entry, notice: "記事を更新しました。"
+    else
+      render "new"
     end
+  end
 
-    #編集フォーム
-    def edit
-      @entry = current_member.entries.find(params[:id])
+  #更新
+  def update
+    @entry = current_member.entries.find(params[:id])
+    @entry.assign_attributes(entry_params)
+    if @entry.save
+      redirect_to @entry, notice: "記事を更新しました。"
+    else
+      render "edit"
     end
+  end
+  #削除
+  def destroy
+    @entry = current_member.entries.find(params[:id])
+    @entry.destroy
+    redirect_to :entries, notice: "記事を削除しました。"
+  end
 
-    #記事詳細
-    def show
-      @entry = Entry.readable_for(current_member).find(params[:id])
-    end
+  #投票
+  def like
+    @entry = Entry.published.find(params[:id])
+    current_member.voted_entries << @entry
+    redirect_to @entry, notice: "投票しました。"
+  end
 
-    #新規フォーム
-    def new
-      @entry = Entry.new(posted_at: Time.current)
-    end
+  #投票削除
+  def unlike
+    current_member.votes_entries.destroy(Entry.find(params[:id]))
+    redirect_to :voted_entries, notice: "削除しました。"
+  end
 
-    #新規作成
-    def create
-      @entry = Entry.new(entry_params)
-      @entry.author = current_member
-      if @entry.save
-        redirect_to @entry, notice: "記事を更新しました。"
-      else
-        render "new"
-      end
-    end
+  #投票した記事
+  def voted
+    @entries = current_member.voted_entries.published
+                 .order("votes.created_at DESC")
+                 .page(params[:page]).per(15)
+  end
 
-    #更新
-    def update
-      @entry = current_member.entries.find(params[:id])
-      @entry.assign_attributes(entry_params)
-      if @entry.save
-        redirect_to @entry, notice: "記事を更新しました。"
-      else
-        render "edit"
-      end
-    end
-    #削除
-    def destroy
-      @entry = current_member.entries.find(params[:id])
-      @entry.destroy
-      redirect_to :entries, notice: "記事を削除しました。"
-    end
+  #ストロングパラメータ
+  private
 
-    #投票
-    def like
-      @entry = Entry.published.find(params[:id])
-      current_member.voted_entries << @entry
-      redirect_to @entry, notice: "投票しました。"
-    end
-
-      #投票削除
-      def unlike
-        current_member.votes_entries.destroy(Entry.find(params[:id]))
-        redirect_to :voted_entries, notice: "削除しました。"
-      end
-
-      #投票した記事
-      def voted
-        @entries = current_member.voted_entries.published
-                     .order("votes.created_at DESC")
-                     .page(params[:page]).per(15)
-      end
-
-    #ストロングパラメータ
-      private
-
-      def entry_params
-      params.require(:entry).permit(
-        :member_id,
-        :title,
-        :body,
-        :posted_at,
-        :status
-      )
-    end
+  def entry_params
+    params.require(:entry).permit(
+      :member_id,
+      :title,
+      :body,
+      :posted_at,
+      :status
+    )
+  end
 end

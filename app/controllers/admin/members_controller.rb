@@ -19,7 +19,7 @@ class Admin::MembersController < Admin::Base
   def edit
     @member = Member.find(params[:id])
   end
-  #会員の新規登録 
+  #会員の新規登録
   def create
     @member = Member.new(member_params)
     if @member.save
