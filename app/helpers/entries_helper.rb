@@ -12,11 +12,12 @@ module EntriesHelper
     entry.images.order(:position)[1..-1]&.each do |image|
       buffer << render_entry_image(image)
     end
-
     buffer
   end
 
-  private def render_entry_image(image)
+  private
+
+  def render_entry_image(image)
     content_tag(:div) do
       image_tag image.data.variant(resize: "530x>"),
                 alt: image.alt_text,

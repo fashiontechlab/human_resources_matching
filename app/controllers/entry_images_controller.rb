@@ -65,12 +65,12 @@ class EntryImagesController < ApplicationController
     @image = @entry.images.find(params[:id])
     @image.move_higher
     redirect_back fallback_location: [@entry, :images]
-end
+  end
 
    #表示位置を下げる
   def move_lower
     @image = @entry.images.find(params[:id])
     @image.move_lower
     redirect_back fallback_location: [@entry, :images]
-end
+  end
 end
