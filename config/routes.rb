@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :entries, only: [:index]
   end
 
+  resources :staffs
   resource :session, only: [:create, :destroy]
   resource :account, only: [:show, :edit, :update]
   resource :password, only:[:show, :edit, :update]
