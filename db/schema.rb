@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_09_150416) do
+ActiveRecord::Schema.define(version: 2021_12_13_053322) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -74,6 +74,17 @@ ActiveRecord::Schema.define(version: 2021_12_09_150416) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.boolean "disp_flg"
+    t.datetime "start"
+    t.datetime "end"
+    t.string "allday"
+    t.integer "staff_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["staff_id"], name: "index_schedules_on_staff_id"
   end
 
   create_table "staffs", force: :cascade do |t|
