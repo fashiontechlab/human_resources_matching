@@ -1,5 +1,8 @@
 
 ja:
+  simple_calendar:
+      previous: "前"
+      next: "次"
   activerecord:
     models:
       member: 会員情報

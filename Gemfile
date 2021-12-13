@@ -59,4 +59,4 @@ gem 'jquery-rails'
 gem 'acts_as_list'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
-gem 'simple_calendar'
+gem 'simple_calendar', "~> 2.0"
