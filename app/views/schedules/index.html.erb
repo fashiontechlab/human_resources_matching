@@ -1,6 +1,6 @@
 <h1>出勤予定表</h1>
 
-<%= link_to "出勤表を作成する", new_schedule_path%>
+<%= link_to "出勤表を作成する", new_schedule_path %>
 
 <%= month_calendar events: @schedules do |date, schedules| %>
   <%= date %>
@@ -11,3 +11,27 @@
   </div>
   <% end %>
 <% end %>
+<table>
+  <tbody>
+    <div class='schedule'>
+      <tr>
+        <td>出勤可否</td>
+        <td>出勤日</td>
+        <td>出勤時間</td>
+        <td>退勤時間</td>
+      </tr>
+      <% @schedules.each do |schedule| %>
+      <tr>
+        <td><%= schedule.workday %></td>
+        <td><%= schedule.start_time.strftime("%m/%d") %></td>
+        <td><%= schedule.start.strftime("%H:%M") %></td>
+        <td><%= schedule.end.strftime("%H:%M") %></td>
+        <div>
+          <th><%= link_to "編集", edit_schedule_path(schedule) %></th>
+          <th><%= link_to "削除", schedule_path(schedule), method: :delete, data: { confirm: "本当に削除しますか？" } %></th>
+        </div>
+      </tr>
+      <% end %>
+  </tbody>
+  </div>
+</table>

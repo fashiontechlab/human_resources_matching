@@ -18,12 +18,22 @@ class SchedulesController < ApplicationController
   end
 
   def edit
+    @schedule = Schedule.find(params[:id])
   end
 
   def update
+    @schedule = Schedule.find(params[:id])
+    if @schedule.update(schedule_params)
+      redirect_to schedules_url,  notice: "出勤日時を編集しました。"
+    else
+      render "edit"
+    end
   end
 
   def destroy
+    @schedule = Schedule.find(params[:id])
+    @schedule.destroy
+    redirect_to schedules_url,  notice: "出勤日時を削除しました。"
   end
 
   private

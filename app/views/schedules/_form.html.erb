@@ -3,19 +3,22 @@
     <%= render "shared/errors", obj: @schedule %>
   </tr>
   <tr>
+    <%= link_to "出勤予定表に戻る", schedules_path %>
+  </tr>
+  <tr>
     <th><%= form.label :workday, "出勤可否" %></th>
     <td><%= form.text_field :workday %></td>
   </tr>
   <tr>
     <th><%= form.label :start_time, "出勤日" %></th>
-    <td><%= form.date_select :start_time%></td>
+    <td><%= form.date_field :start_time%></td>
   </tr>
   <tr>
   <tr>
-    <th><%= form.label :start, "始業時間" %></th>
+    <th><%= form.label :start, "出勤時間" %></th>
     <td><%= form.time_select :start %></td>
   </tr>
   <tr>
-    <th><%= form.label :end, "終業時間" %></th>
+    <th><%= form.label :end, "退勤時間" %></th>
     <td><%= form.time_select :end %></td>
 </table>
