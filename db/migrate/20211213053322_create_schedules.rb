@@ -3,7 +3,7 @@ class CreateSchedules < ActiveRecord::Migration[5.2]
     create_table :schedules do |t|
       t.string :start
       t.string :end
-      t.string :Allday
+      t.string :allday
       t.references :staff_id
 
       t.timestamps

@@ -1,0 +1,30 @@
+<table class="attr">
+o  <tr>
+    <%= render "shared/errors", obj: @staff %>
+  </tr>
+    <th><%= form.label :name, "氏名" %></th>
+    <td><%= form.text_field :name %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :kana_name, "フリガナ" %></th>
+    <td><%= form.text_field :kana_name %></td>
+  </tr>
+  <tr>
+    <th>性別</th>
+    <td>
+      <%= form.radio_button :sex, 1 %>
+      <%= form.label :sex_1, "女" %>
+      <%= form.radio_button :sex, 2 %>
+      <%= form.label :sex_2, "男" %>
+    </td>
+  </tr>
+  </tr>
+  <tr>
+    <th><%= form.label :email, "携帯番号" %></th>
+    <td><%= form.text_field :mobile %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :email, "メールアドレス" %></th>
+    <td><%= form.text_field :email %></td>
+  </tr>
+</table>
