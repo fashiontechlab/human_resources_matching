@@ -61,7 +61,7 @@ class Admin::MembersController < Admin::Base
       :remove_profile_picture,
       :name,
       :full_name,
-      :kane_name,
+      :kana_name,
       :sex,
       :email,
       :administrator

@@ -1,7 +1,7 @@
 class SchedulesController < ApplicationController
 
   def index
-    @schedules =  Schedule.all
+    @schedules = Schedule.where(member_id: current_member.id)
   end
 
   def new
@@ -10,6 +10,7 @@ class SchedulesController < ApplicationController
 
   def create
     @schedule = Schedule.new(schedule_params)
+    @schedule.writer = current_member
     if @schedule.save
       redirect_to schedules_url, notice: "出勤日時を登録しました。"
     else
@@ -39,6 +40,6 @@ class SchedulesController < ApplicationController
   private
 
   def schedule_params
-    params.require(:schedule).permit(:start, :end, :Allday, :staff_id, :start_time, :workday)
+    params.require(:schedule).permit(:start, :end, :Allday, :staff_id, :start_time, :workday, :member_id,)
   end
 end
