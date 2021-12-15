@@ -1,4 +1,5 @@
 class StaffsController < ApplicationController
+
   def index
     @staffs = Staff.all
   end
@@ -26,6 +27,6 @@ class StaffsController < ApplicationController
   private
 
   def staff_params
-    params.require(:staff).permit(:name, :kana_name, :mobile, :email, :sex)
+    params.require(:staff).permit(:name, :kana_name, :mobile, :email, :sex, :password)
   end
 end

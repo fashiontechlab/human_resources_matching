@@ -20,7 +20,7 @@
     <td><%= @article.expired_at.try(:strftime, "%Y/%m/%d %H:%M") %></td>
   </tr>
   <tr>
-    <th>会員限定</th>
+    <th>メンバー限定</th>
     <td><%= @article.member_only? ? "○" : "一" %></td>
   </tr>
 </table>

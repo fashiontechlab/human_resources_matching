@@ -11,7 +11,7 @@
   <% end %>
 </ul>
 
-<h2>会員ブログ</h2>
+<h2>メンバーブログ</h2>
 <%
   entries = Entry.readable_for(current_member)
   .order(posted_at: :desc).limit(5)

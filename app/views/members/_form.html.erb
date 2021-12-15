@@ -1,10 +1,6 @@
 <table class="attr">
   <tr>
     <%= render "shared/errors", obj: @member %>
-    <th><%= form.label :number, "背番号" %></th>
-    <td><%= form.text_field :number, size: 8 %></td>
-  </tr>
-  <tr>
     <th><%= form.label :name, "ユーザー名" %></th>
     <td><%= form.text_field :name %></td>
   </tr>
@@ -13,20 +9,17 @@
     <td><%= form.text_field :full_name %></td>
   </tr>
   <tr>
+    <th><%= form.label :kana_name, "カタカナ" %></th>
+    <td><%= form.text_field :full_name %></td>
+  </tr>
+  <tr>
     <th>性別</th>
     <td>
       <%= form.radio_button :sex, 1 %>
-      <%= form.label :sex_1, "男" %>
+      <%= form.label :sex_1, "女" %>
       <%= form.radio_button :sex, 2 %>
-      <%= form.label :sex_2, "女" %>
+      <%= form.label :sex_2, "男" %>
     </td>
-  </tr>
-  <tr>
-    <th><%= form.label :birthday, "誕生日",
-            for: "member_birthday_1i" %></th>
-    <td><%= form.date_select :birthday,
-            start_year: 1940, end_year: Time.current.year,
-            use_month_mumbers: true %></td>
   </tr>
   <tr>
     <th><%= form.label :email, "メールアドレス" %></th>

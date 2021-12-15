@@ -8,10 +8,6 @@
     </td>
   </tr>
   <tr>
-    <th width="150">背番号</th>
-    <td><%= @member.name %></td>
-  </tr>
-  <tr>
     <th>ユーザー名</th>
     <td><%= @member.name %></td>
   </tr>
@@ -19,13 +15,13 @@
     <th>氏名</th>
     <td><%= @member.full_name %></td>
   </tr>
+  <tr>
+    <th>カタカナ</th>
+    <td><%= @member.kana_name %></td>
+  </tr>
    <tr>
     <th>性別</th>
     <td><%= @member.sex == 1 ? "男" : "女" %></td>
-  </tr>
-  <tr>
-    <th>誕生日</th>
-    <td><%= @member.birthday&.strftime("%Y年%m月%d日") %></td>
   </tr>
   <tr>
     <th>メールアドレス</th>
@@ -36,4 +32,3 @@
     <td><%= @member.administrator? ? "○" : "ー" %></td>
   </tr>
  </table>
-  

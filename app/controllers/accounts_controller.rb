@@ -12,7 +12,7 @@ class AccountsController < ApplicationController
 
   def update
     @member = current_member
-    @member.assign_attributes(account_params).permit(:number, :name)
+    @member.assign_attributes(account_params)
     if @member.save
       redirect_to :account, notice: "アカウント情報を更新しました。"
     else
@@ -23,14 +23,13 @@ class AccountsController < ApplicationController
   private
 
   def account_params
-    params.riquire(:account).permit(
+    params.require(:account).permit(
       :new_profile_picture,
       :remove_profile_picture,
-      :number,
       :name,
       :full_name,
+      :kana_name,
       :sex,
-      :birthday,
       :email
     )
   end

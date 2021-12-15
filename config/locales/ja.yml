@@ -12,13 +12,12 @@ ja:
       member:
         new_porfile_picture: プロフィール画像
         remove_profile_picture: 画像の削除
-        number: 背番号
         name: ユーザー名
         full_name: 氏名
+        kana_name: カタカナ
         sex: 性別
         sex_1: 男性
         sex_2: 女性
-        birthday: 誕生日
         email: メールアドレス
         administrator: 管理者
         current_password: 現在のパスワード
@@ -30,14 +29,14 @@ ja:
         released_at: 掲載開始日時
         expired_at: 掲載終了日時
         no_expiration: 掲載日時を設定しない
-        member_only: 会員限定
+        member_only: メンバー限定
       entry:
         title: タイトル
         body: 本文
         posted_at: 日時
         status: 状態
         status_draft: 下書き
-        status_member_only: 会員限定
+        status_member_only: メンバー限定
         status_public: 公開
       entry_image:
         data: 画像ファイル

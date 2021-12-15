@@ -1,4 +1,4 @@
-<% @page_title = "会員管理" %>
+<% @page_title = "人材の管理" %>
 <h1><% @page_title %></h1>
 
 <%= form_tag :search_admin_members, method: :get, class: "search" do %>
@@ -6,13 +6,12 @@
 <%= submit_tag "検索" %>
 <% end %>
 
-<div class="toolbar"><%= link_to "会員の新規登録", :new_admin_member %></div>
+<div class="toolbar"><%= link_to "人材の新規登録", :new_admin_member %></div>
 
 <% if @members.present? %>
 <table class="list">
   <thead>
     <tr>
-      <th>背番号</th>
       <th>ユーザー名</th>
       <th>氏名</th>
       <th>操作</th>
@@ -21,9 +20,8 @@
   <tbody>
     <% @members.each do |member| %>
     <tr>
-      <td style="text-algin: right"><%= member.number %></td>
-      <td><%= link_to member.name, [:admin, member] %></td>
-      <td><%= member.full_name %></td>
+      <td style="text-algin: right"><%= member.name %></td>
+      <td><%= link_to member.full_name, [:admin, member] %></td>
       <td>
         <%= link_to "編集", [:edit, :admin, member] %> |
         <%= link_to "削除", [:admin, member], method: :delete,

@@ -8,20 +8,13 @@ class Member < ApplicationRecord
 
   attribute :new_profile_picture
   attribute :remove_profile_picture, :boolean
-  validates :number, presence: true,
-            numericality: {
-              only_integer: true,
-              greater_than: 0,
-              less_than: 100,
-              allow_blak: true
-            },
-            uniqueness: true
   validates :name, presence: true,
             format: { with: /\A[A-Za-z][A-Za-z0-9]*\z/, allow_blank: true,
                       message: :invalid_member_name },
             length: { minimum: 2, maximum: 20, allow_blank: true},
             uniqueness: { case_sensitive: false }
   validates :full_name, presence:true, length: { maximum: 20 }
+  validates :kana_name, presence:true, length: { maximum: 20 }
   validates :email, email: { allow_blank: true }
 
   attr_accessor :current_password
@@ -51,7 +44,7 @@ class Member < ApplicationRecord
 
   class << self
     def search(query)
-      rel = order("number")
+      rel = order("name")
       if query.present?
         rel = rel.where("name LIKE ? OR full_name LIKE ?",
                         "%#{query}%", "%#{query}%")

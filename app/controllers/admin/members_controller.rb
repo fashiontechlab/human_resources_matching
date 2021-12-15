@@ -4,7 +4,7 @@ class Admin::MembersController < Admin::Base
 
   #会員一覧
   def index
-    @members = Member.order("number")
+    @members = Member.order(:name)
                  .page(params[:page]).per(15)
   end
   #会員情報の詳細
@@ -13,7 +13,7 @@ class Admin::MembersController < Admin::Base
   end
   #新規フォーム
   def new
-    @member = Member.new(birthday: Date.new(1974, 8, 13))
+    @member = Member.new
   end
   #更新フォーム
   def edit
@@ -23,7 +23,7 @@ class Admin::MembersController < Admin::Base
   def create
     @member = Member.new(member_params)
     if @member.save
-      redirect_to [:admin, @member],notice: "会員を登録しました。"
+      redirect_to [:admin, @member],notice: "メンバーを登録しました。"
     else
       render "new"
     end
@@ -33,7 +33,7 @@ class Admin::MembersController < Admin::Base
     @member = Member.find(params[:id])
     @member.assign_attributes(member_params)
     if @member.save
-      redirect_to [:admin, @member], notice: "会員情報を更新しました。"
+      redirect_to [:admin, @member], notice: "メンバー情報を更新しました。"
     else
       render "edit"
     end
@@ -42,7 +42,7 @@ class Admin::MembersController < Admin::Base
   def destroy
     @member = Member.find(params[:id])
     @member.destroy
-    redirect_to :admin_members , notice: "会員を削除しました。"
+    redirect_to :admin_members , notice: "メンバーを削除しました。"
   end
 
   #検索
@@ -59,11 +59,10 @@ class Admin::MembersController < Admin::Base
     attrs = [
       :new_profile_picture,
       :remove_profile_picture,
-      :number,
       :name,
       :full_name,
+      :kane_name,
       :sex,
-      :birthday,
       :email,
       :administrator
     ]

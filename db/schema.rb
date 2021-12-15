@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_14_083512) do
+ActiveRecord::Schema.define(version: 2021_12_15_070736) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -64,16 +64,15 @@ ActiveRecord::Schema.define(version: 2021_12_14_083512) do
   end
 
   create_table "members", force: :cascade do |t|
-    t.integer "number", null: false
     t.string "name", null: false
     t.string "full_name"
     t.string "email"
-    t.date "birthday"
     t.integer "sex", default: 1, null: false
     t.boolean "administrator", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.string "kana_name"
   end
 
   create_table "schedules", force: :cascade do |t|
@@ -96,6 +95,7 @@ ActiveRecord::Schema.define(version: 2021_12_14_083512) do
     t.integer "sex", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
   create_table "votes", force: :cascade do |t|

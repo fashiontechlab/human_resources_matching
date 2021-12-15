@@ -2,7 +2,7 @@
 
 <table class="attr">
   <tr>
-    <th><%= form.label :new_profile_picture %></th>
+    <th><%= form.label :new_porfile_picture %></th>
     <td>
       <div><%= form.file_field :new_profile_picture %></div>
       <% if @member.profile_picture.attached? %>
@@ -15,10 +15,6 @@
     </td>
   </tr>
   <tr>
-    <th><%= form.label :number %></th>
-    <td><%= form.text_field :number, size: 8 %></td>
-  </tr>
-  <tr>
     <th><%= form.label :name %></th>
     <td><%= form.text_field :name %></td>
   </tr>
@@ -27,19 +23,17 @@
     <td><%= form.text_field :full_name %></td>
   </tr>
   <tr>
+    <th><%= form.label :kana_name %></th>
+    <td><%= form.text_field :kana_name %></td>
+  </tr>
+  <tr>
     <th><%= Member.human_attribute_name(:sex) %></th>
     <td>
       <%= form.radio_button :sex, 1 %>
-      <%= form.label :sex_1 %>
-      <%= form.radio_button :sex, 2 %>
       <%= form.label :sex_2 %>
+      <%= form.radio_button :sex, 2 %>
+      <%= form.label :sex_1 %>
     </td>
-  </tr>
-  <tr>
-    <th><%= form.label :birthday, for: "member_birthday_1i" %></th>
-    <td><%= form.date_select :birthday,
-            start_year: 1940, end_year: Time.current.year,
-            use_month_numbers: true %></td>
   </tr>
   <tr>
     <th><%= form.label :email, "メールアドレス" %></th>
