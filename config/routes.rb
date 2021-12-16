@@ -36,4 +36,8 @@ Rails.application.routes.draw do
     end
     resources :articles
   end
+  namespace :admin do
+    root "top#index"
+    resources :ryokans
+  end
 end

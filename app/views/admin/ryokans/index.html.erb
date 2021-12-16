@@ -1,0 +1,36 @@
+<% @page_title = "旅館の管理" %>
+<h1><% @page_title %></h1>
+
+<div class="toolbar"><%= link_to "旅館の新規登録", :new_admin_ryokan %></div>
+
+<% if @ryokans.present? %>
+<table class="list">
+  <thead>
+    <tr>
+      <th>ユーザー名</th>
+      <th>旅館名</th>
+      <th>カタカナ</th>
+      <th>担当者</th>
+      <th>電話番号</th>
+      <th>emailアドレス</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ryokans.each do |ryokan|%>
+    <tr>
+      <td style="text-algin: right"><%= link_to ryokan.name, [:admin, ryokan] %></td>
+      <td><%= ryokan.full_name %></td>
+      <td><%= ryokan.kana_name %></td>
+      <td><%= ryokan.manager %></td>
+      <td><%= ryokan.telephone %></td>
+      <td><%= ryokan.email %></td>
+      <td>
+        <%= link_to "編集", [:edit, :admin, ryokan] %> |
+        <%= link_to "削除", [:admin, ryokan], method: :delete,
+            data: { confirm: "本当に削除しますか？" } %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>

@@ -24,7 +24,8 @@ class SchedulesController < ApplicationController
 
   def update
     @schedule = Schedule.find(params[:id])
-    if @schedule.update(schedule_params)
+    @schedule.assign_attributes(schedule_params)
+    if @schedule.save
       redirect_to schedules_url,  notice: "出勤日時を編集しました。"
     else
       render "edit"

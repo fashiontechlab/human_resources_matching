@@ -9,3 +9,24 @@
   </div>
   <% end %>
 <% end %>
+
+<table>
+  <tbody>
+    <div class='schedule'>
+      <tr>
+        <td>出勤可否</td>
+        <td>出勤日</td>
+        <td>出勤時間</td>
+        <td>退勤時間</td>
+      </tr>
+      <% @schedules.each do |schedule| %>
+      <tr>
+        <td><%= schedule.workday %></td>
+        <td><%= schedule.start_time.strftime("%m/%d") %></td>
+        <td><%= schedule.start.strftime("%H:%M") %></td>
+        <td><%= schedule.end.strftime("%H:%M") %></td>
+      </tr>
+      <% end %>
+    </div>
+  </tbody>
+</table>
