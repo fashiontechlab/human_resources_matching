@@ -1,0 +1,2 @@
+class Ryokan < ApplicationRecord
+end

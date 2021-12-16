@@ -1,0 +1,2 @@
+class RyokansController < ApplicationController
+end
