@@ -35,6 +35,12 @@ class Admin::RyokansController < ApplicationController
     end
   end
 
+  def destroy
+    @schedules = Schedule.find_by(params[:id])
+    @schedules.destroy
+    redirect_to admin_ryokans_url, notice: "旅館のアカウントを削除しました。"
+  end
+
   private
 
   def ryokan_params
