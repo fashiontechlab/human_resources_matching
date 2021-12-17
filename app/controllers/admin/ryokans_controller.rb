@@ -9,8 +9,8 @@ class Admin::RyokansController < ApplicationController
   end
 
   def create
-    @schedules = Ryokan.new(ryokan_params)
-    if @schedules.save
+    @ryokan = Ryokan.new(ryokan_params)
+    if @ryokan.save
       redirect_to admin_ryokans_url, notice: "旅館のアカウントを作成しました。"
     else
       render "new"
@@ -44,6 +44,6 @@ class Admin::RyokansController < ApplicationController
   private
 
   def ryokan_params
-    params.require(:ryokan).permit(:name, :full_name, :kana_name, :email, :manager, :telephone, :email)
+    params.require(:ryokan).permit(:name, :full_name, :kana_name, :email, :manager, :telephone, :email, :password)
   end
 end
