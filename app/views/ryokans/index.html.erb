@@ -5,7 +5,8 @@
 
   <% schedules.each do |schedule| %>
   <div>
-    <%= schedule.workday %>
+    <%= schedule.workday %>：
+    <%= schedule.member.full_name %>
   </div>
   <% end %>
 <% end %>
@@ -14,13 +15,15 @@
   <tbody>
     <div class='schedule'>
       <tr>
+        <td>氏名</td>
         <td>出勤可否</td>
         <td>出勤日</td>
         <td>出勤時間</td>
-        <td>退勤時間</td>
+        <td>退勤時間</tdt>
       </tr>
       <% @schedules.each do |schedule| %>
       <tr>
+        <td><%= schedule.member.full_name %></td>
         <td><%= schedule.workday %></td>
         <td><%= schedule.start_time.strftime("%m/%d") %></td>
         <td><%= schedule.start.strftime("%H:%M") %></td>

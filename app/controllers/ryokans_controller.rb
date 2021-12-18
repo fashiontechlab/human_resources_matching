@@ -3,18 +3,9 @@ class RyokansController < ApplicationController
 
   def index
     @schedules = Schedule.all
-    @ryokans = Ryokan.all
-  end
-
-  def new
-    @ryokans = Ryokan.new
   end
 
   def create
-  end
-
-  def show
-    @ryokan = Ryokan.find(params[:id])
   end
 
   def edit
