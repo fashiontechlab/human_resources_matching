@@ -16,8 +16,8 @@ ja:
         full_name: 氏名
         kana_name: カタカナ
         sex: 性別
-        sex_1: 男性
-        sex_2: 女性
+        sex_1: 女性
+        sex_2: 男性
         email: メールアドレス
         administrator: 管理者
         current_password: 現在のパスワード

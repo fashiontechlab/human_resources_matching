@@ -16,16 +16,17 @@
     </tr>
   </thead>
   <tbody>
-    <% @ryokans.each do |ryokan|%>
+    <% @ryokans.each do |ryokan| %>
     <tr>
-      <td style="text-algin: right"><%= link_to ryokan.name, [:admin, ryokan] %></td>
+      <td style="text-algin: right">
+        <%= link_to ryokan.name, [:admin, ryokan] %></td>
       <td><%= ryokan.full_name %></td>
       <td><%= ryokan.kana_name %></td>
       <td><%= ryokan.manager %></td>
       <td><%= ryokan.telephone %></td>
       <td><%= ryokan.email %></td>
       <td>
-        <%= link_to "編集", [:edit, :admin, ryokan] %> |
+        <%= link_to "編集", edit_admin_ryokan_path(ryokan) %> |
         <%= link_to "削除", [:admin, ryokan], method: :delete,
             data: { confirm: "本当に削除しますか？" } %>
       </td>
@@ -33,4 +34,6 @@
     <% end %>
   </tbody>
 </table>
+<% else %>
+<p>旅館の情報がありません。</p>
 <% end %>
