@@ -10,6 +10,7 @@ class SchedulesController < ApplicationController
 
   def create
     @schedule = Schedule.new(schedule_params)
+    @schedule.human = current_member
     if @schedule.save
       redirect_to schedules_url, notice: "出勤日時を登録しました。"
     else
@@ -40,6 +41,6 @@ class SchedulesController < ApplicationController
   private
 
   def schedule_params
-    params.require(:schedule).permit(:start, :end, :Allday, :staff_id, :start_time, :workday, :member_id, members_attributes: [:name, :full_name])
+    params.require(:schedule).permit(:start, :end, :Allday, :staff_id, :start_time, :workday, :member_id,)
   end
 end
