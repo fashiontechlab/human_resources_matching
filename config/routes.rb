@@ -40,4 +40,9 @@ Rails.application.routes.draw do
     root "top#index"
     resources :ryokans
   end
+  namespace :admin do
+    root "top#index"
+    resources :schedules
+  end
+
 end
