@@ -1,6 +1,6 @@
 class Admin::SchedulesController < ApplicationController
 
   def index
-    @schedules = Schedule.where(member_id: current_member.id)
+    @schedules = Schedule.all
   end
 end
