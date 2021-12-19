@@ -5,6 +5,9 @@ class RyokansController < ApplicationController
     @schedules = Schedule.all
   end
 
+  def new
+  end
+
   def create
   end
 
