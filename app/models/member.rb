@@ -5,6 +5,7 @@ class Member < ApplicationRecord
   has_many :votes, dependent: :destroy
   has_many :voted_entries, through: :votes, source: :entry
   has_many :schedules, dependent: :destroy
+  has_many :reservations, dependent: :destroy
   has_one_attached :profile_picture
 
   attribute :new_profile_picture

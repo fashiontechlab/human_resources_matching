@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_16_011601) do
+ActiveRecord::Schema.define(version: 2021_12_19_102243) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -73,6 +73,17 @@ ActiveRecord::Schema.define(version: 2021_12_16_011601) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "kana_name"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer "schedule_id"
+    t.integer "ryokan_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ryokan_id"], name: "index_reservations_on_ryokan_id"
+    t.index ["schedule_id"], name: "index_reservations_on_schedule_id"
   end
 
   create_table "ryokans", force: :cascade do |t|

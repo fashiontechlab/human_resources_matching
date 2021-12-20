@@ -1,7 +1,9 @@
-<% @page_title = "アカウントの編集" %>
+<% @page_title = "スケジュールの確認" %>
 <h1><%= @page_title %></h1>
 
-<%= form_for @ryokan do |form| %>
-<% render = "form", form: form%>
-<div><% form.submit %></div>
+<%= link_to "戻る", ryokans_path %>
+
+<%= form_for @schedule do |form| %>
+<%= render "form"  %>
+<div><%= form.submit value="依頼する" %></div>
 <% end %>

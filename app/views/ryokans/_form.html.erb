@@ -1,26 +1,18 @@
 <table class="attr">
   <tr>
-    <th>ユーザー名</th>
-    <td><%= @ryokan.name %></td>
+    <th>名前</th>
+    <td><%= @schedule.human.full_name %></td>
   </tr>
   <tr>
-    <th>名称</th>
-    <td><%= @ryokan.full_name %></td>
+    <th>出勤日</th>
+    <td><%= @schedule.start_time.strftime("%m/%d") %></td>
   </tr>
   <tr>
-    <th>カタカナ</th>
-    <td><%= @ryokan.kana_name %></td>
+    <th>出勤時間</th>
+    <td><%= @schedule.start.strftime("%H:%M") %></td>
   </tr>
   <tr>
-    <th>担当者</th>
-    <td><%= @ryokan.manager%></td>
-  </tr>
-  <tr>
-    <th>電話番号</th>
-    <td><%= @ryokan.telephone %></td>
-  </tr>
-  <tr>
-    <th>メールアドレス</th>
-    <td><%= @ryokan.email %></td>
+    <th>退勤時間</th>
+    <td><%= @schedule.end.strftime("%H:%M") %></td>
   </tr>
 </table>

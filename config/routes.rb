@@ -14,6 +14,9 @@ Rails.application.routes.draw do
     resources :entries, only: [:index]
   end
 
+  resources :requests do
+    get "confirmation", on: :member
+  end
   resources :ryokans
   resources :schedules
   resources :staffs

@@ -5,19 +5,8 @@ class RyokansController < ApplicationController
     @schedules = Schedule.all
   end
 
-  def new
-  end
-
-  def create
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
+  def show
+    @schedule = Schedule.find(params[:id])
   end
 
   private
