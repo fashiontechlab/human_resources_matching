@@ -10,7 +10,7 @@ class SchedulesController < ApplicationController
 
   def create
     @schedule = Schedule.new(schedule_params)
-    @schedule.human = current_member
+    @schedule.human_resource = current_member
     if @schedule.save
       redirect_to schedules_url, notice: "出勤日時を登録しました。"
     else
@@ -36,6 +36,16 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
     @schedule.destroy
     redirect_to schedules_url,  notice: "出勤日時を削除しました。"
+  end
+
+  def confirmation
+    @schedule = Schedule.find(params[:id])
+  end
+
+  def ask
+    @schedule = Schedule.find(params[:id])
+    ContactMailer.send_mail(@schedule).deliver_later
+    redirect_to ryokans_url, notice: "出勤依頼のメールを送りました。"
   end
 
   private

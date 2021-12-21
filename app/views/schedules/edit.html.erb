@@ -2,23 +2,6 @@
 <h1><%= @page_title %></h1>
 
 <%= form_for @schedule do |form| %>
-<table class="attr">
-  <tr>
-    <th><%= form.label :workday, "出勤可否" %></th>
-    <td><%= form.text_field :workday %></td>
-  </tr>
-  <tr>
-    <th><%= form.label :start_time, "出勤日" %></th>
-    <td><%= form.date_field :start_time%></td>
-  </tr>
-  <tr>
-  <tr>
-    <th><%= form.label :start, "出勤時間" %></th>
-    <td><%= form.time_field :start %></td>
-  </tr>
-  <tr>
-    <th><%= form.label :end, "退勤時間" %></th>
-    <td><%= form.time_field :end %></td>
-</table>
+<%= render "form", form: form %>
 <div><%= form.submit "編集する" %></div>
 <% end %>

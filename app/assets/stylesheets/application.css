@@ -79,14 +79,14 @@ footer {
   font: 11px Verdana;
   color: #888;
   padding: 8px 0;
-  border-top: 4px solid #6bb;
+  border-top: 4px solid pink;
   text-align: center;
 }
 
 /* メニューバー */
 nav.menubar {
   padding: 2px;
-  background-color: #000;
+  background-color: navy;
   color: #ccc;
   font-size: 80%;
   padding: 8px 16px;
@@ -129,9 +129,9 @@ form#login-form input[type="password"] {
 }
 
 aside#sidebar h2 {
-  color: #080;
+  color: #F0F;
   font-weight: bold;
-  border-bottom: 1px dotted #080;
+  border-bottom: 1px dotted #F0F;
   margin-bottom: 0.5em;
   font-size: 100%;
 }

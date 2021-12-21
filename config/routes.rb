@@ -14,11 +14,11 @@ Rails.application.routes.draw do
     resources :entries, only: [:index]
   end
 
-  resources :requests do
+  resources :schedules do
     get "confirmation", on: :member
+    get "ask", on: :member
   end
   resources :ryokans
-  resources :schedules
   resources :staffs
   resource :session, only: [:create, :destroy]
   resource :account, only: [:show, :edit, :update]

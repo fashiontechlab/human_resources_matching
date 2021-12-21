@@ -6,7 +6,7 @@
   <% schedules.each do |schedule| %>
   <div>
     <%= schedule.workday %>：
-    <%= schedule.human.full_name %>
+    <%= schedule.human_resource.full_name %>
   </div>
   <% end %>
 <% end %>
@@ -23,7 +23,7 @@
       </tr>
       <% @schedules.each do |schedule| %>
       <tr>
-        <td><%= schedule.human.full_name %></td>
+        <td><%= schedule.human_resource.full_name %></td>
         <td><%= schedule.workday %></td>
         <td><%= schedule.start_time.strftime("%m/%d") %></td>
         <td><%= schedule.start.strftime("%H:%M") %></td>

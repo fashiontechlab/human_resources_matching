@@ -1,0 +1,12 @@
+<%=  @schedule.human_resource.full_name %>さん
+<%= @ryokan %>から出勤依頼の通知です。
+
+出勤日：<%= @schedule.start_time.strftime("%m/%d") %>
+出勤時間：<%= @schedule.start.strftime("%H:%M") %>
+退勤時間：<%= @schedule.end.strftime("%H:%M") %>
+に勤務をお願い致します。
+
+キャンセルの場合は、ご依頼主に直接電話連絡をお願いいたします。
+-------------------
+プチプラ人材派遣管理者
+
