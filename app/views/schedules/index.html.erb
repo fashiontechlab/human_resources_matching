@@ -23,7 +23,7 @@
       <% @schedules.each do |schedule| %>
       <tr>
         <td><%= schedule.workday %></td>
-        <td><%= schedule.start_time.strftime("%Y/%m/%d(#{wd[time.wday]})") %></td>
+        <td><%= schedule.start_time.strftime("%m/%d") %></td>
         <td><%= schedule.start.strftime("%H:%M") %></td>
         <td><%= schedule.end.strftime("%H:%M") %></td>
         <div>
