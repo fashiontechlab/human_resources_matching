@@ -44,9 +44,6 @@ class Admin::RyokansController < ApplicationController
   private
 
   def ryokan_params
-    params.require(:ryokan).permit(:name, :full_name, :kana_name, :email, :manager, :telephone, :email)
-
-    attrs << :password if params[:action] == "create"
-    params.require(:ryokan).permit(attrs)
+    params.require(:ryokan).permit(:name, :full_name, :kana_name, :email, :manager, :telephone, :email, :password)
   end
 end

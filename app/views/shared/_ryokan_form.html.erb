@@ -24,11 +24,11 @@
     <th><%= form.label :email, "メールアドレス" %></th>
     <td><%= form.text_field :email %></td>
   </tr>
-  <% if @member.new_record?%>
+  <%# if @member.new_record?%>
   <tr>
     <th><%= form.label :password, "パスワード" %></th>
     <td><%= form.text_field :password %></td>
   </tr>
-  <% end %>
+  <%# end %>
 </tr>
 </table>

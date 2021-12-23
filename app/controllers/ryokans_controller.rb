@@ -12,6 +12,6 @@ class RyokansController < ApplicationController
   private
 
   def ryokan_params
-    params.require(:ryokan).permit(:name, :full_name, :kana_name, :email, :manager, :telephone, :email)
+    params.require(:ryokan).permit(:name, :full_name, :kana_name, :email, :manager, :telephone, :email, :status)
   end
 end
