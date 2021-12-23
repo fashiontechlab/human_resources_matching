@@ -59,6 +59,7 @@ class SchedulesController < ApplicationController
 
   def demand
     @schedule = Schedule.find(params[:id])
+    @schedule.assign_attributes(schedule_params)
     ContactMailer.negotiation_send_mail(@schedule).deliver_later
     redirect_to ryokans_url, notice: "希望勤務時間のメールを送りました。"
   end
