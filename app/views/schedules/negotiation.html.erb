@@ -20,5 +20,8 @@
 </table>
 <%= form_for @schedule, url: demand_schedule_path do |form| %>
 <%= render "body", form: form %>
-<div><%= form.submit "勤務時間の交渉をする" %></div>
+<tr>
+  <th><%= form.submit "勤務時間の交渉メールを送る" %></th>
+  <th><%= link_to "出勤予定表一覧に戻る", ryokans_path %></th>
+</tr>
 <% end %>
