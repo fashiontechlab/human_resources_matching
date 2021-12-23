@@ -1,0 +1,15 @@
+<table class="attr">
+  <tr>
+    <%= render "shared/errors", obj: @schedule %>
+  </tr>
+  <tr>
+    <%= link_to "出勤予定表一覧", ryokans_path %>
+  </tr>
+  <tr>
+    <th><%= form.label :start, "出勤時間" %></th>
+    <td><%= form.time_select :start %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :end, "退勤時間" %></th>
+    <td><%= form.time_select :end %></td>
+</table>

@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   resources :schedules do
     get "confirmation", on: :member
     get "ask", on: :member
+    get "negotiation", on: :member
+    patch "demand", on: :member
   end
   resources :ryokans
   resources :staffs

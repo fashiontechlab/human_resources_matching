@@ -19,6 +19,7 @@
         <td>出勤日</td>
         <td>出勤時間</td>
         <td>退勤時間</td>
+        <td>出勤ステータス</td>
       </tr>
       <% @schedules.each do |schedule| %>
       <tr>
@@ -26,6 +27,7 @@
         <td><%= schedule.start_time.strftime("%m/%d") %></td>
         <td><%= schedule.start.strftime("%H:%M") %></td>
         <td><%= schedule.end.strftime("%H:%M") %></td>
+        <td><%= schedule.status %></td>
         <div>
           <th><%= link_to "編集", edit_schedule_path(schedule) %></th>
           <th><%= link_to "削除", schedule_path(schedule), method: :delete, data: { confirm: "本当に削除しますか？" } %></th>

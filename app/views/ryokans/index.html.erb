@@ -4,11 +4,13 @@
     <%= date %>
 
     <% schedules.each do |schedule| %>
+    <% if schedule.status == true %>
     <div>
       <%= schedule.workday %>：
       <%= schedule.human_resource.full_name %>
     </div>
-  <% end %>
+    <% end %>
+    <% end %>
 <% end %>
 
 <table>
@@ -20,8 +22,9 @@
         <td>出勤日</td>
         <td>出勤時間</td>
         <td>退勤時間</td>
+        <td>依頼可否</td>
+        <td>勤務時間の交渉</td>
       </tr>
-
       <% @schedules.each do |schedule| %>
       <% if schedule.status == true %>
       <tr>
@@ -31,6 +34,7 @@
         <td><%= schedule.start.strftime("%H:%M") %></td>
         <td><%= schedule.end.strftime("%H:%M") %></td>
         <td><%= link_to "依頼", confirmation_schedule_path(schedule) %></td>
+        <td><%= link_to "交渉", negotiation_schedule_path(schedule) %></td>
       </tr>
       <% end %>
       <% end %>
