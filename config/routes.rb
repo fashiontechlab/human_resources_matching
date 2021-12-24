@@ -25,7 +25,10 @@ Rails.application.routes.draw do
     patch "non_approval", on: :member
   end
 
-  resources :ryokans
+  resources :ryokans do
+    get "request_confirmation", on: :collection
+  end
+
   resources :staffs
   resource :session, only: [:create, :destroy]
   resource :account, only: [:show, :edit, :update]

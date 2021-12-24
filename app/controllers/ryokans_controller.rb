@@ -9,6 +9,10 @@ class RyokansController < ApplicationController
     @schedule = Schedule.find(params[:id])
   end
 
+  def request_confirmation
+    @schedules = Schedule.where(ryokan_id: current_member.id)
+  end
+
   private
 
   def ryokan_params
