@@ -3,11 +3,15 @@
     <%= render "shared/errors", obj: @schedule %>
   </tr>
   <tr>
+    <th><%= form.label :start_time, "出勤日" %></th>
+    <td><%= form.date_field :start_time %></td>
+  </tr>
+  <tr>
     <th><%= form.label :start, "出勤時間" %></th>
-    <td><%= form.time_select :start %></td>
+    <td><%= form.time_field :start %></td>
   </tr>
   <tr>
     <th><%= form.label :end, "退勤時間" %></th>
-    <td><%= form.time_select :end %></td>
+    <td><%= form.time_field :end %></td>
   </tr>
 </table>

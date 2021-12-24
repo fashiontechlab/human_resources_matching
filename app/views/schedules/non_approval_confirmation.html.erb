@@ -1,0 +1,8 @@
+<% @page_title = "非承認確認" %>
+<h1><%= @page_title %></h1>
+<%= form_for @schedule, url: non_approval_schedule_path do |form| %>
+<%= render "body", form: form %>
+<tr>
+  <th><%= form.submit "出勤時間を非承認する" %></th>
+</tr>
+<% end %>

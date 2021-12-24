@@ -19,6 +19,10 @@ Rails.application.routes.draw do
     get "ask", on: :member
     get "negotiation", on: :member
     patch "demand", on: :member
+    get "approval_confirmation", on: :member
+    get "non_approval_confirmation", on: :member
+    patch "approval", on: :member
+    patch "non_approval", on: :member
   end
   resources :ryokans
   resources :staffs

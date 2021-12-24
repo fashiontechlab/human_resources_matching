@@ -68,9 +68,33 @@ class SchedulesController < ApplicationController
     end
   end
 
+  def approval_confirmation
+    @schedule = Schedule.find(params[:id])
+  end
+
+  def approval
+    @schedule = Schedule.find(params[:id])
+    @schedule.assign_attributes(schedule_params)
+    ContactMailer.approval_send_mail(@schedule).deliver_later
+    redirect_to schedules_url, notice: "承認のメールを送りました。"
+    @schedule.approval_status = true
+    @schedule.save
+  end
+
+  def non_approval_confirmation
+    @schedule = Schedule.find(params[:id])
+  end
+
+  def non_approval
+    @schedule = Schedule.find(params[:id])
+    ContactMailer.non_approval_send_mail(@schedule).deliver_later
+    redirect_to schedules_url, notice: "非承認のメールを送りました。"
+  end
+
+
   private
 
   def schedule_params
-    params.require(:schedule).permit(:start, :end, :Allday, :staff_id, :start_time, :workday, :member_id,)
+    params.require(:schedule).permit(:start, :end, :Allday, :staff_id, :start_time, :workday, :member_id, :status, :approval_status)
   end
 end
