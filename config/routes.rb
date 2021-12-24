@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     patch "approval", on: :member
     patch "non_approval", on: :member
   end
+
   resources :ryokans
   resources :staffs
   resource :session, only: [:create, :destroy]

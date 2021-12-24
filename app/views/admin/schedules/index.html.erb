@@ -20,7 +20,8 @@
         <td>出勤日</td>
         <td>出勤時間</td>
         <td>退勤時間</td>
-        <td>出勤ステータス</td>
+        <td>出勤状況</td>
+        <td>勤務時間承認</td>
       </tr>
       <% @schedules.each do |schedule| %>
       <tr>
@@ -29,7 +30,8 @@
         <td><%= schedule.start_time.strftime("%m/%d") %></td>
         <td><%= schedule.start.strftime("%H:%M") %></td>
         <td><%= schedule.end.strftime("%H:%M") %></td>
-        <td><%= schedule.status %></td>
+        <td><%= schedule.status == true ? "未決定" : "決定"%></td>
+        <td><%= schedule.approval_status == true ? "承認" : "未承認" %></td>
       </tr>
       <% end %>
     </div>
