@@ -1,24 +1,28 @@
 <table class="attr">
   <tr>
+    <%= render "shared/errors", obj: @ryokan %>
+  </tr>
+  <tr>
     <th>ユーザー名</th>
     <td><%= @ryokan.name %></td>
   </tr>
   <tr>
-    <th>名称</th>
+    <th>氏名</th>
     <td><%= @ryokan.full_name %></td>
   </tr>
-  <tr>
+   <tr>
     <th>カタカナ</th>
     <td><%= @ryokan.kana_name %></td>
   </tr>
   <tr>
     <th>担当者</th>
-    <td><%= @ryokan.manager%></td>
+    <td><%= @ryokan.manager %></td>
   </tr>
   <tr>
     <th>電話番号</th>
     <td><%= @ryokan.telephone %></td>
   </tr>
+  <tr>
   <tr>
     <th>メールアドレス</th>
     <td><%= @ryokan.email %></td>

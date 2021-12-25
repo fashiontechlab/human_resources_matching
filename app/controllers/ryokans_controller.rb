@@ -1,5 +1,6 @@
 class RyokansController < ApplicationController
   before_action :login_required
+  before_action :login_ryokan_required
 
   def index
     @schedules = Schedule.all

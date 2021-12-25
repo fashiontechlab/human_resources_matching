@@ -18,15 +18,15 @@ class Admin::RyokansController < ApplicationController
   end
 
   def show
-    @ryokan = Ryokan.find_by(params[:id])
+    @ryokan = Ryokan.find(params[:id])
   end
 
   def edit
-    @ryokan = Ryokan.find_by(params[:id])
+    @ryokan = Ryokan.find(params[:id])
   end
 
   def update
-    @ryokan = Ryokan.find_by(params[:id])
+    @ryokan = Ryokan.find(params[:id])
     @ryokan.assign_attributes(ryokan_params)
     if @ryokan.save
       redirect_to admin_ryokans_url, notice: "アカウントを更新しました。"

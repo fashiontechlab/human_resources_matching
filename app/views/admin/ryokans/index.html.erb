@@ -26,7 +26,7 @@
       <td><%= ryokan.telephone %></td>
       <td><%= ryokan.email %></td>
       <td>
-        <%= link_to "編集", edit_admin_ryokan_path(ryokan) %> |
+        <%= link_to "編集", edit_admin_ryokan_path(ryokan) %>
         <%= link_to "削除", [:admin, ryokan], method: :delete,
             data: { confirm: "本当に削除しますか？" } %>
       </td>
