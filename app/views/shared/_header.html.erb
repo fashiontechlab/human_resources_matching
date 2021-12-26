@@ -5,8 +5,8 @@
   <%= menu_link_to current_member.name + "さん", :account  %>
   <%= menu_link_to "ログアウト", :session,
       method: :delete, data: { confirm: "ログアウトしますか？"} %>
-  <ul>
-    <% end %>
+<ul>
+<% end %>
 
     <%=
       if controller.kind_of?(Admin::Base)

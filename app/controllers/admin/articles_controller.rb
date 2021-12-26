@@ -50,7 +50,9 @@ end
   end
 
   #ストロングパラメータ
-  private def article_params
+  private
+
+  def article_params
     params.require(:article).permit(
              :title,
              :body,

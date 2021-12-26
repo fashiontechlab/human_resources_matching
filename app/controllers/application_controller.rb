@@ -2,11 +2,6 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def current_ryokan
-    @current_ryokan ||= Ryokan.find_by(id: session[:id])
-  end
-  helper_method :current_ryokan
-
   def current_member
     Member.find_by(id: session[:member_id]) if session[:member_id]
   end
@@ -28,10 +23,6 @@ class ApplicationController < ActionController::Base
 
   def login_required
     raise LoginRequired unless current_member
-  end
-
-  def login_ryokan_required
-    raise LoginRequired unless current_ryokan
   end
 
   private
