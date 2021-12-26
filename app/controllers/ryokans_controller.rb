@@ -1,5 +1,5 @@
 class RyokansController < ApplicationController
-  before_action :login_required
+
 
   def index
     @schedules = Schedule.all
@@ -10,7 +10,7 @@ class RyokansController < ApplicationController
   end
 
   def request_confirmation
-    @schedules = Schedule.where(ryokan_id: current_member.id)
+    @schedules = Schedule.where(ryokan_id: current_ryokan.id)
   end
 
   private

@@ -2,18 +2,21 @@
 
 <% if current_member %>
 <ul class="account-menu">
-  <%= menu_link_to current_member.name + "さん", :account  %>
+  <%= menu_link_to current_member.full_name + "さん", :account  %>
   <%= menu_link_to "ログアウト", :session,
       method: :delete, data: { confirm: "ログアウトしますか？"} %>
 <ul>
 <% end %>
 
 <% if current_ryokan %>
-<ul class="account-menu">
-  <%= current_ryokan.name + "さん" %>
-  <%= menu_link_to "ログアウト", :session,
-      method: :delete, data: { confirm: "ログアウトしますか？"} %>
-<ul>
+<div class="account-menu">
+  <tr>
+    <td><%= current_ryokan.full_name + "さん" %></td><br>
+    <td><%= menu_link_to "人材のスケジュールを確認", ryokans_path %></td>
+    <td><%= menu_link_to "ログアウト", :session,
+            method: :delete, data: { confirm: "ログアウトしますか？"} %></td>
+    </tr>
+</div>
 <% end %>
 
     <%=

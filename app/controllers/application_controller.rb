@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_member
 
   class LoginRequired < StandardError; end
+  class LoginRyokanRequired < StandardError; end
   class Forbidden < StandardError; end
 
   if Rails.env.production? || ENV["RESCUE_EXCEPTIONS"]
@@ -22,12 +23,17 @@ class ApplicationController < ActionController::Base
   end
 
   rescue_from LoginRequired, with: :rescue_login_required
+  rescue_from LoginRyokanRequired, with: :rescue_login_ryokan_required
   rescue_from Forbidden, with: :rescue_forbidden
 
   private
 
   def login_required
     raise LoginRequired unless current_member
+  end
+
+  def login_ryokan_required
+    raise LoginRyokanRequired unless current_ryokan
   end
 
   private
@@ -40,6 +46,13 @@ class ApplicationController < ActionController::Base
   private
 
   def rescue_login_required(exception)
+    render "errors/login_required", status: 403, layout: "error",
+           formats: [:html]
+  end
+
+  private
+
+  def rescue_login_ryokan_required(exception)
     render "errors/login_required", status: 403, layout: "error",
            formats: [:html]
   end

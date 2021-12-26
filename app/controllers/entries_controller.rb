@@ -33,6 +33,7 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new(entry_params)
     @entry.author = current_member
+    @entry.ryokan_author = current_ryokan
     if @entry.save
       redirect_to @entry, notice: "記事を更新しました。"
     else
@@ -86,7 +87,8 @@ class EntriesController < ApplicationController
       :title,
       :body,
       :posted_at,
-      :status
+      :status,
+      :ryokan_id
     )
   end
 end
