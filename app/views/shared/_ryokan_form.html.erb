@@ -1,0 +1,34 @@
+<table class="attr">
+  <tr>
+    <%= render "shared/errors", obj: @ryokan %>
+    <th><%= form.label :name, "ユーザー名" %></th>
+    <td><%= form.text_field :name %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :full_name, "名称" %></th>
+    <td><%= form.text_field :full_name %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :kana_name, "カタカナ" %></th>
+    <td><%= form.text_field :kana_name %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :manager, "担当者" %></th>
+    <td><%= form.text_field :manager %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :telephone, "電話番号" %></th>
+    <td><%= form.text_field :telephone %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :email, "メールアドレス" %></th>
+    <td><%= form.text_field :email %></td>
+  </tr>
+  <%# if @member.new_record?%>
+  <tr>
+    <th><%= form.label :password, "パスワード" %></th>
+    <td><%= form.text_field :password %></td>
+  </tr>
+  <%# end %>
+</tr>
+</table>

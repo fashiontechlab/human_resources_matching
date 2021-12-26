@@ -2,6 +2,11 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def current_ryokan
+    Ryokan.find_by(id: session[:ryokan_id]) if session[:ryokan_id]
+  end
+  helper_method :current_ryokan
+
   def current_member
     Member.find_by(id: session[:member_id]) if session[:member_id]
   end

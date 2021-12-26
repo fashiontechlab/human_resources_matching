@@ -13,7 +13,7 @@ class Entry < ApplicationRecord
   scope :common, -> { where(status: "public") }
   scope :published, -> { where("status <> ?", "draft") }
   scope :full, ->(member) {
-    where("status <> ? OR member_id = ?", "draft", member.id) }
+    where("status <> ? OR member_id = ?", "draft", member.id || ryokan.id) }
   scope :readable_for, ->(member) { member ? full(member) : common }
 
   class << self
