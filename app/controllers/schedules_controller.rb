@@ -46,6 +46,7 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
     if ContactMailer.send_mail(@schedule).deliver_later
       redirect_to ryokans_url, notice: "出勤依頼のメールを送りました。"
+      @schedule.ryokan_id = current_ryokan.id
       @schedule.status = false
       @schedule.save
     else
