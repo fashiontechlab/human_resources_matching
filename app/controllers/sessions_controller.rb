@@ -1,8 +1,12 @@
 # coding: utf-8
 class SessionsController < ApplicationController
   def create
+    member = Member.find_by(name: params[:name])
     ryokan = Ryokan.find_by(name: params[:name])
-    if ryokan&.authenticate(params[:password])
+    if member&.authenticate(params[:password])
+      session[:member_id] = member.id
+    elsif
+      ryokan&.authenticate(params[:password])
       session[:ryokan_id] = ryokan.id
     else
       flash.alert = "名前とパスワードが一致しません。"
