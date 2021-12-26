@@ -8,6 +8,14 @@
 <ul>
 <% end %>
 
+<% if current_ryokan %>
+<ul class="account-menu">
+  <%= current_ryokan.name + "さん" %>
+  <%= menu_link_to "ログアウト", :session,
+      method: :delete, data: { confirm: "ログアウトしますか？"} %>
+<ul>
+<% end %>
+
     <%=
       if controller.kind_of?(Admin::Base)
       render "shared/admin_menubar"

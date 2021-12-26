@@ -11,7 +11,10 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.delete(:member_id)
+    if session.delete(:member_id)
+    else
+      session.delete(:ryokan_id)
+    end
     redirect_to :root
   end
 end
