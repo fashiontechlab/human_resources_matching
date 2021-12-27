@@ -1,4 +1,4 @@
-<%#= @schedule.full_name %>さん
+<%#= @schedule.ryokan_id.full_name %>さん
 <%= @schedule.human_resource.full_name %>さんから出勤時間の変更承認通知です。
 出勤日：<%= @schedule.start_time.strftime("%m/%d") %>
 出勤時間：<%= @schedule.start.strftime("%H:%M") %>

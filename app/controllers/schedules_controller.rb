@@ -44,12 +44,14 @@ class SchedulesController < ApplicationController
 
   def ask
     @schedule = Schedule.find(params[:id])
-    @schedule.ryokan_id = current_ryokan.id
-    @schedule.status = false
-    @schedule.assign_attributes(schedule_params)
-    @schedule.save
-    ContactMailer.send_mail(@schedule).deliver_later
-    redirect_to ryokans_url, notice: "出勤依頼のメールを送りました。"
+    if ContactMailer.send_mail(@schedule).deliver_later
+      redirect_to ryokans_url, notice: "出勤依頼のメールを送りました。"
+      @schedule.ryokan_id = current_ryokan.id
+      @schedule.status = false
+      @schedule.save
+    else
+      render "ask"
+    end
   end
 
   def negotiation
