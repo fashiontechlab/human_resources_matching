@@ -61,14 +61,11 @@ class SchedulesController < ApplicationController
   def demand
     @schedule = Schedule.find(params[:id])
     @schedule.ryokan_id = current_ryokan.id
-    if @schedule.assign_attributes(schedule_params)
-      @schedule.approval_status == true
-      @schedule.save
-    else
-      @schedule.assign_attributes(schedule_params)
-      ContactMailer.negotiation_send_mail(@schedule).deliver_later
-      redirect_to ryokans_url, notice: "希望勤務時間のメールを送りました。"
-    end
+    @schedule.approval_status = true
+    @schedule.assign_attributes(schedule_params)
+    @schedule.save
+    ContactMailer.negotiation_send_mail(@schedule).deliver_later
+    redirect_to ryokans_url, notice: "希望勤務時間のメールを送りました。"
   end
 
   def approval_confirmation
@@ -78,10 +75,10 @@ class SchedulesController < ApplicationController
   def approval
     @schedule = Schedule.find(params[:id])
     @schedule.assign_attributes(schedule_params)
+    @schedule.status = false
+    @schedule.save
     ContactMailer.approval_send_mail(@schedule).deliver_later
     redirect_to schedules_url, notice: "承認のメールを送りました。"
-    @schedule.approval_status = true
-    @schedule.save
   end
 
   def non_approval_confirmation
@@ -90,6 +87,9 @@ class SchedulesController < ApplicationController
 
   def non_approval
     @schedule = Schedule.find(params[:id])
+    @schedule.assign_attributes(schedule_params)
+    @schedule.approval_status = false
+    @schedule.save
     ContactMailer.non_approval_send_mail(@schedule).deliver_later
     redirect_to schedules_url, notice: "非承認のメールを送りました。"
   end

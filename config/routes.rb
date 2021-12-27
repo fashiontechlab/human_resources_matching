@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
   resources :ryokans do
     get "request_confirmation", on: :collection
+    get "demand_confirmation", on: :collection
   end
 
   resources :staffs

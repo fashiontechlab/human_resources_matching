@@ -27,6 +27,7 @@
       </tr>
       <% @schedules.each do |schedule| %>
       <% if schedule.status == true %>
+      <% if schedule.approval_status == false %>
       <tr>
         <td><%= schedule.human_resource.full_name %></td>
         <td><%= schedule.workday %></td>
@@ -38,7 +39,9 @@
       </tr>
       <% end %>
       <% end %>
+      <% end %>
     </div>
   </tbody>
 </table>
 <%= link_to "依頼確認画面", request_confirmation_ryokans_path %>
+<%= link_to "交渉確認画面", demand_confirmation_ryokans_path %>

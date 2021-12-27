@@ -10,7 +10,11 @@ class RyokansController < ApplicationController
   end
 
   def request_confirmation
-    @schedules = Schedule.where(ryokan_id: current_ryokan.id)
+    @schedules = Schedule.where(status: "false", ryokan_id: current_ryokan.id)
+  end
+
+  def demand_confirmation
+    @schedules = Schedule.where(approval_status: "true", ryokan_id: current_ryokan.id)
   end
 
   private
