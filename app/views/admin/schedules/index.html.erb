@@ -31,7 +31,7 @@
         <td><%= schedule.start.strftime("%H:%M") %></td>
         <td><%= schedule.end.strftime("%H:%M") %></td>
         <td><%= schedule.status == true ? "未決定" : "決定"%></td>
-        <td><%= schedule.approval_status == true ? "有" : "無" %></td>
+        <td><%= schedule.approval_status == true ? "交渉中" : "交渉無し" %></td>
       </tr>
       <% end %>
     </div>

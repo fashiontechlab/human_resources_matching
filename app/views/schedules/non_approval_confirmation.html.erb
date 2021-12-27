@@ -1,8 +1,22 @@
 <% @page_title = "非承認確認" %>
 <h1><%= @page_title %></h1>
 <%= form_for @schedule, url: non_approval_schedule_path do |form| %>
-<%= render "body", form: form %>
-<tr>
-  <th><%= form.submit "出勤時間を非承認する" %></th>
-</tr>
+<table class="attr">
+  <tr>
+    <th>名前</th>
+    <td><%= @schedule.human_resource.full_name %></td>
+  </tr>
+  <tr>
+    <th>出勤日</th>
+    <td><%= @schedule.start_time.strftime("%m/%d") %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :start, "出勤時間" %></th>
+    <td><%= form.time_field :start %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :end, "退勤時間" %></th>
+    <td><%= form.time_field :end %></td>
+</table>
+<%= form.submit "出勤時間を非承認する" %>
 <% end %>
