@@ -60,6 +60,7 @@ class SchedulesController < ApplicationController
 
   def demand
     @schedule = Schedule.find(params[:id])
+    @schedule.ryokan_id = current_ryokan.id
     if @schedule.assign_attributes(schedule_params)
       @schedule.approval_status == true
       @schedule.save
