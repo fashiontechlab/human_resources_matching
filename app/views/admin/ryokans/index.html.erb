@@ -19,8 +19,8 @@
     <% @ryokans.each do |ryokan| %>
     <tr>
       <td style="text-algin: right">
-        <%= link_to ryokan.name, [:admin, ryokan] %></td>
-      <td><%= ryokan.full_name %></td>
+        <%= ryokan.name %></td>
+      <td><%= link_to ryokan.full_name, [:admin, ryokan] %></td>
       <td><%= ryokan.kana_name %></td>
       <td><%= ryokan.manager %></td>
       <td><%= ryokan.telephone %></td>
