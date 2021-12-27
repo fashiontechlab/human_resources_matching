@@ -1,6 +1,22 @@
 <% @page_title = "勤務時間の交渉" %>
 <h1><%= @page_title %></h1>
 <%= form_for @schedule, url: demand_schedule_path do |form| %>
-  <%= render "body", form: form %>
-  <%= form.submit "勤務時間の交渉メールを送る" %>
+<table class="attr">
+  <tr>
+    <th>名前</th>
+    <td><%= @schedule.human_resource.full_name %></td>
+  </tr>
+  <tr>
+    <th>出勤日</th>
+    <td><%= @schedule.start_time.strftime("%m/%d") %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :start, "出勤時間" %></th>
+    <td><%= form.time_field :start %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :end, "退勤時間" %></th>
+    <td><%= form.time_field :end %></td>
+</table>
+<%= form.submit "勤務時間の交渉メールを送る" %>
 <% end %>
