@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: articles
+#
+#  id          :integer          not null, primary key
+#  body        :text             not null
+#  expired_at  :datetime
+#  member_only :boolean          default(FALSE), not null
+#  released_at :datetime         not null
+#  title       :string           not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
 class Article < ApplicationRecord
   validates :title, :body, :released_at, presence: true
   validates :title, length: { maximum: 80 }

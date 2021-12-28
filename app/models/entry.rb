@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: entries
+#
+#  id         :integer          not null, primary key
+#  body       :text
+#  posted_at  :datetime         not null
+#  status     :string           default("draft"), not null
+#  title      :string           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  member_id  :integer          not null
+#  ryokan_id  :integer
+#
+# Indexes
+#
+#  index_entries_on_member_id  (member_id)
+#  index_entries_on_ryokan_id  (ryokan_id)
+#
 class Entry < ApplicationRecord
   belongs_to :author, class_name: "Member", foreign_key: "member_id"
   belongs_to :ryokan_author, class_name: "Ryokan", foreign_key: "ryokan_id"

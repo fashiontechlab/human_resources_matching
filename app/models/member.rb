@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: members
+#
+#  id              :integer          not null, primary key
+#  administrator   :boolean          default(FALSE), not null
+#  email           :string
+#  full_name       :string
+#  kana_name       :string
+#  name            :string           not null
+#  password_digest :string
+#  sex             :integer          default(1), not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
 class Member < ApplicationRecord
   has_secure_password
 
