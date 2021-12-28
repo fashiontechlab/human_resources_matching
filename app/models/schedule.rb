@@ -31,10 +31,10 @@ class Schedule < ApplicationRecord
 
   def date_before_start
     return if start_time.blank?
-    errors.add(:start_time, "は本日以降を選択して下さい。") if start_time < Date.today
+    errors.add(:start_time, "は本日以降を選択して下さい") if start_time < Date.today
   end
 
   def time_axis
-    errors.add(:end, "は出勤時間より遅い時間を選択してください。") if self.start > self.end
+    errors.add(:end, "は出勤時間より遅い時間を選択してください") if self.start > self.end
   end
 end

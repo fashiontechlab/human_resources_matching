@@ -24,6 +24,6 @@ class Ryokan < ApplicationRecord
   validate :time_axis
 
   def time_axis
-    errors.add(:end, "は出勤時間より遅い時間を選択してください。") if self.start > self.end
+    errors.add(:end, "は出勤時間より遅い時間を選択してください") if self.start > self.end
   end
 end
