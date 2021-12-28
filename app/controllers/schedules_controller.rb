@@ -74,8 +74,8 @@ class SchedulesController < ApplicationController
 
   def approval
     @schedule = Schedule.find(params[:id])
-    @schedule.assign_attributes(schedule_params)
     @schedule.status = false
+    @schedule.approval_status = false
     @schedule.save
     ContactMailer.approval_send_mail(@schedule).deliver_later
     redirect_to schedules_url, notice: "承認のメールを送りました。"
@@ -98,6 +98,6 @@ class SchedulesController < ApplicationController
   private
 
   def schedule_params
-    params.require(:schedule).permit(:start, :end, :Allday, :staff_id, :start_time, :workday, :member_id, :status, :approval_status)
+    params.require(:schedule).permit(:start, :end, :Allday, :staff_id, :start_time, :workday, :member_id, :ryokan_id, :status, :approval_status)
   end
 end
