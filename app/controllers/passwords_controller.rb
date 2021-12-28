@@ -38,7 +38,7 @@ class PasswordsController < ApplicationController
     params.require(:account).permit(
       :current_password,
       :password,
-      :password_comfirmation
+      :password_confirmation
     )
     end
 end

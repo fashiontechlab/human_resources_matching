@@ -3,7 +3,7 @@
 
 <div class="toolbar"><%= link_to "マイカウントに戻る", :account %></div>
 
-<%= form_for @member, as: "account", url: :password do |form| %>
+<%= form_for @member, as: "account", url: :password, method: :patch do |form| %>
 <%= render "shared/errors", obj: @member %>
 
 <table class="attr">

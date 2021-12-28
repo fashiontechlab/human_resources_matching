@@ -63,7 +63,7 @@ class SchedulesController < ApplicationController
     @schedule.ryokan_id = current_ryokan.id
     @schedule.approval_status = true
     @schedule.assign_attributes(schedule_params)
-    @schedule.save
+    @schedule.save!
     ContactMailer.negotiation_send_mail(@schedule).deliver_later
     redirect_to ryokans_url, notice: "希望勤務時間のメールを送りました。"
   end
