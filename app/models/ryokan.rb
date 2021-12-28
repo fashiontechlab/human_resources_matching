@@ -20,6 +20,5 @@ class Ryokan < ApplicationRecord
   validates :full_name, presence:true, length: { maximum: 15 }
   validates :kana_name, presence:true, length: { maximum: 15 }
   validates :manager, presence:true, length: { maximum: 15 }
-  validates :name, presence:true, length: { minimum: 2, maximum: 15, allow_blank: true},
-
+  validates :name, presence:true, length: { minimum: 2, maximum: 15, allow_blank: true}
 end

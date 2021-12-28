@@ -9,6 +9,9 @@ ja:
       article: ニュース記事
       entry: ブログ記事
     attributes:
+      schedule:
+        start_time: 日付け
+        end: 退勤時間
       member:
         new_porfile_picture: プロフィール画像
         remove_profile_picture: 画像の削除
