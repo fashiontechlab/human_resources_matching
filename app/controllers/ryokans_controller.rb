@@ -3,7 +3,7 @@ class RyokansController < ApplicationController
 
   def index
     @schedules = Schedule.all
-    @schedules = Schedule.order("created_at DESC").page(params[:page]).per(5)
+    @schedules = Schedule.order("start_time ASC").page(params[:page]).per(5)
   end
 
   def show
