@@ -25,6 +25,7 @@
 class Schedule < ApplicationRecord
   belongs_to :human_resource, class_name: "Member", foreign_key: "member_id"
 
+  validates :workday, presence: true
   validates :start_time, :start, :end, presence: true
   validate :date_before_start
   validate :time_axis

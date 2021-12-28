@@ -10,6 +10,7 @@ ja:
       entry: ブログ記事
     attributes:
       schedule:
+        workday: 出勤
         start_time: 日付け
         end: 退勤時間
       member:
