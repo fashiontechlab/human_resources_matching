@@ -2,6 +2,7 @@ class Admin::RyokansController < ApplicationController
 
   def index
     @ryokans = Ryokan.all
+    @ryokans = Ryokan.order("name").page(params[:page]).per(5)
   end
 
   def new

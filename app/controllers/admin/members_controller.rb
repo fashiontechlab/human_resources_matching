@@ -5,7 +5,7 @@ class Admin::MembersController < Admin::Base
   #会員一覧
   def index
     @members = Member.order(:name)
-                 .page(params[:page]).per(15)
+                 .page(params[:page]).per(7)
   end
   #会員情報の詳細
   def show

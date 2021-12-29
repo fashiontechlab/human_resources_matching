@@ -5,7 +5,7 @@ class MembersController < ApplicationController
   #会員一覧
   def index
     @members = Member.order("name")
-                 .page(params[:page]).per(15)
+                 .page(params[:page]).per(5)
   end
 
   #会員情報の詳細
