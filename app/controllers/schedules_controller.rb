@@ -1,7 +1,7 @@
 class SchedulesController < ApplicationController
 
   def index
-    @schedules = Schedule.where(member_id: current_member.id)
+    @schedules = Schedule.where(member_id: current_member.id).order("start_time ASC").page(params[:page]).per(3)
   end
 
   def new
