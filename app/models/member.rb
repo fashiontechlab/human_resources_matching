@@ -31,7 +31,9 @@ class Member < ApplicationRecord
             uniqueness: { case_sensitive: false }
   validates :full_name, presence:true, length: { maximum: 20 }
   validates :kana_name, presence:true, length: { maximum: 20 }
-  validates :email, email: { allow_blank: false }
+
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
 
   attr_accessor :current_password
   validates :password, presence: { if: :current_password }
