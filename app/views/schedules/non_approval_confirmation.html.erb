@@ -1,7 +1,11 @@
 <% @page_title = "非承認確認" %>
 <h1><%= @page_title %></h1>
+
 <%= form_for @schedule, url: non_approval_schedule_path do |form| %>
 <table class="attr">
+  <tr>
+    <%= render "shared/errors", obj: @schedule %>
+  </tr>
   <tr>
     <th>名前</th>
     <td><%= @schedule.human_resource.full_name %></td>

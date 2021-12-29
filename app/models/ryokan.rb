@@ -21,9 +21,4 @@ class Ryokan < ApplicationRecord
   validates :kana_name, presence:true, length: { maximum: 15 }
   validates :manager, presence:true, length: { maximum: 15 }
   validates :name, presence:true, length: { minimum: 2, maximum: 15, allow_blank: true}
-  validate :time_axis
-
-  def time_axis
-    errors.add(:end, "は出勤時間より遅い時間を選択してください") if self.start > self.end
-  end
 end
