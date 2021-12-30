@@ -1,7 +1,6 @@
 class RyokansController < ApplicationController
   before_action :ryokan_login_required
 
-
   def index
     @schedules = Schedule.all
     @schedules = Schedule.where("schedules.start_time > ?", DateTime.now)
