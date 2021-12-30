@@ -33,7 +33,7 @@ class Schedule < ApplicationRecord
 
   def date_before_start
     return if start_time.blank?
-    errors.add(:start_time, "は本日以降を選択して下さい") if start_time < Date.today
+    errors.add(:start_time, "は明日以降を選択して下さい") if start_time < Date.today
   end
 
   def time_axis
