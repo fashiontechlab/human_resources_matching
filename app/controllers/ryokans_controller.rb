@@ -1,4 +1,5 @@
 class RyokansController < ApplicationController
+  before_action :ryokan_login_required
 
 
   def index
@@ -17,6 +18,10 @@ class RyokansController < ApplicationController
 
   def demand_confirmation
     @schedules = Schedule.where(approval_status: "true", ryokan_id: current_ryokan.id)
+  end
+
+  def ryokan_login_required
+    raise Forbidden unless current_ryokan
   end
 
   private
