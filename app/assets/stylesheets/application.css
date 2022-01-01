@@ -58,7 +58,7 @@ div.container {
 
 /* 左の枠 (コンテンツを入れる) */
 main {
-  font-size: 25px;
+  font-size: 20px;
   float: left;
   padding: 10px 10px 10px 0;
 }
@@ -157,4 +157,10 @@ aside#sidebar ul {
 
 aside#sidebar li {
   margin-bottom: 0.3em;
+}
+
+p.about_putipura {
+  font-size: 25px;
+  float: left;
+  padding: 10px 10px 10px 0;
 }
