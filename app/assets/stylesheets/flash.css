@@ -4,3 +4,7 @@ p.notice {
     padding: 3px;
     background: pink;
 }
+p.alert {
+  color: red;
+  white-space: nowrap;
+}

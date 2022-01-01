@@ -66,10 +66,10 @@ main {
 /* 右の枠 (サイドバーを入れる ) */
 aside#sidebar {
   float: right;
-  width: 300px;
+  width: 350px;
   background-color: white;
-  padding: 20px;
-  margin: 20px;
+  padding: 30px;
+  margin: 30px;
   font-size: 20px;
 }
 
@@ -158,4 +158,3 @@ aside#sidebar ul {
 aside#sidebar li {
   margin-bottom: 0.3em;
 }
-

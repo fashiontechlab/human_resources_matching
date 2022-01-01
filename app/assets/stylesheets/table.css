@@ -21,9 +21,21 @@ table.list th {
 }
 
 table.attr th {
-  text-align: right;
+  text-align: left;
 }
 
 table.list td, table.attr td {
   backgroung-color: #F0F;
+}
+
+h1.guide {
+  text-align: center;
+}
+
+h1.human_resource {
+  text-align: center;
+}
+
+form.search {
+  text-align: right;
 }
