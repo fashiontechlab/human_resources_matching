@@ -1,6 +1,6 @@
 <div class="vote">
   <% @entry.voters.order("votes.created_at").each do |voter| %>
-  ☆<%= voter.name %>
+  ☆いいね☆<%= voter.name %>
   <% end %>
 
   <% if current_member && current_member.votable_for?(@entry) %>

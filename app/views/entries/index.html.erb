@@ -5,18 +5,17 @@
 <ul class="toolbar">
   <%= menu_link_to "ブログ記事の作成", :new_entry %>
   <%= menu_link_to "投票した記事", :voted_entries %>
-  </ul>
-<div class="toolbar"><%= link_to "ブログ記事の作成", :new_entry %></div>
+</ul>
 <% end %>
 
 <% if @entries.present? %>
-<% @entries.each do |entry| %>
-<h2><%= entry.title %></h2>
-<p><%= truncate(entry.body, length: 80)%>
-  <%= link_to "もっと読む", entry %></p>
-<%= render "footer", entry: entry %>
-<% end %>
+  <% @entries.each do |entry| %>
+    <h2><%= entry.title %></h2>
+    <p><%= truncate(entry.body, length: 80)%>
+    <%= link_to "もっと読む", entry %></p>
+    <%= render "footer", entry: entry %>
+  <% end %>
 <%= paginate @entries %>
 <% else %>
-<p>記事がありません。</p>
+<p>現在、記事はありません。</p>
 <% end %>

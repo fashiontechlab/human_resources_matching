@@ -45,8 +45,8 @@ ul.links li {
 }
 
 /* リンク */
-a:link { color: #00c; }
-a:visited { color: #00c; }
+a:link { color: navy; }
+a:visited { color: navy; }
 a:hover { color: #f00; }
 a img {
 }
@@ -69,7 +69,7 @@ aside#sidebar {
   width: 300px;
   background-color: white;
   padding: 20px;
-  margin: 30px;
+  margin: 20px;
   font-size: 20px;
 }
 
@@ -77,7 +77,7 @@ aside#sidebar {
 footer {
   clear: both;
   font: 11px Verdana;
-  color: #888;
+  color: black;
   padding: 8px 0;
   border-top: 4px solid pink;
   text-align: center;
@@ -100,13 +100,13 @@ nav.menubar {
   clear: both;
   padding: 2px;
   background-color: navy;
-  color: white;
+  color: pink;
   font-size: 20px;
   padding: 5px 5px;
 }
 
 nav.menubar ul li:not(:last-child):after {
-  color: #ccc;
+  color: white;
   content: " | ";
   margin: 0 2px;
 }
@@ -142,6 +142,7 @@ form#login-form input[type="password"] {
 }
 
 aside#sidebar h2 {
+  padding: 20px;
   color: #F0F;
   font-weight: bold;
   border-bottom: 1px dotted #F0F;
@@ -157,3 +158,4 @@ aside#sidebar ul {
 aside#sidebar li {
   margin-bottom: 0.3em;
 }
+

@@ -34,7 +34,7 @@ class Article < ApplicationRecord
     end
   end
 
-  scope :open_to_the_public, -> { where(member_only: false) }
+  scope :open_to_the_public, -> { where(member_only: true) }
 
   scope :visible, -> do
     now = Time.current

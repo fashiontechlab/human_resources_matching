@@ -33,7 +33,6 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new(entry_params)
     @entry.author = current_member
-    @entry.ryokan_author = current_ryokan
     if @entry.save
       redirect_to @entry, notice: "記事を更新しました。"
     else
@@ -62,13 +61,13 @@ class EntriesController < ApplicationController
   def like
     @entry = Entry.published.find(params[:id])
     current_member.voted_entries << @entry
-    redirect_to @entry, notice: "投票しました。"
+    redirect_to @entry, notice: "いいねを付けました。"
   end
 
   #投票削除
   def unlike
     current_member.votes_entries.destroy(Entry.find(params[:id]))
-    redirect_to :voted_entries, notice: "削除しました。"
+    redirect_to :voted_entries, notice: "いいねをやめました"
   end
 
   #投票した記事

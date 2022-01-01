@@ -19,7 +19,6 @@
 #
 class Entry < ApplicationRecord
   belongs_to :author, class_name: "Member", foreign_key: "member_id"
-  belongs_to :ryokan_author, class_name: "Ryokan", foreign_key: "ryokan_id"
   has_many :images, class_name: "EntryImage"
   has_many :votes, dependent: :destroy
   has_many :voters, through: :votes, source: :member
@@ -33,7 +32,7 @@ class Entry < ApplicationRecord
   scope :common, -> { where(status: "public") }
   scope :published, -> { where("status <> ?", "draft") }
   scope :full, ->(member) {
-    where("status <> ? OR member_id = ?", "draft", member.id || ryokan.id) }
+    where("status <> ? OR member_id = ?", "draft", member.id) }
   scope :readable_for, ->(member) { member ? full(member) : common }
 
   class << self
