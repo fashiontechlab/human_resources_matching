@@ -1,6 +1,5 @@
 <ul class="entry-footer">
   <% if current_member %>
-  <li><%= Entry.status_text(entry.status) %></li>
   <% if current_member == entry.author %>
     <%= menu_link_to "編集", [:edit, entry] %>
     <%= menu_link_to "画像", [entry, :images] %>
@@ -10,12 +9,12 @@
   <% end %>
 
   <li>
-    by <%= link_to entry.author.name, [entry. author, :entries] %>
+    <%= entry.author.name %> さんの投稿
   </li>
   <li>
-    <%= entry.posted_at.strftime("%Y/%m/%d %H:%M") %>
+    <%= entry.posted_at.strftime("%Y/%m/%d") %>
   </li>
   <% if (count = entry.votes.count) > 0 %>
-  <li><span class="vote">☆<%= count %></span></li>
+  <li><span class="vote">いいね！<%= count %></span></li>
   <% end %>
 </ul>
