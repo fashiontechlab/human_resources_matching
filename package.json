@@ -1,5 +1,7 @@
 {
   "name": "asagao",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
 }

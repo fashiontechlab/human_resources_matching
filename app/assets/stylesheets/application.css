@@ -17,10 +17,10 @@
 
 /* ページ全体 */
 body{
-    background-color: white;
-    color: black;
-    margin: 0; padding: 0;
-    font-family: Meiryo, sans-serif;
+  background-color: white;
+  color: black;
+  margin: 0; padding: 0;
+  font-family: Meiryo, sans-serif;
 }
 
 /* ブロック要素 */
@@ -48,29 +48,29 @@ ul.links li {
 a:link { color: #00c; }
 a:visited { color: #00c; }
 a:hover { color: #f00; }
-a img { border: none; }
+a img {
+}
 
 /* 全体の枠 */
-div#container {
-    margin: 0 auto;
-    padding-top: 5px;
-    width: 780px;
+div.container {
+  float: center;
 }
 
 /* 左の枠 (コンテンツを入れる) */
 main {
-    float: left;
-    width: 530px;
-    padding: 10px 10px 10px 0;
+  font-size: 25px;
+  float: left;
+  padding: 10px 10px 10px 0;
 }
 
 /* 右の枠 (サイドバーを入れる ) */
 aside#sidebar {
-    float: left; 
-    width: 230px;
-    background-color: #e8ffff;
-    padding: 5px;
-    font-size: 86%;
+  float: right;
+  width: 300px;
+  background-color: white;
+  padding: 20px;
+  margin: 30px;
+  font-size: 20px;
 }
 
 /* フッター */
@@ -83,13 +83,26 @@ footer {
   text-align: center;
 }
 
+div.account-menu{
+  font-size: 25px;
+  text-align: left;
+}
+
+/* ヘッダー */
+header {
+  text-align: center;
+}
+
+
 /* メニューバー */
 nav.menubar {
+  text-align: center;
+  clear: both;
   padding: 2px;
   background-color: navy;
-  color: #ccc;
-  font-size: 80%;
-  padding: 8px 16px;
+  color: white;
+  font-size: 20px;
+  padding: 5px 5px;
 }
 
 nav.menubar ul li:not(:last-child):after {

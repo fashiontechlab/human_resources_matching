@@ -7,4 +7,6 @@
   <%= menu_link_to "パスワードの変更", :edit_password %>
   <%= link_to "出勤予定表", schedules_path %>
 </ul>
-<%= render "members/body" %>
+<div class="border col-5">
+  <%= render "members/body" %>
+</div>

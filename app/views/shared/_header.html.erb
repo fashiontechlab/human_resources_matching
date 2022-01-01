@@ -1,11 +1,11 @@
-<%= image_tag "logo.jpg", size: "300x200", alt: "PutipuraHaken" %>
+<%= image_tag "logo.jpg", size: "400x300", alt: "PutipuraHaken" %>
 
 <% if current_member %>
-<ul class="account-menu">
+<div class="account-menu">
   <%= menu_link_to current_member.full_name + "さん", :account  %>
   <%= menu_link_to "ログアウト", :session,
       method: :delete, data: { confirm: "ログアウトしますか？"} %>
-<ul>
+</div>
 <% end %>
 
 <% if current_ryokan %>
