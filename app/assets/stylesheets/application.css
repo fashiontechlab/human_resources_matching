@@ -165,3 +165,9 @@ p.about_putipura {
 div.site {
   font-size: 15px;
 }
+
+/* ページタイトル */
+
+h1.title_name {
+  text-align: center;
+}

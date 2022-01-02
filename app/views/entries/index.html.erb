@@ -1,5 +1,6 @@
-<% @page_title = @member? @member.name + "さんのブログ" : "会員のブログ" %>
-<h1><%= @page_titlle %></h1>
+<% @page_title = "ブログ一覧" %>
+<h1 class="title_name"><%= @page_title %></h1>
+
 
 <% if current_member %>
 <ul class="toolbar">

@@ -1,4 +1,5 @@
-<h1>出勤カレンダー</h1>
+<% @page_title = "出勤カレンダー" %>
+<h1 class="title_name"><%= @page_title %><h1>
 
   <%= month_calendar events: @schedules do |date, schedules| %>
     <%= date %>
@@ -13,7 +14,8 @@
     <% end %>
 <% end %>
 
-<h1>出勤一覧</h1>
+<% @page_title = "出勤一覧" %>
+<h1 class="title_name"><%= @page_title %><h1>
 <table class='attr'>
   <tbody>
     <div class='schedule'>
