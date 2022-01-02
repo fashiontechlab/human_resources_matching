@@ -1,4 +1,7 @@
-<%= image_tag "logo.jpg", size: "400x300", alt: "PutipuraHaken" %>
+<%= image_tag "logo.jpg", size: "350x250", alt: "PutipuraHaken" %>
+<aside id= "sidebar">
+  <%= render "shared/login_form" unless current_member || current_ryokan %>
+</aside>
 
 <% if current_member %>
 <div class="account-menu">
@@ -18,7 +21,6 @@
     </tr>
 </div>
 <% end %>
-
     <%=
       if controller.kind_of?(Admin::Base)
       render "shared/admin_menubar"
