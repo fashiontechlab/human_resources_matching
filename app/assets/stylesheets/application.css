@@ -29,9 +29,7 @@ p, h1, h2, h3, table, ul {
 }
 
 /* ナビゲーション */
-nav ul,
-ul.toolbar,
-ul.links {
+nav.ul, ul.toolbar, ul.links {
   list-style-type: none;
   margin: 0;
   padding: 0;

@@ -3,11 +3,11 @@
 
 <% if current_member %>
 <ul class="toolbar">
-  <%= menu_link_to "ブログ記事の作成", :new_entry %>
-  <%= menu_link_to "投票した記事", :voted_entries %>
+  <%= menu_link_to "ブログ記事の作成", :new_entry %><br>
+  <%= menu_link_to "👍したブログ記事", :voted_entries %>
 </ul>
 <% end %>
-
+<br>
 <% if @entries.present? %>
   <% @entries.each do |entry| %>
     <h2><%= entry.title %></h2>
