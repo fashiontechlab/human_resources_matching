@@ -7,10 +7,10 @@
     <h2><%= article.title %></h2>
     <p>
        <%= truncate(article.body, length: 80) %>
-       <%= link_to "もっと読む", article %>
+       <%= link_to "more", article %>
     </p>
     <div class="article-footer">
-      <%= article.released_at.strftime("%Y/%m/%d %H:%M") %>
+      <%#= article.released_at.strftime("%Y/%m/%d %H:%M") %>
     </div>
   <% end %>
 <% else %>

@@ -12,7 +12,7 @@
   <% @entries.each do |entry| %>
     <h2><%= entry.title %></h2>
     <p><%= truncate(entry.body, length: 80)%>
-    <%= link_to "もっと読む", entry %></p>
+    <%= link_to "more", entry %></p>
     <%= render "footer", entry: entry %>
   <% end %>
 <%= paginate @entries %>
