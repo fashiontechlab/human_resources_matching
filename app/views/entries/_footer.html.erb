@@ -15,6 +15,6 @@
     <%= entry.posted_at.strftime("%Y/%m/%d") %>
   </li>
   <% if (count = entry.votes.count) > 0 %>
-  <li><span class="vote">いいね！<%= count %></span></li>
+  <li><span class="vote">👍<%= count %></span></li>
   <% end %>
 </ul>
