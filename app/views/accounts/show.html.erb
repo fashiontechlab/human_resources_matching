@@ -3,8 +3,8 @@
 <h1><%= @page_title %></h1>
 
 <ul class="toolbar">
-  <%= menu_link_to "アカウント情報の編集", :edit_account  %>
-  <%= menu_link_to "パスワードの変更", :edit_password %>
-  <%= link_to "出勤予定表", schedules_path %>
+  <%= render "members/body" %>
+  <%= menu_link_to "アカウント情報の編集", :edit_account  %><br>
+  <%= menu_link_to "パスワードの変更", :edit_password %><br>
+  <%= link_to "出勤予定表", schedules_path %><br>
 </ul>
-<%= render "members/body" %>

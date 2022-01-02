@@ -39,4 +39,6 @@ class Schedule < ApplicationRecord
   def time_axis
     errors.add(:end, "は出勤時間より遅い時間を選択してください") if self.start > self.end
   end
+
+  scope :past_day, -> { where("schedules.start_time > ?", DateTime.now)}
 end

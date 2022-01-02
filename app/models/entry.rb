@@ -3,7 +3,7 @@
 # Table name: entries
 #
 #  id         :integer          not null, primary key
-#  body       :text
+#  obody       :text
 #  posted_at  :datetime         not null
 #  status     :string           default("draft"), not null
 #  title      :string           not null

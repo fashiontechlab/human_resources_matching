@@ -3,8 +3,7 @@ class RyokansController < ApplicationController
 
   def index
     @schedules = Schedule.all
-    @schedules = Schedule.where("schedules.start_time > ?", DateTime.now)
-    @schedules = Schedule.order("start_time ASC").page(params[:page]).per(5)
+    @schedules = Schedule.past_day.order("start_time ASC").page(params[:page]).per(5)
   end
 
   def show

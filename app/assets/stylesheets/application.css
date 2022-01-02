@@ -63,7 +63,6 @@ main {
 
 /* 右の枠 (サイドバーを入れる ) */
 aside#sidebar {
-  display: inline;
   float: right;
   width: 350px;
   background-color: white;
