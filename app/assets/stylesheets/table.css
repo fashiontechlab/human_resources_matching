@@ -1,6 +1,6 @@
 /* 表: 一覧表示、詳細表示 */
 table.list, table.attr {
-  font-size: 100%;
+  font-size: 80%;
   width: 100%;
 }
 
@@ -21,7 +21,7 @@ table.list th {
 }
 
 table.attr th {
-  text-align: left;
+  text-align: center;
 }
 
 table.list td, table.attr td {

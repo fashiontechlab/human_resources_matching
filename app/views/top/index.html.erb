@@ -1,7 +1,2 @@
-<% @articles.each do |article| %>
-  <h2><%= article.title %></h2>
-  <p>
-<%= truncate article.body, length: 80%>
-    <%= link_to "more", article %>
-  </p>
-<% end %>
+<% @page_title = "Putipura人材派遣" %>
+<h1><font color="#F0F"><%= @page_title %></h1>

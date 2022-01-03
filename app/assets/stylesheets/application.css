@@ -57,7 +57,7 @@ div.container {
 /* 左の枠 (コンテンツを入れる) */
 main {
   font-size: 25px;
-  float: left;
+  float: center;
   padding: 10px 10px 10px 0;
 }
 
