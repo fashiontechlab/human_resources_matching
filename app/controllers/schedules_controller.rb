@@ -1,7 +1,8 @@
 class SchedulesController < ApplicationController
+  before_action :set_beginning_of_week
 
   def index
-    @schedules = Schedule.where(member_id: current_member.id).order("start_time ASC").page(params[:page]).per(10)
+    @schedules = Schedule.where(member_id: current_member.id).order("start_time ASC").page(params[:page]).per(100)
   end
 
   def new
@@ -105,5 +106,9 @@ class SchedulesController < ApplicationController
 
   def schedule_params
     params.require(:schedule).permit(:start, :end, :Allday, :staff_id, :start_time, :workday, :member_id, :ryokan_id, :status, :approval_status)
+  end
+
+  def set_beginning_of_week
+    Date.beginning_of_week = :sunday
   end
 end

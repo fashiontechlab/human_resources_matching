@@ -1,9 +1,10 @@
 class RyokansController < ApplicationController
   before_action :ryokan_login_required
+  before_action :set_beginning_of_week
 
   def index
     @schedules = Schedule.all
-    @schedules = Schedule.past_day.order("start_time ASC").page(params[:page]).per(5)
+    @schedules = Schedule.past_day.order("start_time ASC").page(params[:page]).per(100)
   end
 
   def show
@@ -26,5 +27,9 @@ class RyokansController < ApplicationController
 
   def ryokan_params
     params.require(:ryokan).permit(:name, :full_name, :kana_name, :email, :manager, :telephone, :email, :status)
+  end
+
+  def set_beginning_of_week
+    Date.beginning_of_week = :sunday
   end
 end

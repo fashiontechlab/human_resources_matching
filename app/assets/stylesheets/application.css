@@ -166,3 +166,13 @@ h1.title_name {
   text-align: center;
   color: pink;
 }
+
+.simple-calendar .today{
+  color: gray;
+  background: pink;
+}
+
+div.calendar {
+  font-size: 50%;
+  white-space: nowrap;
+}
