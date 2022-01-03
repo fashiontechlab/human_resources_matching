@@ -7,7 +7,7 @@
     <%= menu_link_to "プチプラガイド", :inquiry %>
     <% end %>
     <% if current_member %>
-    <%= menu_link_to "人材派遣の一覧", :members %>
+    <%= menu_link_to "メンバーの一覧", :members %>
     <% if current_member.administrator? %>
     <%= menu_link_to "管理ページ", :admin_root %>
     <% end %>
