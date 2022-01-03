@@ -3,8 +3,8 @@
 
 <%= form_tag :search_members, method: :get, class: "search" do %>
   <%= text_field_tag "q", params[:q] %>
-  <%= submit_tag "検索" %>
-  <% end %>
+  <%= submit_tag "メンバー検索" %>
+  <% end %><br>
 
 <% if @members.present? %>
 <table class="list">
