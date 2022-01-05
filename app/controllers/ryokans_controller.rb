@@ -1,6 +1,7 @@
 class RyokansController < ApplicationController
   before_action :ryokan_login_required
   before_action :set_beginning_of_week
+  before_action :set_search
 
   def index
     @schedules = Schedule.all
@@ -23,6 +24,10 @@ class RyokansController < ApplicationController
     raise Forbidden unless current_ryokan
   end
 
+  def search
+    @schedules = @q.result
+  end
+
   private
 
   def ryokan_params
@@ -31,5 +36,9 @@ class RyokansController < ApplicationController
 
   def set_beginning_of_week
     Date.beginning_of_week = :sunday
+  end
+
+  def set_search
+    @q = Schedule.ransack(params[:q])
   end
 end
