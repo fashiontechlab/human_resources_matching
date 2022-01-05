@@ -1,4 +1,5 @@
 class Admin::RyokansController < ApplicationController
+  before_action :set_search
 
   def index
     @ryokans = Ryokan.all
@@ -42,9 +43,17 @@ class Admin::RyokansController < ApplicationController
     redirect_to admin_ryokans_url, notice: "旅館のアカウントを削除しました。"
   end
 
+  def search
+    @schedules = @q.result.past_day.order()
+  end
+
   private
 
   def ryokan_params
     params.require(:ryokan).permit(:name, :full_name, :kana_name, :email, :manager, :telephone, :password)
+  end
+
+  def set_search
+    @q = Schedule.ransack(params[:q])
   end
 end

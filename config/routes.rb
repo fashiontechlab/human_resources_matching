@@ -58,7 +58,9 @@ Rails.application.routes.draw do
   end
   namespace :admin do
     root "top#index"
-    resources :schedules
+    resources :schedules do
+      get "search", on: :collection
+    end
   end
 
 end

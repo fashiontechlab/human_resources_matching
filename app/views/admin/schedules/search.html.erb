@@ -1,0 +1,24 @@
+<% @page_title = "検索結果" %>
+<h1 class="title_name"><%= @page_title %><h1>
+<table class='attr'>
+  <tbody>
+    <div class='schedule'>
+      <tr>
+        <td>氏名</td>
+        <td>出勤日</td>
+        <td>出勤時間</td>
+        <td>退勤時間</td>
+      </tr>
+      <% @schedules.each do |schedule| %>
+      <tr>
+        <td><%= schedule.human_resource.full_name %></td>
+        <td><%= schedule.start_time.strftime("%m/%d") %></td>
+        <td><%= schedule.start.strftime("%H:%M") %></td>
+        <td><%= schedule.end.strftime("%H:%M") %></td>
+      </tr>
+      <% end %>
+    </div>
+  </tbody>
+</table>
+<%= paginate @schedules %>
+<%= link_to "戻る", :admin_schedules %>
