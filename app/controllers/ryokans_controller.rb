@@ -25,7 +25,7 @@ class RyokansController < ApplicationController
   end
 
   def search
-    @schedules = @q.result
+    @schedules = @q.result.past_day.order("start_time ASC").page(params[:page]).per(5)
   end
 
   private
