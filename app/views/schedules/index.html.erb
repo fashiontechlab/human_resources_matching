@@ -1,5 +1,5 @@
 <% @page_title = "出勤カレンダー" %>
-<h1 class="title_name"><%= @page_title %><h1>
+<h1 class="title_name"><%= @page_title %></h1>
 
 <%= link_to "出勤表を作成する", new_schedule_path %>
 
@@ -7,14 +7,14 @@
   <%= date %>
 
   <% schedules.each do |schedule| %>
-  <div>
+  <div class="calendar">
     <%= schedule.workday %>
   </div>
   <% end %>
 <% end %>
 
 <% @page_title = "出勤一覧" %>
-<h1 class="title_name"><%= @page_title %><h1>
+<h1 class="title_name"><%= @page_title %></h1>
 <table class='attr'>
   <thead>
     <div class='schedule'>
@@ -43,10 +43,10 @@
           <td><%= link_to "非承認", non_approval_confirmation_schedule_path(schedule) %></td>
           <% if schedule.approval_status == false %>
             <td><%= link_to "編集", edit_schedule_path(schedule) %></td>
-            <td><%= link_to "削除", schedule_path(schedule), method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
-          <% end %>
-        <% end %>
-      </tr>
+        <td><%= link_to "削除", schedule_path(schedule), method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
+        </tr>
+      <% end %>
+      <% end %>
     </div>
     <% end %>
   </tbody>

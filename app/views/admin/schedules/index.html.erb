@@ -1,5 +1,5 @@
 <% @page_title = "出勤カレンダー" %>
-<h1 class="title_name"><%= @page_title %><h1>
+<h1 class="title_name"><%= @page_title %></h1>
 <%= month_calendar events: @schedules do |date, schedules| %>
   <%= date %>
 
@@ -12,7 +12,7 @@
 <% end %>
 
 <% @page_title = "出勤一覧" %>
-<h1 class="title_name"><%= @page_title %><h1>
+<h1 class="title_name"><%= @page_title %></h1>
 
     <%= search_form_for @q, url: search_admin_schedules_path do |f| %>
     <%= f.label :human_resource_full_name_cont, "名前で検索する" %><br>

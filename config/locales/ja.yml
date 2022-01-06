@@ -55,4 +55,4 @@ ja:
         member:
           attributes:
             current_password:
-              wrong: 間違っています
+              wrong: が間違っています

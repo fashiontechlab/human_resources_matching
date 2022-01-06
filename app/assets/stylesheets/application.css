@@ -176,3 +176,11 @@ div.calendar {
   color: gray;
   background: pink;
 }
+
+div.schedule {
+  white-space: nowrap;
+}
+
+div.schedule_list {
+  white-space: nowrap;
+}
