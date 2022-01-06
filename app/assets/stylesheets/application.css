@@ -184,3 +184,13 @@ div.schedule {
 div.schedule_list {
   white-space: nowrap;
 }
+
+div.name_search {
+  display: inline-block;
+  margin: 20px;
+}
+
+div.day_search {
+  display: inline-block;
+  margin: 20px;
+}

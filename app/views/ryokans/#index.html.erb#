@@ -29,7 +29,7 @@
       <%= f.search_field :start_time_cont %>
       <%= f.submit "検索" %>
     <% end %>
-    </div><br>
+    </div>
     <div class='schedule'>
       <tr>
         <td>氏名</td>

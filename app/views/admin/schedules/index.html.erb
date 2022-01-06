@@ -14,12 +14,18 @@
 <% @page_title = "出勤一覧" %>
 <h1 class="title_name"><%= @page_title %></h1>
 
-    <%= search_form_for @q, url: search_admin_schedules_path do |f| %>
-    <%= f.label :human_resource_full_name_cont, "名前で検索する" %><br>
-    <%= f.search_field :human_resource_full_name_cont %><br>
+<div class="name_search">
+  <%= search_form_for @q, url: search_admin_schedules_path do |f| %>
+    <%= f.label :human_resource_full_name_cont, "名前で検索する" %>
+    <%= f.search_field :human_resource_full_name_cont %>
     <%= f.submit "検索"%>
-    <% end %><br>
-
+</div>
+<div class="day_search">
+  <%= f.label :start_time_cont, '出勤日で検索する' %>
+  <%= f.search_field :start_time_cont %>
+  <%= f.submit "検索" %>
+  <% end %>
+</div>
 <table class="attr">
   <tbody>
     <div class='schedule'>
