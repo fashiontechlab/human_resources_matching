@@ -27,3 +27,28 @@ table.attr th {
 table.list td, table.attr td {
   backgroung-color: #F0F;
 }
+
+/* プチプラガイド表示 */
+table.attr_inquiries {
+  font-size: 80%;
+  width: 100%;
+}
+
+table.attr_inquiries th {
+  background-color: pink;
+  color: white;
+  font-weight: normal;
+
+table.attr_inquiries td,
+table.attr_inquiries th {
+  text-align: left;
+  padding: 6px;
+}
+table.attr_inquiries th {
+  text-align: left;
+}
+
+table.attr_inquiries td {
+  backgroung-color: #F0F;
+}
+
