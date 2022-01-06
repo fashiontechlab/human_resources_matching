@@ -1,5 +1,5 @@
 <% @page_title = "検索結果" %>
-<h1 class="title_name"><%= @page_title %><h1>
+<h1 class="title_name"><%= @page_title %></h1>
 <table class='attr'>
   <tbody>
     <div class='schedule'>
@@ -9,6 +9,8 @@
         <td>出勤時間</td>
         <td>退勤時間</td>
       </tr>
+    </div>
+    <div class='schedule_list'>
       <% @schedules.each do |schedule| %>
       <% if schedule.status == true && schedule.approval_status == false %>
       <tr>

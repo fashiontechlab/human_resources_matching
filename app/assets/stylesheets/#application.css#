@@ -185,8 +185,3 @@ div.schedule_list {
   white-space: nowrap;
 }
 
-table.login {
-  font-size: 50px;
-  margin: 10px;
-  padding: 10px;
-}
