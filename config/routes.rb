@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     get "non_approval_confirmation", on: :member
     patch "approval", on: :member
     patch "non_approval", on: :member
+    get "work", on: :member
   end
 
   resources :ryokans do
@@ -32,7 +33,6 @@ Rails.application.routes.draw do
     get "search", on: :collection
   end
 
-  resources :staffs
   resource :session, only: [:create, :destroy]
   resource :account, only: [:show, :edit, :update]
   resource :password, only:[:show, :edit, :update]

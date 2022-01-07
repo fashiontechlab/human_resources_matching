@@ -1,0 +1,27 @@
+<% @page_title = "勤務予定表" %>
+<h1 class="title_name"><%= @page_title %></h1>
+<table class="attr">
+  <thead>
+    <tr>
+      <td>氏名</td>
+      <td>出勤先</td>
+      <td>出勤日</td>
+      <td>出勤時間</td>
+      <td>退勤時間</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @schedules.each do |schedule| %>
+    <% if schedule.status == false %>
+    <tr>
+      <td><%= schedule.human_resource.full_name %></td>
+      <td><%= schedule.ryokan.full_name %></td>
+      <td><%= schedule.start_time.strftime("%m/%d") %></td>
+      <td><%= schedule.start.strftime("%H:%M") %></td>
+      <td><%= schedule.end.strftime("%H:%M") %></td>
+    </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "戻る", schedules_path %>

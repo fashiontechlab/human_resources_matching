@@ -101,6 +101,9 @@ class SchedulesController < ApplicationController
     end
   end
 
+  def work
+    @schedules = Schedule.where(member_id: current_member.id).order("start_time ASC").page(params[:page]).per(100)
+  end
 
   private
 
