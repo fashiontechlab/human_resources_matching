@@ -13,11 +13,11 @@ class RyokansController < ApplicationController
   end
 
   def request_confirmation
-    @schedules = Schedule.where(status: "false", ryokan_id: current_ryokan.id)
+    @schedules = Schedule.where(status: "false", ryokan_id: current_ryokan.id).order("start_time ASC").page(params[:page]).per(10)
   end
 
   def demand_confirmation
-    @schedules = Schedule.where(approval_status: "true", ryokan_id: current_ryokan.id)
+    @schedules = Schedule.where(approval_status: "true", ryokan_id: current_ryokan.id).order("start_time ASC").page(params[:page]).per(10)
   end
 
   def ryokan_login_required
