@@ -16,7 +16,7 @@
 class Ryokan < ApplicationRecord
   has_secure_password
   has_one :schedule
-  validates :email, format: { with: /\A[a-zA-Z]+\z/}, email: { allow_blank: false }
+  validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i}, email: { allow_blank: false }
   validates :full_name, presence:true, length: { maximum: 15 }
   validates :kana_name, presence:true, length: { maximum: 15 }
   validates :manager, presence:true, length: { maximum: 15 }
