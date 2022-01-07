@@ -10,6 +10,10 @@ class Admin::SchedulesController < ApplicationController
     @schedules = @q.result.past_day.order("start_time ASC").page(params[:page]).per(5)
   end
 
+  def work
+    @schedules = Schedule.where(member_id: current_member.id).order("start_time ASC").page(params[:page]).per(100)
+  end
+
   def set_search
     @q = Schedule.ransack(params[:q])
   end

@@ -60,6 +60,7 @@ Rails.application.routes.draw do
     root "top#index"
     resources :schedules do
       get "search", on: :collection
+      get "work", on: :member
     end
   end
 
