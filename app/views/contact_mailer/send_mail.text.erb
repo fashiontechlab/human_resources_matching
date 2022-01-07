@@ -1,5 +1,5 @@
-<%=  @schedule.human_resource.full_name %>さん
-<%#= @schedule.ryokan_id.full_name %>から出勤依頼の通知です。
+<%= @schedule.human_resource.full_name %>さん
+<%= @schedule.ryokan.full_name %>さんから出勤依頼の通知です。
 
 出勤日：<%= @schedule.start_time.strftime("%m/%d") %>
 出勤時間：<%= @schedule.start.strftime("%H:%M") %>
