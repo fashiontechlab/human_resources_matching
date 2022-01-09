@@ -16,7 +16,9 @@
       <td><%= schedule.start_time.strftime("%m/%d") %></td>
       <td><%= schedule.start.strftime("%H:%M") %></td>
       <td><%= schedule.end.strftime("%H:%M") %></td>
-      <td><%= link_to "取り消し", request_delete_ryokan_path(schedule), method: :delete, data: { confirm: "本当に取り消しますか？" } %></td>
+      <% if schedule.start_time > Date.today.since(3.days) %>
+         <td><%= link_to "取り消し", request_delete_ryokan_path(schedule), method: :delete, data: { confirm: "本当に取り消しますか？" } %></td>
+      <% end %>
     </tr>
     <% end %>
   </tbody>
