@@ -39,6 +39,10 @@
     <th><%= form.label :email, "メールアドレス" %></th>
     <td><%= form.text_field :email %></td>
   </tr>
+  <tr>
+    <th><%= form.label :mobile, "携帯番号" %></th>
+    <td><%= form.text_field :mobile %></td>
+  </tr>
   <% if @member.new_record?%>
   <tr>
     <th><%= form.label :password, "パスワード" %></th>

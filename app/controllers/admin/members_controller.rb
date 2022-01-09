@@ -64,6 +64,7 @@ class Admin::MembersController < Admin::Base
       :kana_name,
       :sex,
       :email,
+      :mobile,
       :administrator
     ]
 

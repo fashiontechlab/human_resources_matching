@@ -30,7 +30,8 @@ class AccountsController < ApplicationController
       :full_name,
       :kana_name,
       :sex,
-      :email
+      :email,
+      :mobile
     )
   end
 end

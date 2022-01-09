@@ -7,6 +7,7 @@
 #  email           :string
 #  full_name       :string
 #  kana_name       :string
+#  mobile          :string
 #  name            :string           not null
 #  password_digest :string
 #  sex             :integer          default(1), not null
