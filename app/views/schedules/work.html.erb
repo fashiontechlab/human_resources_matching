@@ -17,6 +17,7 @@
       <td><%= schedule.start_time.strftime("%m/%d") %></td>
       <td><%= schedule.start.strftime("%H:%M") %></td>
       <td><%= schedule.end.strftime("%H:%M") %></td>
+      <td><%= link_to "取り消し", work_delete_schedule_path(schedule), method: :delete, data: { confirm: "本当に取り消しますか？" } %></td>
     </tr>
     <% end %>
     <% end %>

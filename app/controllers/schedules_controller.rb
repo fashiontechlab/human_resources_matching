@@ -105,6 +105,14 @@ class SchedulesController < ApplicationController
     @schedules = Schedule.where(member_id: current_member.id).order("start_time ASC").page(params[:page]).per(100)
   end
 
+  def work_delete
+    @schedules = Schedule.where(member_id: current_member.id)
+    @schedule.status = false
+    @schedule.save
+    ContactMailer.work_delete_mail(@schedule).deliver_later
+    redirect_to ryokans_url, notice: "取り消しのメールを送りました。"
+  end
+
   private
 
   def schedule_params

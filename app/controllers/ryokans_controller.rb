@@ -16,6 +16,14 @@ class RyokansController < ApplicationController
     @schedules = Schedule.where(status: "false", ryokan_id: current_ryokan.id).order("start_time ASC").page(params[:page]).per(10)
   end
 
+  def request_delete
+    @schedule = Schedule.where(status: "false", ryokan_id: current_ryokan.id)
+    @schedule.status = false
+    @schedule.save
+    ContactMailer.request_delete_mail(@schedule).deliver_later
+    redirect_to ryokans_url, notice: "取り消しのメールを送りました。"
+  end
+
   def demand_confirmation
     @schedules = Schedule.where(approval_status: "true", ryokan_id: current_ryokan.id).order("start_time ASC").page(params[:page]).per(10)
   end

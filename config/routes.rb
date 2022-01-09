@@ -25,12 +25,14 @@ Rails.application.routes.draw do
     patch "approval", on: :member
     patch "non_approval", on: :member
     get "work", on: :member
+    delete "work_delete", on: :member
   end
 
   resources :ryokans do
     get "request_confirmation", on: :collection
     get "demand_confirmation", on: :collection
     get "search", on: :collection
+    delete "request_delete", on: :member
   end
 
   resource :session, only: [:create, :destroy]
