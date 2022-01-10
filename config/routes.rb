@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     get "approval_confirmation", on: :member
     get "non_approval_confirmation", on: :member
     patch "approval", on: :member
-    patch "non_approval", on: :member
+    get "non_approval", on: :member
     get "work", on: :member
     delete "work_delete", on: :member
   end

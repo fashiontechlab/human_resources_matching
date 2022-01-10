@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_09_021642) do
+ActiveRecord::Schema.define(version: 2022_01_10_160259) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -115,6 +115,8 @@ ActiveRecord::Schema.define(version: 2022_01_09_021642) do
     t.boolean "status", default: true, null: false
     t.boolean "approval_status", default: false, null: false
     t.integer "ryokan_id"
+    t.datetime "hope_start"
+    t.datetime "hope_end"
     t.index ["member_id"], name: "index_schedules_on_member_id"
     t.index ["ryokan_id"], name: "index_schedules_on_ryokan_id"
     t.index ["staff_id"], name: "index_schedules_on_staff_id"
@@ -129,6 +131,20 @@ ActiveRecord::Schema.define(version: 2022_01_09_021642) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+  end
+
+  create_table "temporarilies", force: :cascade do |t|
+    t.datetime "start_time"
+    t.datetime "start"
+    t.datetime "end"
+    t.boolean "status", default: true, null: false
+    t.boolean "approval_status", default: false, null: false
+    t.integer "ryokan_id"
+    t.integer "member_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["member_id"], name: "index_temporarilies_on_member_id"
+    t.index ["ryokan_id"], name: "index_temporarilies_on_ryokan_id"
   end
 
   create_table "votes", force: :cascade do |t|

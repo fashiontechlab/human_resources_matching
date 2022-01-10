@@ -1,9 +1,14 @@
 <%= @schedule.ryokan.full_name %>さん
-<%= @schedule.human_resource.full_name %>さんから出勤時間の変更非承認通知です。別の方法でご対応の程、宜しくお願い致します。
+<%= @schedule.human_resource.full_name %>さんから出勤時間の変更非承認通知です。
 
 出勤日：<%= @schedule.start_time.strftime("%m/%d") %>
 出勤時間：<%= @schedule.start.strftime("%H:%M") %>
 退勤時間：<%= @schedule.end.strftime("%H:%M") %>
 
+希望出勤時間：<%= @schedule.hope_start.strftime("%H:%M") %>
+希望退勤時間：<%= @schedule.hope_end.strftime("%H:%M") %>
+
+申し訳ございませんが、ご希望の時間の承認は得られませんでした。
+別の方法でのご対応の程、宜しくお願い致します。
 -------------------
 プチプラ人材紹介管理者

@@ -7,6 +7,8 @@
       <td>出勤日</td>
       <td>出勤時間</td>
       <td>退勤時間</td>
+      <td>希望出勤時間</td>
+      <td>希望退勤時間</td>
     </tr>
   </thead>
   <tbody>
@@ -17,6 +19,8 @@
       <td><%= schedule.start_time.strftime("%m/%d") %></td>
       <td><%= schedule.start.strftime("%H:%M") %></td>
       <td><%= schedule.end.strftime("%H:%M") %></td>
+      <td><%= schedule.hope_start.strftime("%H:%M") %></td>
+      <td><%= schedule.hope_end.strftime("%H:%M") %></td>
     </tr>
     <% end %>
     <% end %>

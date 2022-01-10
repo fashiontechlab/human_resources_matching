@@ -18,4 +18,12 @@
     <th>退勤時間</th>
     <td><%= @schedule.end.strftime("%H:%M") %></td>
   </tr>
+  <tr>
+    <th>希望出勤時間</th>
+    <td><%= @schedule.hope_start.strftime("%H:%M") %></td>
+  </tr>
+  <tr>
+    <th>希望退勤時間</th>
+    <td><%= @schedule.hope_end.strftime("%H:%M") %></td>
+  </tr>
 </table>

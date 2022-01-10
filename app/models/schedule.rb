@@ -6,6 +6,8 @@
 #  allday          :string
 #  approval_status :boolean          default(FALSE), not null
 #  end             :datetime
+#  hope_end        :datetime
+#  hope_start      :datetime
 #  start           :datetime
 #  start_time      :datetime
 #  status          :boolean          default(TRUE), not null

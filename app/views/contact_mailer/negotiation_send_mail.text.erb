@@ -4,6 +4,9 @@
 出勤日：<%= @schedule.start_time.strftime("%m/%d") %>
 出勤時間：<%= @schedule.start.strftime("%H:%M") %>
 退勤時間：<%= @schedule.end.strftime("%H:%M") %>
+
+希望出勤時間：<%= @schedule.hope_start.strftime("%H:%M") %>
+希望退勤時間：<%= @schedule.hope_end.strftime("%H:%M") %>
 に勤務時間を変更できませんでしょうか。
 大変お手数ですが、プチプラ紹介にログインして頂き、承認可否ボタンをクリックして頂きたいです。
 宜しくお願い致します。

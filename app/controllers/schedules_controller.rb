@@ -80,6 +80,8 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
     @schedule.status = false
     @schedule.approval_status = false
+    @schedule.start = @schedule.hope_start
+    @schedule.end = @schedule.hope_end
     @schedule.save
     ContactMailer.approval_send_mail(@schedule).deliver_later
     redirect_to schedules_url, notice: "承認のメールを送りました。"
@@ -91,7 +93,6 @@ class SchedulesController < ApplicationController
 
   def non_approval
     @schedule = Schedule.find(params[:id])
-    @schedule.assign_attributes(schedule_params)
     @schedule.approval_status = false
     if @schedule.save
       ContactMailer.non_approval_send_mail(@schedule).deliver_later
@@ -116,7 +117,7 @@ class SchedulesController < ApplicationController
   private
 
   def schedule_params
-    params.require(:schedule).permit(:start, :end, :Allday, :staff_id, :start_time, :workday, :member_id, :ryokan_id, :status, :approval_status)
+    params.require(:schedule).permit(:start, :end, :Allday, :staff_id, :start_time, :workday, :member_id, :ryokan_id, :status, :approval_status, :hope_start, :hope_end)
   end
 
   def set_beginning_of_week
