@@ -17,8 +17,8 @@ class RyokansController < ApplicationController
   end
 
   def request_delete
-    @schedule = Schedule.where(status: "false", ryokan_id: current_ryokan.id)
-    @schedule.status = false
+    @schedule = Schedule.find(params[:id])
+    @schedule.status = true
     @schedule.save
     ContactMailer.request_delete_mail(@schedule).deliver_later
     redirect_to ryokans_url, notice: "取り消しのメールを送りました。"

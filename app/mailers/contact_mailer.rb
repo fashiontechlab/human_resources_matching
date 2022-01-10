@@ -49,4 +49,14 @@ class ContactMailer < ApplicationMailer
       format.text
     end
   end
+
+    def work_delete_mail(schedule)
+    @schedule = schedule
+    mail(
+      subject: "依頼承認の取り消し通知です。",
+      to: @schedule.human_resource.email
+    ) do |format|
+      format.text
+    end
+  end
 end

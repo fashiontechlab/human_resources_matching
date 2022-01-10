@@ -106,11 +106,11 @@ class SchedulesController < ApplicationController
   end
 
   def work_delete
-    @schedules = Schedule.where(member_id: current_member.id)
-    @schedule.status = false
+    @schedule = Schedule.find(params[:id])
+    @schedule.status = true
     @schedule.save
     ContactMailer.work_delete_mail(@schedule).deliver_later
-    redirect_to ryokans_url, notice: "取り消しのメールを送りました。"
+    redirect_to schedules_url, notice: "取り消しのメールを送りました。"
   end
 
   private
