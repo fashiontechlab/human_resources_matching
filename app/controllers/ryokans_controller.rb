@@ -13,7 +13,7 @@ class RyokansController < ApplicationController
   end
 
   def request_confirmation
-    @schedules = Schedule.where(status: "false", ryokan_id: current_ryokan.id).order("start_time ASC").page(params[:page]).per(10)
+    @schedules = Schedule.past_day.where(status: "false", ryokan_id: current_ryokan.id).order("start_time ASC").page(params[:page]).per(10)
   end
 
   def request_delete
