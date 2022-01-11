@@ -4,7 +4,7 @@
 <div class="toolbar"><%= link_to "旅館の新規登録", :new_admin_ryokan %></div>
 
 <% if @ryokans.present? %>
-<table class="attr">
+<table class="list">
   <thead>
     <tr>
       <th>ユーザー名</th>
@@ -18,8 +18,7 @@
   <tbody>
     <% @ryokans.each do |ryokan| %>
     <tr>
-      <td style="text-algin: right">
-        <%= ryokan.name %></td>
+      <td style="text-algin: right"><%= ryokan.name %></td>
       <td><%= link_to ryokan.full_name, [:admin, ryokan] %></td>
       <td><%= ryokan.kana_name %></td>
       <td><%= ryokan.manager %></td>
