@@ -26,6 +26,8 @@ Rails.application.routes.draw do
     get "non_approval", on: :member
     get "work", on: :collection
     delete "work_delete", on: :member
+    get "time_card", on: :member
+    patch "calculation", on: :member
   end
 
   resources :ryokans do

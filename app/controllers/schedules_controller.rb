@@ -114,6 +114,19 @@ class SchedulesController < ApplicationController
     redirect_to schedules_url, notice: "取り消しのメールを送りました。"
   end
 
+  def time_card
+    @schedule = Schedule.find(params[:id])
+  end
+
+  def calculation
+    @schedule = Schedule.find(params[:id])
+    if @schedule.save
+      redirect_to work_schedules_url, "タイムカードを登録しました。"
+    else
+      render "time_card"
+    end
+  end
+
   private
 
   def schedule_params

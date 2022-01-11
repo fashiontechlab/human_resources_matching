@@ -4,7 +4,10 @@
 #
 #  id              :integer          not null, primary key
 #  allday          :string
+#  amount          :string
 #  approval_status :boolean          default(FALSE), not null
+#  confirm_end     :datetime
+#  confirm_start   :datetime
 #  end             :datetime
 #  hope_end        :datetime
 #  hope_start      :datetime
