@@ -22,6 +22,8 @@
       <% end %>
 
       <td><%= link_to "タイムカード", time_card_schedule_path(schedule) %></td>
+      <th>金額</th>
+      <td><%= schedule.amount %></td>
 
     </tr>
     <% end %>

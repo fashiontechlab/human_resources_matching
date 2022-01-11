@@ -120,17 +120,18 @@ class SchedulesController < ApplicationController
 
   def calculation
     @schedule = Schedule.find(params[:id])
-    if @schedule.save
-      redirect_to work_schedules_url, "タイムカードを登録しました。"
-    else
-      render "time_card"
-    end
+    @schedule.assign_attributes(schedule_params)
+    @schedule.start = @schedule.confirm_start
+    @schedule.end = @schedule.confirm_end
+    @schedule.amount = (@schedule.end - @schedule.start) * 1500
+    @schedule.save
+    redirect_to work_schedules_url, notice: "タイムカードを登録しました。"
   end
 
   private
 
   def schedule_params
-    params.require(:schedule).permit(:start, :end, :Allday, :staff_id, :start_time, :workday, :member_id, :ryokan_id, :status, :approval_status, :hope_start, :hope_end)
+    params.require(:schedule).permit(:start, :end, :Allday, :staff_id, :start_time, :workday, :member_id, :ryokan_id, :status, :approval_status, :hope_start, :hope_end, :confirm_start, :confirm_end)
   end
 
   def set_beginning_of_week
