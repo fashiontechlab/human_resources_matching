@@ -24,7 +24,7 @@ Rails.application.routes.draw do
     get "non_approval_confirmation", on: :member
     patch "approval", on: :member
     get "non_approval", on: :member
-    get "work", on: :member
+    get "work", on: :collection
     delete "work_delete", on: :member
   end
 
@@ -62,7 +62,7 @@ Rails.application.routes.draw do
     root "top#index"
     resources :schedules do
       get "search", on: :collection
-      get "work", on: :member
+      get "work", on: :collection
     end
   end
 
