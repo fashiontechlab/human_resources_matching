@@ -11,7 +11,8 @@
    <tr>
     <th>出勤日</th>
     <td><%= @schedule.start_time.strftime("%m/%d") %></td>
-  </tr>
+   </tr>
+  <th style="background-color: white"><span style="color: lightpink">午前</th></span>
   <tr>
     <th>出勤時間</th>
     <td><%= @schedule.start.strftime("%H:%M") %></td>
@@ -19,6 +20,15 @@
   <tr>
     <th>退勤時間</th>
     <td><%= @schedule.end.strftime("%H:%M") %></td>
+  </tr>
+  <th style="background-color: white"><span style="color: lightpink">午後</th></span>
+  <tr>
+    <th>出勤時間</th>
+    <td><%= @schedule.afternoon_start.strftime("%H:%M") %></td>
+  </tr>
+  <tr>
+    <th>退勤時間</th>
+    <td><%= @schedule.afternoon_end.strftime("%H:%M") %></td>
   </tr>
 </table>
 <%= link_to "出勤の依頼をする", ask_schedule_path %>

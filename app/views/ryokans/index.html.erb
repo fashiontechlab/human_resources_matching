@@ -35,6 +35,10 @@
         <td>氏名</td>
         <td>出勤可否</td>
         <td>出勤日</td>
+        <th>午前</th>
+        <td>出勤時間</td>
+        <td>退勤時間</td>
+        <th>午後</th>
         <td>出勤時間</td>
         <td>退勤時間</td>
         <td>依頼可否</td>
@@ -50,8 +54,12 @@
         <td><%= schedule.human_resource.full_name %></td>
         <td><%= schedule.workday %></td>
         <td><%= schedule.start_time.strftime("%m/%d") %></td>
+        <td></td>
         <td><%= schedule.start.strftime("%H:%M") %></td>
         <td><%= schedule.end.strftime("%H:%M") %></td>
+        <td></td>
+        <td><%= schedule.afternoon_start.strftime("%H:%M") %></td>
+        <td><%= schedule.afternoon_end.strftime("%H:%M") %></td>
         <td><%= link_to "依頼", confirmation_schedule_path(schedule) %></td>
         <td><%= link_to "交渉", negotiation_schedule_path(schedule) %></td>
       </tr>

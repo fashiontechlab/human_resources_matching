@@ -2,24 +2,30 @@
 #
 # Table name: schedules
 #
-#  id              :integer          not null, primary key
-#  allday          :string
-#  amount          :string
-#  approval_status :boolean          default(FALSE), not null
-#  confirm_end     :datetime
-#  confirm_start   :datetime
-#  end             :datetime
-#  hope_end        :datetime
-#  hope_start      :datetime
-#  start           :datetime
-#  start_time      :datetime
-#  status          :boolean          default(TRUE), not null
-#  workday         :string
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  member_id       :integer
-#  ryokan_id       :integer
-#  staff_id        :integer
+#  id                      :integer          not null, primary key
+#  afternoon_end           :datetime
+#  afternoon_start         :datetime
+#  allday                  :string
+#  amount                  :string
+#  approval_status         :boolean          default(FALSE), not null
+#  confirm_afternoon_end   :datetime
+#  confirm_afternoon_start :datetime
+#  confirm_end             :datetime
+#  confirm_start           :datetime
+#  end                     :datetime
+#  hope_afternoon_end      :datetime
+#  hope_afternoon_start    :datetime
+#  hope_end                :datetime
+#  hope_start              :datetime
+#  start                   :datetime
+#  start_time              :datetime
+#  status                  :boolean          default(TRUE), not null
+#  workday                 :string
+#  created_at              :datetime         not null
+#  updated_at              :datetime         not null
+#  member_id               :integer
+#  ryokan_id               :integer
+#  staff_id                :integer
 #
 # Indexes
 #

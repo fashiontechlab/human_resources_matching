@@ -2,8 +2,10 @@
 a<%= @schedule.human_resource.full_name %>さんから依頼した出勤日の取り消し通知です。
 
 出勤日：<%= @schedule.start_time.strftime("%m/%d") %>
-出勤時間：<%= @schedule.start.strftime("%H:%M") %>
-退勤時間：<%= @schedule.end.strftime("%H:%M") %>
+午前出勤時間：<%= @schedule.start.strftime("%H:%M") %>
+午前退勤時間：<%= @schedule.end.strftime("%H:%M") %>
+午後出勤時間：<%= @schedule.afternoon_start.strftime("%H:%M") %>
+午後退勤時間：<%= @schedule.afternoon_end.strftime("%H:%M") %>
 
 プチプラ人材紹介のシステムでは、3日以内の取り消しは出来ない仕組みとなっております。
 3日以前のご依頼承認後の取り消しは可能となっております。ご理解の程、宜しくお願い致します。

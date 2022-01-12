@@ -5,6 +5,12 @@
     <tr>
       <td>氏名</td>
       <td>出勤日</td>
+      <th>午前</th>
+      <td>出勤時間</td>
+      <td>退勤時間</td>
+      <td>希望出勤時間</td>
+      <td>希望退勤時間</td>
+      <th>午後</th>
       <td>出勤時間</td>
       <td>退勤時間</td>
       <td>希望出勤時間</td>
@@ -17,10 +23,16 @@
     <tr>
       <td><%= schedule.human_resource.full_name %></td>
       <td><%= schedule.start_time.strftime("%m/%d") %></td>
+      <td></td>
       <td><%= schedule.start.strftime("%H:%M") %></td>
       <td><%= schedule.end.strftime("%H:%M") %></td>
       <td><%= schedule.hope_start.strftime("%H:%M") %></td>
       <td><%= schedule.hope_end.strftime("%H:%M") %></td>
+      <td></td>
+      <td><%= schedule.afternoon_start.strftime("%H:%M") %></td>
+      <td><%= schedule.afternoon_end.strftime("%H:%M") %></td>
+      <td><%= schedule.hope_afternoon_start.strftime("%H:%M") %></td>
+      <td><%= schedule.hope_afternoon_end.strftime("%H:%M") %></td>
     </tr>
     <% end %>
     <% end %>

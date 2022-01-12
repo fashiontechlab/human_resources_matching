@@ -15,22 +15,40 @@
    <tr>
     <th>出勤日</th>
     <td><%= @schedule.start_time.strftime("%m/%d") %></td>
-  </tr>
+   </tr>
+  <th style="background-color: white"><span style="color: lightpink">午前</th></span>
   <tr>
     <th>出勤時間</th>
     <td><%= @schedule.start.strftime("%H:%M") %></td>
-  </tr>
-  <tr>
-    <th><%= form.label :confirm_start, "確定出勤時間" %></th>
-    <td><%= form.time_field :confirm_start %></td>
   </tr>
   <tr>
     <th>退勤時間</th>
     <td><%= @schedule.end.strftime("%H:%M") %></td>
   </tr>
   <tr>
+    <th><%= form.label :confirm_start, "確定出勤時間" %></th>
+    <td><%= form.time_field :confirm_start %></td>
+  </tr>
+  <tr>
     <th><%= form.label :confirm_end, "確定退勤時間" %></th>
     <td><%= form.time_field :confirm_end %></td>
+  </tr>
+  <th style="background-color: white"><span style="color: lightpink">午後</th></span>
+  <tr>
+    <th>出勤時間</th>
+    <td><%= @schedule.afternoon_start.strftime("%H:%M") %></td>
+  </tr>
+  <tr>
+    <th>退勤時間</th>
+    <td><%= @schedule.afternoon_end.strftime("%H:%M") %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :confirm_afternoon_start, "確定出勤時間" %></th>
+    <td><%= form.time_field :confirm_afternoon_start %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :confirm_afternoon_end, "確定退勤時間" %></th>
+    <td><%= form.time_field :confirm_afternoon_end %></td>
   </tr>
 </table>
 <%= form.submit "登録" %>

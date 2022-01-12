@@ -13,6 +13,7 @@
     <th>出勤日</th>
     <td><%= @schedule.start_time.strftime("%m/%d") %></td>
   </tr>
+  <th style="background-color: white"><span style="color: lightpink">午前</th></span>
   <tr>
     <th>出勤時間</th>
     <td><%= @schedule.start.strftime("%H:%M") %></td>
@@ -28,6 +29,23 @@
   <tr>
     <th><%= form.label :hope_end, "希望退勤時間" %></th>
     <td><%= form.time_field :hope_end %></td>
+  </tr>
+  <th style="background-color: white"><span style="color: lightpink">午後</th></span>
+  <tr>
+    <th>出勤時間</th>
+    <td><%= @schedule.afternoon_start.strftime("%H:%M") %></td>
+  </tr>
+  <tr>
+    <th>退勤時間</th>
+    <td><%= @schedule.afternoon_end.strftime("%H:%M") %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :hope_afternoon_start, "希望出勤時間" %></th>
+    <td><%= form.time_field :hope_afternoon_start %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :hope_afternoon_end, "希望退勤時間" %></th>
+    <td><%= form.time_field :hope_afternoon_end %></td>
   </tr>
 </table>
 <%= form.submit "勤務時間の交渉メールを送る" %>

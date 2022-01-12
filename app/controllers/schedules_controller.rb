@@ -131,7 +131,7 @@ class SchedulesController < ApplicationController
   private
 
   def schedule_params
-    params.require(:schedule).permit(:start, :end, :Allday, :staff_id, :start_time, :workday, :member_id, :ryokan_id, :status, :approval_status, :hope_start, :hope_end, :confirm_start, :confirm_end)
+    params.require(:schedule).permit(:start, :end, :Allday, :staff_id, :start_time, :workday, :member_id, :ryokan_id, :status, :approval_status, :hope_start, :hope_end, :confirm_start, :confirm_end, :afternoon_start, :afternoon_end, :hope_afternoon_start, :hope_afternoon_end, :confirm_afternoon_start, :confirm_afternoon_end)
   end
 
   def set_beginning_of_week

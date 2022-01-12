@@ -21,6 +21,10 @@
       <tr>
         <td>出勤可否</td>
         <td>出勤日</td>
+        <th>午前</th>
+        <td>出勤時間</td>
+        <td>退勤時間</td>
+        <th>午後</th>
         <td>出勤時間</td>
         <td>退勤時間</td>
         <td>勤務状況</td>
@@ -35,8 +39,12 @@
       <tr>
         <td><%= schedule.workday %></td>
         <td><%= schedule.start_time.strftime("%m/%d") %></td>
+        <td></td>
         <td><%= schedule.start.strftime("%H:%M") %></td>
         <td><%= schedule.end.strftime("%H:%M") %></td>
+        <td></td>
+        <td><%= schedule.afternoon_start.strftime("%H:%M") %></td>
+        <td><%= schedule.afternoon_end.strftime("%H:%M") %></td>
         <td><%= schedule.status == true ? "未決定" : "" %></td>
         <td><%= schedule.approval_status == true ? "交渉中" : "交渉無し" %></td>
         <% if schedule.approval_status == true %>

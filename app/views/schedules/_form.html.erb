@@ -15,10 +15,19 @@
   </tr>
   <tr>
   <tr>
-    <th><%= form.label :start, "出勤時間" %></th>
+    <th><%= form.label :start, "午前出勤時間" %></th>
     <td><%= form.time_select :start %></td>
   </tr>
   <tr>
-    <th><%= form.label :end, "退勤時間" %></th>
+    <th><%= form.label :end, "午前退勤時間" %></th>
     <td><%= form.time_select :end %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :afternoon_start, "午後出勤時間" %></th>
+    <td><%= form.time_select :afternoon_start %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :afternoon_end, "午後退勤時間" %></th>
+    <td><%= form.time_select :afternoon_end %></td>
+  </tr>
 </table>
