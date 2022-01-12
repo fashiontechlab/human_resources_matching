@@ -28,6 +28,10 @@ ja:
         password: パスワード
         password_confirmation: パスワードの確認
         password_digest: パスワード
+      ryokan:  
+        current_ryokan_password: 現在のパスワード
+        password_confirmation: パスワードの確認
+        password: パスワード
       article:
         title: タイトル
         body: 本文
@@ -56,3 +60,8 @@ ja:
           attributes:
             current_password:
               wrong: が間違っています
+      models:
+        ryokan:
+          attributes:
+            current_ryokan_password:
+              wrong: が間違っています        

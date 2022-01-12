@@ -1,0 +1,25 @@
+<% @page_title = "パスワードの変更" %>
+<h1 class="title_name"><%= @page_title %></h1>
+
+<div class="toolbar"><%= link_to "アカウント情報に戻る", :ryokan_account %></div>
+
+<%= form_for @ryokan, url: :ryokan_password, method: :patch do |form| %>
+<%= render "shared/errors", obj: @ryokan %>
+
+<table class="attr">
+  <tr>
+    <th><%= form.label :current_ryokan_password %></th>
+    <td><%= form.password_field :current_ryokan_password %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :password %></th>
+    <td><%= form.password_field :password %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :password_confirmation %></th>
+    <td><%= form.password_field :password_confirmation %>
+  </tr>
+</table>
+<div><%= form.submit "変更" %></div>
+<% end %>
+

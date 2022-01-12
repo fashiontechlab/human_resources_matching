@@ -21,4 +21,7 @@ class Ryokan < ApplicationRecord
   validates :kana_name, presence:true, length: { maximum: 15 }
   validates :manager, presence:true, length: { maximum: 15 }
   validates :name, presence:true, length: { minimum: 2, maximum: 15, allow_blank: true}
+
+  attr_accessor :current_ryokan_password
+  validates :password, presence: { if: :current_ryokan_password }
 end

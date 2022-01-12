@@ -40,5 +40,5 @@ class PasswordsController < ApplicationController
       :password,
       :password_confirmation
     )
-    end
+   end
 end
