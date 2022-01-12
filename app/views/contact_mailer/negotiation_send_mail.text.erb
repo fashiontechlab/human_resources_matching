@@ -2,6 +2,7 @@
 <%= @schedule.ryokan.full_name %>さんから希望出勤時間の通知です。
 
 出勤日：<%= @schedule.start_time.strftime("%m/%d") %>
+依頼先：<%= @schedule.ryokan.full_name %>
 
 午前
 出勤時間：<%= @schedule.start.strftime("%H:%M") %>

@@ -5,6 +5,7 @@
   <tr>
     <%= render "shared/errors", obj: @schedule %>
   </tr>
+  <span style="color: red">※午前または午後で出勤不可の場合は、00:00を表示</span>
   <tr>
     <th>名前</th>
     <td><%= @schedule.human_resource.full_name %></td>

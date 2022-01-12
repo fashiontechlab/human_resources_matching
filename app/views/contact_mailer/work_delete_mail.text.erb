@@ -2,6 +2,8 @@
 <%= @schedule.human_resource.full_name %>さんから依頼した出勤日の取り消し通知です。
 
 出勤日：<%= @schedule.start_time.strftime("%m/%d") %>
+名前：<%= @schedule.human_resource.full_name %>
+
 午前
 出勤時間：<%= @schedule.start.strftime("%H:%M") %>
 退勤時間：<%= @schedule.end.strftime("%H:%M") %>

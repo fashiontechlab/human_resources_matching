@@ -3,7 +3,7 @@
     <%= render "shared/errors", obj: @schedule %>
   </tr>
   <tr>
-    <%= link_to "出勤予定表に戻る", schedules_path %>
+    <%= link_to "出勤予定表に戻る", schedules_path %><br>
   </tr>
   <tr>
     <th><%= form.label :workday, "出勤可否" %></th>
@@ -32,4 +32,5 @@
     <th><%= form.label :afternoon_end, "退勤時間" %></th>
     <td><%= form.time_select :afternoon_end, {default: Date.today + 22.hour} %></td>
   </tr>
+  <span style="color: red">※午前または午後で出勤不可の場合は、00:00を表示</span>
 </table>
