@@ -13,6 +13,11 @@ ja:
         workday: 出勤
         start_time: 日付け
         end: 退勤時間
+        afternoon_end: 退勤時間
+        hope_end: 希望退勤時間
+        hope_afternoon_end: 希望退勤時間
+        confirm_end: 確定退勤時間
+        confirm_afternoon_end: 確定退勤時間
       member:
         new_porfile_picture: プロフィール画像
         remove_profile_picture: 画像の削除
