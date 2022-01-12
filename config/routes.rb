@@ -37,6 +37,7 @@ Rails.application.routes.draw do
     delete "request_delete", on: :member
   end
 
+  resource :ryokan_account, only: [:show, :edit, :update]
   resource :session, only: [:create, :destroy]
   resource :account, only: [:show, :edit, :update]
   resource :password, only:[:show, :edit, :update]
