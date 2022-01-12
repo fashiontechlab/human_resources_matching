@@ -9,7 +9,7 @@ class RyokanAccountsController < ApplicationController
   end
 
   def update
-    @ryokan = current_member
+    @ryokan = current_ryokan
     @ryokan.assign_attributes(ryokan_account_params)
     if @ryokan.save
       redirect_to :ryokan_account, notice: "アカウント情報を更新しました。"
@@ -21,7 +21,7 @@ class RyokanAccountsController < ApplicationController
   private
 
   def ryokan_account_params
-    params.require(:ryokan_account).permit(
+    params.require(:ryokan).permit(
       :name,
       :full_name,
       :kana_name,

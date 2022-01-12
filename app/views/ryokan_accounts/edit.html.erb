@@ -4,7 +4,7 @@
 
 <div class="toolbar"><%= link_to "アカウントに戻る", :ryokan_account %></div>
 
-<%= form_for @ryokan, as: "ryokan_account", url: :ryokan_account do |form| %>
+<%= form_for @ryokan, url: :ryokan_account, method: :patch do |form| %>
 <%= render "shared/ryokan_form", form: form %>
 <div><%= form.submit %></div>
 <% end %>
