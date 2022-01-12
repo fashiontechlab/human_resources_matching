@@ -2,11 +2,14 @@
 <%= @schedule.ryokan.full_name %>さんから出勤依頼の通知です。
 
 出勤日：<%= @schedule.start_time.strftime("%m/%d") %>
-午前出勤時間：<%= @schedule.start.strftime("%H:%M") %>
-午前退勤時間：<%= @schedule.end.strftime("%H:%M") %>
-午後出勤時間：<%= @schedule.afternoon_start.strftime("%H:%M") %>
-午後退勤時間：<%= @schedule.afternoon_end.strftime("%H:%M") %>
+午前
+出勤時間：<%= @schedule.start.strftime("%H:%M") %>
+退勤時間：<%= @schedule.end.strftime("%H:%M") %>
+午後
+出勤時間：<%= @schedule.afternoon_start.strftime("%H:%M") %>
+退勤時間：<%= @schedule.afternoon_end.strftime("%H:%M") %>
 に勤務をお願い致します。
+<%= @schedule.ryokan.manager %>さんを訪ねて出勤して下さい。
 
 キャンセルの場合は、ご依頼主に直接電話連絡をお願いいたします。
 -------------------

@@ -3,17 +3,17 @@
 
 出勤日：<%= @schedule.start_time.strftime("%m/%d") %>
 
-午前出勤時間：<%= @schedule.start.strftime("%H:%M") %>
-午前退勤時間：<%= @schedule.end.strftime("%H:%M") %>
+午前
+出勤時間：<%= @schedule.start.strftime("%H:%M") %>
+退勤時間：<%= @schedule.end.strftime("%H:%M") %>
+希望出勤時間：<%= @schedule.hope_start.strftime("%H:%M") %>
+希望退勤時間：<%= @schedule.hope_end.strftime("%H:%M") %>
 
-希望午前出勤時間：<%= @schedule.hope_start.strftime("%H:%M") %>
-希望午前退勤時間：<%= @schedule.hope_end.strftime("%H:%M") %>
-
-午後出勤時間：<%= @schedule.afternoon_start.strftime("%H:%M") %>
-午後退勤時間：<%= @schedule.afternoon_end.strftime("%H:%M") %>
-
-希望午後出勤時間：<%= @schedule.hope_afternoon_start.strftime("%H:%M") %>
-希望午後退勤時間：<%= @schedule.hope_afternoon_end.strftime("%H:%M") %>
+午後
+出勤時間：<%= @schedule.afternoon_start.strftime("%H:%M") %>
+退勤時間：<%= @schedule.afternoon_end.strftime("%H:%M") %>
+希望出勤時間：<%= @schedule.hope_afternoon_start.strftime("%H:%M") %>
+希望退勤時間：<%= @schedule.hope_afternoon_end.strftime("%H:%M") %>
 
 申し訳ございませんが、ご希望の時間の承認は得られませんでした。
 別の方法でのご対応の程、宜しくお願い致します。
