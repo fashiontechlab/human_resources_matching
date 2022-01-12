@@ -27,11 +27,11 @@
   </tr>
   <tr>
     <th><%= form.label :confirm_start, "確定出勤時間" %></th>
-    <td><%= form.time_field :confirm_start %></td>
+    <td><%= form.time_select :confirm_start, {default: Date.today + 6.hour} %></td>
   </tr>
   <tr>
     <th><%= form.label :confirm_end, "確定退勤時間" %></th>
-    <td><%= form.time_field :confirm_end %></td>
+    <td><%= form.time_select :confirm_end, {default: Date.today + 12.hour} %></td>
   </tr>
   <th style="background-color: white"><span style="color: lightpink">午後</th></span>
   <tr>
@@ -44,11 +44,11 @@
   </tr>
   <tr>
     <th><%= form.label :confirm_afternoon_start, "確定出勤時間" %></th>
-    <td><%= form.time_field :confirm_afternoon_start %></td>
+    <td><%= form.time_select :confirm_afternoon_start, {default: Date.today + 12.hour} %></td>
   </tr>
   <tr>
     <th><%= form.label :confirm_afternoon_end, "確定退勤時間" %></th>
-    <td><%= form.time_field :confirm_afternoon_end %></td>
+    <td><%= form.time_select :confirm_afternoon_end, {default: Date.today + 22.hour} %></td>
   </tr>
 </table>
 <%= form.submit "登録" %>

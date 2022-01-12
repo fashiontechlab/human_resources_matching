@@ -14,20 +14,22 @@
     <td><%= form.date_field :start_time%></td>
   </tr>
   <tr>
+    <th style="background-color: white"><span style="color: lightpink">午前</th></span>
   <tr>
-    <th><%= form.label :start, "午前出勤時間" %></th>
-    <td><%= form.time_select :start %></td>
+    <th><%= form.label :start, "出勤時間" %></th>
+    <td><%= form.time_select :start, {default: Date.today + 6.hour} %></td>
   </tr>
   <tr>
-    <th><%= form.label :end, "午前退勤時間" %></th>
-    <td><%= form.time_select :end %></td>
+    <th><%= form.label :end, "退勤時間" %></th>
+    <td><%= form.time_select :end, {default: Date.today + 12.hour} %></td>
+  </tr>
+  <th style="background-color: white"><span style="color: lightpink">午後</th></span>
+  <tr>
+    <th><%= form.label :afternoon_start, "出勤時間" %></th>
+    <td><%= form.time_select :afternoon_start, {default: Date.today + 12.hour} %></td>
   </tr>
   <tr>
-    <th><%= form.label :afternoon_start, "午後出勤時間" %></th>
-    <td><%= form.time_select :afternoon_start %></td>
-  </tr>
-  <tr>
-    <th><%= form.label :afternoon_end, "午後退勤時間" %></th>
-    <td><%= form.time_select :afternoon_end %></td>
+    <th><%= form.label :afternoon_end, "退勤時間" %></th>
+    <td><%= form.time_select :afternoon_end, {default: Date.today + 22.hour} %></td>
   </tr>
 </table>
