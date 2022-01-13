@@ -12,7 +12,7 @@ class SchedulesController < ApplicationController
   def create
     @schedule = Schedule.new(schedule_params)
     @schedule.human_resource = current_member
-    if @schedule.save
+    if @schedule.save(context: :check_time_axis)
       redirect_to schedules_url, notice: "出勤日時を登録しました。"
     else
       render "new"
@@ -26,7 +26,7 @@ class SchedulesController < ApplicationController
   def update
     @schedule = Schedule.find(params[:id])
     @schedule.assign_attributes(schedule_params)
-    if @schedule.save
+    if @schedule.save(context: :check_time_axis)
       redirect_to schedules_url,  notice: "出勤日時を編集しました。"
     else
       render "edit"
@@ -64,7 +64,7 @@ class SchedulesController < ApplicationController
     @schedule.ryokan_id = current_ryokan.id
     @schedule.approval_status = true
     @schedule.assign_attributes(schedule_params)
-    if @schedule.save
+    if @schedule.save(context: :check_time_axis_hope)
       ContactMailer.negotiation_send_mail(@schedule).deliver_later
       redirect_to ryokans_url, notice: "希望勤務時間のメールを送りました。"
     else
@@ -124,7 +124,7 @@ class SchedulesController < ApplicationController
     @schedule.start = @schedule.confirm_start
     @schedule.end = @schedule.confirm_end
     @schedule.amount = (@schedule.end - @schedule.start) * 1500
-    @schedule.save
+    @schedule.save(context: :check_time_axis_confirm)
     redirect_to work_schedules_url, notice: "タイムカードを登録しました。"
   end
 

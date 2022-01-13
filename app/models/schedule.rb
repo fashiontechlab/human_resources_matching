@@ -41,14 +41,11 @@ class Schedule < ApplicationRecord
   validates :status, inclusion: { in: [true, false] }
   validates :approval_status, inclusion: { in: [true, false] }
   validate :date_before_start
-  validate :time_axis
-  validate :time_axis_afternoon
-#  validate :time_axis_hope
-#  validate :time_axis_hope_afternoon
-#  validate :time_axis_confirm
-#  validate :time_axis_confirm_afternoon
+  validate :time_axis, on: :check_time_axis
+  validate :time_axis_hope, on: :check_time_axis_hope
+  validate :time_axis_confirm, on: :check_time_axis_confirm
 
-  private
+  scope :past_day, -> { where("schedules.start_time > ?", DateTime.now)}
 
   def date_before_start
     return if start_time.blank?
@@ -56,28 +53,14 @@ class Schedule < ApplicationRecord
   end
 
   def time_axis
-    errors.add(:end, "は出勤時間より遅い時間を選択してください") if self.start > self.end
+    errors.add(:end, "は出勤時間より遅い時間を選択してください") if self.start > self.end || self.afternoon_start > self.afternoon_end
   end
 
-  def time_axis_afternoon
-    errors.add(:afternoon_end, "は出勤時間より遅い時間を選択してください") if self.afternoon_start > self.afternoon_end
+  def time_axis_hope
+    errors.add(:hope_end, "は希望出勤時間より遅い時間を選択してください") if self.hope_start > self.hope_end || self.hope_afternoon_start > self.hope_afternoon_end
   end
 
-#  def time_axis_hope
-#    errors.add(:hope_end, "は希望出勤時間より遅い時間を選択してください") if self.hope_start > self.hope_end
-#  end
-#
-#  def time_axis_hope_afternoon
-#    errors.add(:hope_afternoon_end, "は希望出勤時間より遅い時間を選択してください") if self.hope_afternoon_start > self.hope_afternoon_end
-#  end
-#
-#  def time_axis_confirm
-#    errors.add(:confirm_end, "は確定出勤時間より遅い時間を選択してください") if self.confirm_start > self.confirm_end
-#  end
-#
-#  def time_axis_confirm_afternoon
-#    errors.add(:confirm_afternoon_end, "は確定出勤時間より遅い時間を選択してください") if self.confirm_afternoon_start > self.confirm_afternoon_end
-#  end
-
-  scope :past_day, -> { where("schedules.start_time > ?", DateTime.now)}
+  def time_axis_confirm
+    errors.add(:confirm_end, "は確定出勤時間より遅い時間を選択してください") if self.confirm_start > self.confirm_end || self.confirm_afternoon_start > self.confirm_afternoon_end
+  end
 end
