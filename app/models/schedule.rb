@@ -17,9 +17,11 @@
 #  hope_afternoon_start    :datetime
 #  hope_end                :datetime
 #  hope_start              :datetime
+#  ryokan_amount           :string
 #  start                   :datetime
 #  start_time              :datetime
 #  status                  :boolean          default(TRUE), not null
+#  work_complete_status    :boolean          default(FALSE), not null
 #  workday                 :string
 #  created_at              :datetime         not null
 #  updated_at              :datetime         not null
