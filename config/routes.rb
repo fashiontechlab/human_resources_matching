@@ -36,6 +36,7 @@ Rails.application.routes.draw do
     get "search", on: :collection
     delete "request_delete", on: :member
     get "work_complete", on: :collection
+    get "search_work_complete", on: :collection
   end
 
   resource :ryokan_account, only: [:show, :edit, :update]

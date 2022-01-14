@@ -1,4 +1,4 @@
-<% @page_title = "出勤依頼の確認" %>
+<% @page_title = "検索結果" %>
 <h1 class="title_name"><%= @page_title %></h1>
 <table class="attr">
   <thead>
@@ -11,11 +11,12 @@
       <th>午後</th>
       <td>出勤時間</td>
       <td>退勤時間</td>
+      <td>経費</td>
     </tr>
   </thead>
   <tbody>
     <% @schedules.each do |schedule| %>
-    <% if schedule.work_complete_status == false %>
+    <% if schedule.work_complete_status == true %>
     <tr>
       <td><%= schedule.human_resource.full_name %></td>
       <td><%= schedule.start_time.strftime("%m/%d") %></td>
@@ -25,13 +26,12 @@
       <td></td>
       <td><%= schedule.afternoon_start.strftime("%H:%M") %></td>
       <td><%= schedule.afternoon_end.strftime("%H:%M") %></td>
-      <% if schedule.start_time > Date.today.since(3.days) %>
-      <td><%= link_to "取り消し", request_delete_ryokan_path(schedule), method: :delete, data: { confirm: "本当に取り消しますか？" } %></td>
-      <% end %>
-      <% end %>
+      <td><%= schedule.ryokan_amount %></td>
     </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>
-<%= link_to "戻る", :ryokans %><br>
-<%= link_to "勤務完了", work_complete_ryokans_path %>
+<%= paginate @schedules %>
+<%= link_to "戻る", :work_complete_ryokans %>
+
