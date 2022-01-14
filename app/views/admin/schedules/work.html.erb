@@ -8,6 +8,8 @@
       <td>出勤日</td>
       <td>出勤時間</td>
       <td>退勤時間</td>
+      <td>売上</td>
+      <td>利益</td>
     </tr>
   </thead>
   <tbody>
@@ -19,6 +21,7 @@
       <td><%= schedule.start_time.strftime("%m/%d") %></td>
       <td><%= schedule.start.strftime("%H:%M") %></td>
       <td><%= schedule.end.strftime("%H:%M") %></td>
+      <td><%= schedule.amount %></td>
     </tr>
     <% end %>
     <% end %>

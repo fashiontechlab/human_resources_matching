@@ -39,7 +39,7 @@
         <td>勤務時間交渉</td>
       </tr>
       <% @schedules.each do |schedule| %>
-      <%# if schedule.status == true %>
+      <% if schedule.status == true %>
       <tr>
         <td><%= schedule.human_resource.full_name %></td>
         <td><%= schedule.workday %></td>
@@ -49,7 +49,7 @@
         <td><%= schedule.status == true ? "未決定" : "決定"%></td>
         <td><%= schedule.approval_status == true ? "交渉中" : "交渉無し" %></td>
       </tr>
-      <%# end %>
+      <% end %>
       <% end %>
     </div>
   </tbody>
