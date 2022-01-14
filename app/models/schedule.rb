@@ -37,7 +37,8 @@ class Schedule < ApplicationRecord
   belongs_to :human_resource, class_name: "Member", foreign_key: "member_id"
   belongs_to :ryokan, optional: true
   validates :workday, presence: true
-  validates :start_time, uniqueness: { scope: :member_id }, presence: true
+  validates :start_time, uniqueness: { scope: :member_id }
+  validates :start, :end, presence: true
   validates :status, inclusion: { in: [true, false] }
   validates :approval_status, inclusion: { in: [true, false] }
   validate :date_before_start

@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     get "work", on: :collection
     delete "work_delete", on: :member
     get "time_card", on: :member
-    patch "calculation", on: :member
+    post "calculation", on: :member
   end
 
   resources :ryokans do

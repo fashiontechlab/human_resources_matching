@@ -122,10 +122,14 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
     @schedule.assign_attributes(schedule_params)
     @schedule.start = @schedule.confirm_start
+    @schedule.afternoon_start = @schedule.confirm_afternoon_start
     @schedule.end = @schedule.confirm_end
-    @schedule.amount = (@schedule.end - @schedule.start) * 1500
-    @schedule.save(context: :check_time_axis_confirm)
-    redirect_to work_schedules_url, notice: "タイムカードを登録しました。"
+    @schedule.afternoon_end = @schedule.confirm_afternoon_end
+    if @schedule.save(context: :check_time_axis_confirm)
+      redirect_to work_schedules_url, notice: "タイムカードを登録しました。"
+    else
+      render "time_card"
+    end
   end
 
   private
