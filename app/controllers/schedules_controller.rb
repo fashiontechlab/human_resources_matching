@@ -121,6 +121,7 @@ class SchedulesController < ApplicationController
   def calculation
     @schedule = Schedule.find(params[:id])
     @schedule.assign_attributes(schedule_params)
+    @schedule.work_complete_status = true
     @schedule.start = @schedule.confirm_start
     @schedule.afternoon_start = @schedule.confirm_afternoon_start
     @schedule.end = @schedule.confirm_end
@@ -129,8 +130,7 @@ class SchedulesController < ApplicationController
     time_afternoon = (@schedule.afternoon_end.strftime("%H:%M")).to_f - (@schedule.afternoon_start.strftime("%H:%M")).to_f
     time_total = time_morning + time_afternoon
     @schedule.amount = (time_total).round * 1500
-
-time_total * 1500
+    @schedule.ryokan_amount = (time_total).round * 2000
     if @schedule.save(context: :check_time_axis_confirm)
       redirect_to work_schedules_url, notice: "タイムカードを登録しました。"
     else
@@ -141,7 +141,7 @@ time_total * 1500
   private
 
   def schedule_params
-    params.require(:schedule).permit(:start, :end, :Allday, :staff_id, :start_time, :workday, :member_id, :ryokan_id, :status, :approval_status, :hope_start, :hope_end, :confirm_start, :confirm_end, :afternoon_start, :afternoon_end, :hope_afternoon_start, :hope_afternoon_end, :confirm_afternoon_start, :confirm_afternoon_end)
+    params.require(:schedule).permit(:start, :end, :Allday, :staff_id, :start_time, :workday, :member_id, :ryokan_id, :status, :approval_status, :hope_start, :hope_end, :confirm_start, :confirm_end, :afternoon_start, :afternoon_end, :hope_afternoon_start, :hope_afternoon_end, :confirm_afternoon_start, :confirm_afternoon_end, :ryokan_amount, :work_complete_status)
   end
 
   def set_beginning_of_week

@@ -25,7 +25,7 @@ class RyokansController < ApplicationController
   end
 
   def work_complete
-    @schedules = Schedule.where(status: "false", ryokan_id: current_ryokan.id).order("start_time ASC").page(params[:page]).per(10)
+    @schedules = Schedule.where(work_complete_status: "true", ryokan_id: current_ryokan.id).order("start_time ASC").page(params[:page]).per(10)
   end
 
   def demand_confirmation
