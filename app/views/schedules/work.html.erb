@@ -25,16 +25,16 @@
       <td></td>
       <td><%= schedule.afternoon_start.strftime("%H:%M") %></td>
       <td><%= schedule.afternoon_end.strftime("%H:%M") %></td>
-      <% if schedule.start_time > Date.today.since(3.days) %>
-        <td><%= link_to "取り消し", work_delete_schedule_path(schedule), method: :delete, data: { confirm: "本当に取り消しますか？" } %></td>
-      <% end %>
-
-      <td><%= link_to "タイムカード", time_card_schedule_path(schedule) %></td>
-      <th>金額</th>
-      <td><%= schedule.amount %></td>
-
+        <% if schedule.start_time > Date.today.since(3.days) %>
+          <td><%= link_to "取り消し", work_delete_schedule_path(schedule), method: :delete, data: { confirm: "本当に取り消しますか？" } %></td>
+        <% end %>
+        <% if schedule.start_time < Date.today %>
+        <td><%= link_to "タイムカード", time_card_schedule_path(schedule) %></td>
+        <th>金額</th>
+        <td><%= schedule.amount %></td>
     </tr>
-    <% end %>
+        <% end %>
+      <% end %>
     <% end %>
   </tbody>
 </table>

@@ -125,6 +125,12 @@ class SchedulesController < ApplicationController
     @schedule.afternoon_start = @schedule.confirm_afternoon_start
     @schedule.end = @schedule.confirm_end
     @schedule.afternoon_end = @schedule.confirm_afternoon_end
+    time_morning  = (@schedule.end.strftime("%H:%M")).to_f - (@schedule.start.strftime("%H:%M")).to_f
+    time_afternoon = (@schedule.afternoon_end.strftime("%H:%M")).to_f - (@schedule.afternoon_start.strftime("%H:%M")).to_f
+    time_total = time_morning + time_afternoon
+    @schedule.amount = (time_total).round * 1500
+
+time_total * 1500
     if @schedule.save(context: :check_time_axis_confirm)
       redirect_to work_schedules_url, notice: "タイムカードを登録しました。"
     else
