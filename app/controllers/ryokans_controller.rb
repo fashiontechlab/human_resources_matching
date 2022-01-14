@@ -24,6 +24,10 @@ class RyokansController < ApplicationController
     redirect_to ryokans_url, notice: "取り消しのメールを送りました。"
   end
 
+  def work_complete
+    @schedules = Schedule.where(status: "false", ryokan_id: current_ryokan.id).order("start_time ASC").page(params[:page]).per(10)
+  end
+
   def demand_confirmation
     @schedules = Schedule.where(approval_status: "true", ryokan_id: current_ryokan.id).order("start_time ASC").page(params[:page]).per(10)
   end

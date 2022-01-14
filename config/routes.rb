@@ -35,6 +35,7 @@ Rails.application.routes.draw do
     get "demand_confirmation", on: :collection
     get "search", on: :collection
     delete "request_delete", on: :member
+    get "work_complete", on: :collection
   end
 
   resource :ryokan_account, only: [:show, :edit, :update]
