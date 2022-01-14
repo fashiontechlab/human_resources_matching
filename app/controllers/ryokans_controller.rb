@@ -41,7 +41,7 @@ class RyokansController < ApplicationController
   end
 
   def search_work_complete
-    @schedules = @q.result.order("start_time ASC").page(params[:page]).per(5)
+    @schedules = @q.result.order("start_time ASC").page(params[:page]).per(10)
   end
 
   private
