@@ -49,6 +49,7 @@ class Schedule < ApplicationRecord
   validate :time_axis_hope, on: :check_time_axis_hope
   validate :time_axis_confirm, on: :check_time_axis_confirm
 
+  attribute :profit, :integer
   scope :past_day, -> { where("schedules.start_time > ?", DateTime.now)}
 
   def date_before_start
