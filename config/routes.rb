@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     delete "work_delete", on: :member
     get "time_card", on: :member
     post "calculation", on: :member
+    get "business_complete", on: :collection
   end
 
   resources :ryokans do

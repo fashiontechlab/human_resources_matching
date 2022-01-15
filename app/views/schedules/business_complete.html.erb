@@ -1,0 +1,35 @@
+<% @page_title = "勤務完了の確認" %>
+<h1 class="title_name"><%= @page_title %></h1>
+<table class="attr">
+  <thead>
+    <div class="name_search">
+      <tr>
+        <td>氏名</td>
+        <td>出勤日</td>
+        <th>午前</th>
+        <td>出勤時間</td>
+        <td>退勤時間</td>
+        <th>午後</th>
+        <td>出勤時間</td>
+        <td>退勤時間</td>
+        <td>金額</td>
+      </tr>
+    </div>
+  </thead>
+  <tbody>
+    <% @schedules.each do |schedule| %>
+    <tr>
+      <td><%= schedule.human_resource.full_name %></td>
+      <td><%= schedule.start_time.strftime("%m/%d") %></td>
+      <td></td>
+      <td><%= schedule.start.strftime("%H:%M") %></td>
+      <td><%= schedule.end.strftime("%H:%M") %></td>
+      <td></td>
+      <td><%= schedule.afternoon_start.strftime("%H:%M") %></td>
+      <td><%= schedule.afternoon_end.strftime("%H:%M") %></td>
+      <td><%= schedule.amount %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "戻る", work_schedules_path %><br>

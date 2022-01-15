@@ -15,7 +15,7 @@
   </thead>
   <tbody>
     <% @schedules.each do |schedule| %>
-    <% if schedule.status == false %>
+    <% if schedule.status == false && schedule.work_complete_status == false %>
     <tr>
       <td><%= schedule.ryokan.full_name %></td>
       <td><%= schedule.start_time.strftime("%m/%d") %></td>
@@ -30,12 +30,11 @@
         <% end %>
         <%# if schedule.start_time < Date.today %>
         <td><%= link_to "タイムカード", time_card_schedule_path(schedule) %></td>
-        <th>金額</th>
-        <td><%= schedule.amount %></td>
     </tr>
         <%# end %>
       <% end %>
     <% end %>
   </tbody>
 </table>
-<%= link_to "戻る", schedules_path %>
+<%= link_to "戻る", schedules_path %><br>
+<%= link_to "勤務完了", business_complete_schedules_path %>

@@ -17,6 +17,7 @@
 #  hope_afternoon_start    :datetime
 #  hope_end                :datetime
 #  hope_start              :datetime
+#  profit                  :string
 #  ryokan_amount           :string
 #  start                   :datetime
 #  start_time              :datetime

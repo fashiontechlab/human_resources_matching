@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_14_082845) do
+ActiveRecord::Schema.define(version: 2022_01_15_033206) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -128,6 +128,7 @@ ActiveRecord::Schema.define(version: 2022_01_14_082845) do
     t.string "amount"
     t.boolean "work_complete_status", default: false, null: false
     t.string "ryokan_amount"
+    t.string "profit"
     t.index ["member_id"], name: "index_schedules_on_member_id"
     t.index ["ryokan_id"], name: "index_schedules_on_ryokan_id"
     t.index ["staff_id"], name: "index_schedules_on_staff_id"
