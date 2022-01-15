@@ -70,6 +70,7 @@ Rails.application.routes.draw do
     resources :schedules do
       get "search", on: :collection
       get "work", on: :collection
+      get "business_complete", on: :collection
     end
   end
 

@@ -14,6 +14,10 @@ class Admin::SchedulesController < ApplicationController
     @schedules = Schedule.all
   end
 
+  def business_complete
+    @schedules = Schedule.all
+  end
+
   def set_search
     @q = Schedule.ransack(params[:q])
   end
