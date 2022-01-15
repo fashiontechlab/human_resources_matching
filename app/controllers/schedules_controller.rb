@@ -82,6 +82,8 @@ class SchedulesController < ApplicationController
     @schedule.approval_status = false
     @schedule.start = @schedule.hope_start
     @schedule.end = @schedule.hope_end
+    @schedule.afternoon_start = @schedule.hope_afternoon_start
+    @schedule.afternoon_end = @schedule.hope_afternoon_end
     @schedule.save
     ContactMailer.approval_send_mail(@schedule).deliver_later
     redirect_to schedules_url, notice: "承認のメールを送りました。"
