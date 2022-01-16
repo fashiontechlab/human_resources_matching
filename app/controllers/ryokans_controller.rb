@@ -29,7 +29,9 @@ class RyokansController < ApplicationController
   end
 
   def total_expenses
-    @schedules = Schedule.where(work_complete_status: "true", ryokan_id: current_ryokan.id)
+    @schedule = Schedule.find(params[:id])
+    get_member_id = @schedule.member_id
+    @schedules = Schedule.where(work_complete_status: "true", ryokan_id: current_ryokan.id, member_id: get_member_id)
   end
 
   def demand_confirmation
