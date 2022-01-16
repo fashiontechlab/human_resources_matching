@@ -1,0 +1,21 @@
+<% @page_title = "経費の合計" %>
+<h1 class="title_name"><%= @page_title %></h1>
+<table class="attr">
+  <thead>
+    <tr>
+      <td>氏名</td>
+      <td>出勤日</td>
+      <td>経費</td>
+      <td>合計</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @schedules.each do |schedule| %>
+    <tr>
+      <td><%= schedule.human_resource.full_name %></td>
+      <td><%= schedule.start_time.strftime("%m/%d") %></td>
+      <td><%= schedule.ryokan_amount %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

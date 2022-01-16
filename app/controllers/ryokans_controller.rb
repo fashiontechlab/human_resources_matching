@@ -28,6 +28,10 @@ class RyokansController < ApplicationController
     @schedules = Schedule.where(work_complete_status: "true", ryokan_id: current_ryokan.id).order("start_time ASC").page(params[:page]).per(10)
   end
 
+  def total_expenses
+    @schedules = Schedule.where(work_complete_status: "true", ryokan_id: current_ryokan.id)
+  end
+
   def demand_confirmation
     @schedules = Schedule.where(approval_status: "true", ryokan_id: current_ryokan.id).order("start_time ASC").page(params[:page]).per(10)
   end
