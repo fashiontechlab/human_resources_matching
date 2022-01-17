@@ -24,10 +24,19 @@
       <td><%= schedule.start.strftime("%H:%M") %></td>
       <td><%= schedule.end.strftime("%H:%M") %></td>
       <td><%= schedule.ryokan_amount %></td>
-      <td><%= schedule.profit %></td>
+      <td class="price"><%= schedule.profit %></td>
     </tr>
     <% end %>
     <% end %>
+    <tr>
+      <td><button type="button", id="total">合計</button></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="sum_price"></td>
+    </tr>
   </tbody>
 </table>
 <%= link_to "戻る", admin_schedules_path %>
