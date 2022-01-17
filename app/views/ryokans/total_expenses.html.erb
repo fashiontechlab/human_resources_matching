@@ -16,9 +16,11 @@
       <td class="price"><%= schedule.ryokan_amount %></td>
     </tr>
     <% end %>
-    <td><button type="button", id="total">合計</button></td>
-    <td></td>
-    <td class="sum_price"></td>
+    <tr>
+      <td><button type="button", id="total">合計</button></td>
+      <td></td>
+      <td class="sum_price"></td>
+    </tr>
   </tbody>
 </table>
 <%= link_to "戻る", work_complete_ryokans_path %>
