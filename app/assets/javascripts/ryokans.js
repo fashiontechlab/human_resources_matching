@@ -1,7 +1,8 @@
 $(function () {
     // addボタン押下時の処理
     $("#total").on("click", function(){
-        $("#total").css("color","red");
+        $("#total").css("background-color","pink");
+        $("#total").css("color","white");
         // 画面表示時に経費の合計値を計算
         var sum_price = sum();
         function sum(){
