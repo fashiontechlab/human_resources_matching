@@ -7,7 +7,7 @@ $(function () {
         var sum_price = sum();
         function sum(){
             // 表の金額を取得する(tdの列を取得)
-            var pricelist = $("table td[class=price]").map(function(index, val){
+            var pricelist = $("[class=price]").map(function(index, val){
                 var price = parseInt($(val).text());
                 if(price >= 0) {
                     return price;
@@ -21,7 +21,7 @@ $(function () {
             pricelist.each(function(index, val){
                 total = total + val;
             });
-            $(".sum_price").text(total+"円");
+            $(".sum_price").text(total);
         }
     });
 });
