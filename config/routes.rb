@@ -73,6 +73,8 @@ Rails.application.routes.draw do
       get "search", on: :collection
       get "work", on: :collection
       get "business_complete", on: :collection
+      get "name_total_expenses", on: :member
+      get "user_month_total_expenses", on: :member
     end
   end
 

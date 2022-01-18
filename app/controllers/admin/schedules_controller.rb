@@ -21,4 +21,16 @@ class Admin::SchedulesController < ApplicationController
   def set_search
     @q = Schedule.ransack(params[:q])
   end
+
+  def name_total_expenses
+    @schedule = Schedule.find(params[:id])
+    get_member_id = @schedule.member_id
+    @schedules = Schedule.where(work_complete_status: "true", member_id: get_member_id)
+  end
+
+  def user_month_total_expenses
+    @schedule = Schedule.find(params[:id])
+    this_month = @schedule.start_time.all_month
+    @schedules = Schedule.where(work_complete_status: "true", start_time: this_month).order("start_time ASC").page(params[:page]).per(10)
+  end
 end
