@@ -76,7 +76,7 @@ Rails.application.routes.draw do
       get "business_complete", on: :collection
       get "name_total_expenses", on: :member
       get "user_month_total_expenses", on: :member
-      get "ryokan_total_expenses", on: :member
+      get "ryokan_month_total_expenses", on: :member
     end
   end
 
