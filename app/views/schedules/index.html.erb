@@ -63,4 +63,4 @@
 </table>
 <%= paginate @schedules %>
 <%= link_to "勤務予定表", work_schedules_path %><br>
-<%= link_to "勤務完了", business_complete_schedules_path %>
+<%= link_to "勤務完了", business_complete_schedules_path, data: {"turbolinks" => false} %>
