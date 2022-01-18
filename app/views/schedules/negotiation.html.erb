@@ -1,6 +1,6 @@
 <% @page_title = "勤務時間の交渉" %>
 <h1 class="title_name"><%= @page_title %></h1>
-<%= form_for @schedule, url: demand_schedule_path do |form| %>
+<%= form_for @schedule, url: demand_schedule_path, data: {"turbolinks" => false} do |form| %>
 <table class="attr">
   <tr>
     <%= render "shared/errors", obj: @schedule %>

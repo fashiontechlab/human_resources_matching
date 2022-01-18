@@ -15,7 +15,7 @@
 <div class="account-menu">
   <tr>
     <td><%= current_ryokan.full_name + "さん" %></td><br>
-    <td><%= menu_link_to "人材のスケジュールを確認", ryokans_path %></td>
+    <td><%= menu_link_to "人材のスケジュールを確認", ryokans_path, data: {"turbolinks" => false} %></td>
     <td><%= menu_link_to "アカウントの確認", ryokan_account_path %></td>
     <td><%= menu_link_to "ログアウト", :session,
             method: :delete, data: { confirm: "ログアウトしますか？"} %></td>

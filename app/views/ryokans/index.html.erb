@@ -19,7 +19,7 @@
 <table class='attr'>
   <thead>
     <div class="name_search">
-    <%= search_form_for @q, url: search_ryokans_path, data: {"turbolinks" => false} do |f| %>
+    <%= search_form_for @q, url: search_ryokans_path do |f| %>
       <%= f.label :human_resource_full_name_cont, '名前で検索する' %>
       <%= f.search_field :human_resource_full_name_cont %>
       <%= f.submit "検索" %>
@@ -72,3 +72,4 @@
 <%= link_to "依頼済確認", request_confirmation_ryokans_path %><br>
 <%= link_to "交渉中確認", demand_confirmation_ryokans_path %><br>
 <%= link_to "勤務完了", work_complete_ryokans_path, data: {"turbolinks" => false} %>
+

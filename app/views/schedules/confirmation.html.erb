@@ -31,4 +31,4 @@
     <td><%= @schedule.afternoon_end.strftime("%H:%M") %></td>
   </tr>
 </table>
-<%= link_to "出勤の依頼をする", ask_schedule_path %>
+<%= link_to "出勤の依頼をする", ask_schedule_path, data: {"turbolinks" => false} %>
