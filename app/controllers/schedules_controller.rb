@@ -145,6 +145,12 @@ class SchedulesController < ApplicationController
     @schedules = Schedule.where(work_complete_status: "true", member_id: current_member.id).order("start_time ASC").page(params[:page]).per(10)
   end
 
+  def user_month_total_expenses
+    @schedule = Schedule.find(params[:id])
+    this_month = @schedule.start_time.all_month
+    @schedules = Schedule.where(work_complete_status: "true", member_id: current_member.id, start_time: this_month).order("start_time ASC").page(params[:page]).per(10)
+  end
+
   private
 
   def schedule_params

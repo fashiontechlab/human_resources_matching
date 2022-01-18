@@ -29,6 +29,7 @@ Rails.application.routes.draw do
     get "time_card", on: :member
     post "calculation", on: :member
     get "business_complete", on: :collection
+    get "user_month_total_expenses", on: :member
   end
 
   resources :ryokans do
