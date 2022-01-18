@@ -1,18 +1,18 @@
-<% @page_title = "月の賃金の合計" %>
+<% @page_title = "旅館別の賃金の合計" %>
 <h1 class="title_name"><%= @page_title %></h1>
 <table class="attr">
   <thead>
     <tr>
-      <td>出勤日</td>
       <td>出勤先</td>
+      <td>出勤日</td>
       <td>金額</td>
     </tr>
   </thead>
   <tbody>
     <% @schedules.each do |schedule| %>
     <tr>
-      <td><%= schedule.start_time.strftime("%m/%d") %></td>
       <td><%= schedule.ryokan.full_name %></td>
+      <td><%= schedule.start_time.strftime("%m/%d") %></td>
       <td class="price"><%= schedule.amount %></td>
     </tr>
     <% end %>

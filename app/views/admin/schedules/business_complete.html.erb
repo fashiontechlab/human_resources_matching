@@ -23,7 +23,7 @@
     <% if schedule.work_complete_status == true %>
     <tr>
       <td><%= link_to schedule.human_resource.full_name, name_total_expenses_admin_schedule_path(schedule), data: {"turbolinks" => false} %></td>
-      <td><%= schedule.ryokan.full_name %></td>
+      <td><%= link_to schedule.ryokan.full_name, ryokan_total_expenses_admin_schedule_path(schedule), data: {"turbolinks" => false} %></td>
       <td><%= link_to schedule.start_time.strftime("%m/%d"),user_month_total_expenses_admin_schedule_path(schedule), data: {"turbolinks" => false} %></td>
       <td></td>
       <td><%= schedule.start.strftime("%H:%M") %></td>

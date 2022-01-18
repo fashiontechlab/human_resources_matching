@@ -33,4 +33,10 @@ class Admin::SchedulesController < ApplicationController
     this_month = @schedule.start_time.all_month
     @schedules = Schedule.where(work_complete_status: "true", start_time: this_month).order("start_time ASC").page(params[:page]).per(10)
   end
+
+  def ryokan_total_expenses
+    @schedule = Schedule.find(params[:id])
+    get_ryokan_id = @schedule.ryokan_id
+    @schedules = Schedule.where(work_complete_status: "true", ryokan_id: get_ryokan_id)
+  end
 end

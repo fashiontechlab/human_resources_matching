@@ -1,10 +1,10 @@
-<% @page_title = "勤務予定表" %>
+<% @page_title = "個人経費の合計" %>
 <h1 class="title_name"><%= @page_title %></h1>
 <table class="attr">
   <thead>
     <tr>
-      <td>氏名</td>
       <td>出勤先</td>
+      <td>氏名</td>
       <td>出勤日</td>
       <th>午前</th>
       <td>出勤時間</td>
@@ -18,10 +18,9 @@
   </thead>
   <tbody>
     <% @schedules.each do |schedule| %>
-    <% if schedule.status == false && schedule.work_complete_status == false %>
     <tr>
-      <td><%= schedule.human_resource.full_name %></td>
       <td><%= schedule.ryokan.full_name %></td>
+      <td><%= schedule.human_resource.full_name %></td>
       <td><%= schedule.start_time.strftime("%m/%d") %></td>
       <td></td>
       <td><%= schedule.start.strftime("%H:%M") %></td>
@@ -30,10 +29,22 @@
       <td><%= schedule.afternoon_start.strftime("%H:%M") %></td>
       <td><%= schedule.afternoon_end.strftime("%H:%M") %></td>
       <td><%= schedule.ryokan_amount %></td>
-      <td><%= schedule.profit %></td>
+      <td class="price"><%= schedule.profit %></td>
     </tr>
     <% end %>
-    <% end %>
+    <tr>
+      <td><button type="button", id="total">合計</button></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td ><p class="sum_price"></p></td>
+    </tr>
   </tbody>
 </table>
-<%= link_to "戻る", admin_schedules_path %>
+<%= link_to "戻る", business_complete_admin_schedules_path, data: {"turbolinks" => false} %>

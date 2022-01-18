@@ -151,6 +151,12 @@ class SchedulesController < ApplicationController
     @schedules = Schedule.where(work_complete_status: "true", member_id: current_member.id, start_time: this_month).order("start_time ASC").page(params[:page]).per(10)
   end
 
+  def ryokan_month_total_expenses
+    @schedule = Schedule.find(params[:id])
+    get_ryokan_id = @schedule.ryokan_id
+    @schedules = Schedule.where(work_complete_status: "true", member_id: current_member.id, ryokan_id: get_ryokan_id).order("start_time ASC").page(params[:page]).per(10)
+  end
+
   private
 
   def schedule_params
