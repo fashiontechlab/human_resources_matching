@@ -2,13 +2,6 @@
 <h1 class="title_name"><%= @page_title %></h1>
 <table class="attr">
   <thead>
-    <div class="name_search">
-      <%= search_form_for @q, url: search_work_complete_ryokans_path do |f| %>
-      <%= f.label :human_resource_full_name_cont, '名前で検索する' %>
-      <%= f.search_field :human_resource_full_name_cont %>
-      <%= f.submit "検索" %>
-      <% end %>
-    </div>
     <tr>
       <td>氏名</td>
       <td>出勤日</td>
@@ -24,8 +17,8 @@
   <tbody>
     <% @schedules.each do |schedule| %>
     <tr>
-      <td><%= link_to schedule.human_resource.full_name, total_expenses_ryokan_path(schedule), data: {"turbolinks" => false} %></td>
-      <td><%= schedule.start_time.strftime("%m/%d") %></td>
+      <td><%= link_to schedule.human_resource.full_name, name_total_expenses_ryokan_path(schedule), data: {"turbolinks" => false} %></td>
+      <td><%= link_to schedule.start_time.strftime("%m/%d"), month_total_expenses_ryokan_path(schedule), data: {"turbolinks" => false} %></td>
       <td></td>
       <td><%= schedule.start.strftime("%H:%M") %></td>
       <td><%= schedule.end.strftime("%H:%M") %></td>

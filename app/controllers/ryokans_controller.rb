@@ -28,10 +28,16 @@ class RyokansController < ApplicationController
     @schedules = Schedule.where(work_complete_status: "true", ryokan_id: current_ryokan.id).order("start_time ASC").page(params[:page]).per(10)
   end
 
-  def total_expenses
+  def name_total_expenses
     @schedule = Schedule.find(params[:id])
     get_member_id = @schedule.member_id
     @schedules = Schedule.where(work_complete_status: "true", ryokan_id: current_ryokan.id, member_id: get_member_id)
+  end
+
+  def month_total_expenses
+    @schedule = Schedule.find(params[:id])
+    this_month = @schedule.start_time.all_month
+    @schedules = Schedule.where(work_complete_status: "true", ryokan_id: current_ryokan.id, start_time: this_month)
   end
 
   def demand_confirmation
@@ -43,11 +49,7 @@ class RyokansController < ApplicationController
   end
 
   def search
-    @schedules = @q.result.past_day.order("start_time ASC").page(params[:page]).per(5)
-  end
-
-  def search_work_complete
-    @schedules = @q.result.order("start_time ASC").page(params[:page]).per(10)
+    @schedules = @q.result.past_day.order("start_time ASC").page(params[:page]).per(10)
   end
 
   private

@@ -37,8 +37,8 @@ Rails.application.routes.draw do
     get "search", on: :collection
     delete "request_delete", on: :member
     get "work_complete", on: :collection
-    get "search_work_complete", on: :collection
-    get "total_expenses", on: :member
+    get "name_total_expenses", on: :member
+    get "month_total_expenses", on: :member
   end
 
   resource :ryokan_account, only: [:show, :edit, :update]
