@@ -1,7 +1,6 @@
 # coding: utf-8
 class Admin::MembersController < Admin::Base
 
-
   #会員一覧
   def index
     @members = Member.order(:name)

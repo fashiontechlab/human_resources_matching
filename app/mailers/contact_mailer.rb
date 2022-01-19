@@ -50,7 +50,7 @@ class ContactMailer < ApplicationMailer
     end
   end
 
-    def work_delete_mail(schedule)
+  def work_delete_mail(schedule)
     @schedule = schedule
     mail(
       subject: "依頼承認の取り消し通知です。",

@@ -44,12 +44,14 @@ class Schedule < ApplicationRecord
   validates :start, :end, presence: true
   validates :status, inclusion: { in: [true, false] }
   validates :approval_status, inclusion: { in: [true, false] }
+  validates :work_complete_status, inclusion: { in: [true, false] }
   validate :date_before_start
   validate :time_axis, on: :check_time_axis
   validate :time_axis_hope, on: :check_time_axis_hope
   validate :time_axis_confirm, on: :check_time_axis_confirm
 
   attribute :profit, :integer
+
   scope :past_day, -> { where("schedules.start_time > ?", DateTime.now)}
 
   def date_before_start

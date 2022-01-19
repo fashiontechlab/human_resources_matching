@@ -30,6 +30,4 @@ class RyokanAccountsController < ApplicationController
       :telephone
     )
   end
-
-
 end

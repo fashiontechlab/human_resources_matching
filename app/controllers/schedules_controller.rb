@@ -133,7 +133,7 @@ class SchedulesController < ApplicationController
     time_total = time_morning + time_afternoon
     @schedule.amount = time_total.round * 1500
     @schedule.ryokan_amount = time_total.round * 2000
-     @schedule.profit = @schedule.ryokan_amount.to_f - @schedule.amount.to_f
+    @schedule.profit = @schedule.ryokan_amount.to_f - @schedule.amount.to_f
     if @schedule.save(context: :check_time_axis_confirm)
       redirect_to business_complete_schedules_url, notice: "タイムカードを登録しました。"
     else
