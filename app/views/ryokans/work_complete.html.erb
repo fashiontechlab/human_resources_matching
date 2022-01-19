@@ -16,7 +16,7 @@
   </thead>
   <tbody>
     <% @schedules.each do |schedule| %>
-    <% if Date.today.beginning_of_month..Date.today.next_month(3).end_of_month %>
+    <% if Date.today.last_month.beginning_of_month..Date.today.next_month.end_of_month %>
     <tr>
       <td><%= link_to schedule.human_resource.full_name, name_total_expenses_ryokan_path(schedule), data: {"turbolinks" => false} %></td>
       <td><%= link_to schedule.start_time.strftime("%m/%d"), month_total_expenses_ryokan_path(schedule), data: {"turbolinks" => false} %></td>

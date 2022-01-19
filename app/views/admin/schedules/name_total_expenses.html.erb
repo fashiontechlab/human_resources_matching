@@ -18,7 +18,7 @@
   </thead>
   <tbody>
     <% @schedules.each do |schedule| %>
-    <% if Date.today.beginning_of_month..Date.today.next_month(3).end_of_month %>
+    <% if Date.today.last_month.beginning_of_month..Date.today.next_month.end_of_month %>
     <tr>
       <td><%= schedule.human_resource.full_name %></td>
       <td><%= schedule.ryokan.full_name %></td>
