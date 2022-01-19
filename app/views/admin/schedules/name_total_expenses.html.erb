@@ -28,7 +28,7 @@
       <td></td>
       <td><%= schedule.afternoon_start.strftime("%H:%M") %></td>
       <td><%= schedule.afternoon_end.strftime("%H:%M") %></td>
-      <td><%= schedule.ryokan_amount %></td>
+      <td class="sales_price"><%= schedule.ryokan_amount %></td>
       <td class="price"><%= schedule.profit %></td>
     </tr>
     <% end %>
@@ -42,8 +42,8 @@
       <td></td>
       <td></td>
       <td></td>
-      <td></td>
-      <td ><p class="sum_price"></p></td>
+      <td class="sales_sum_price"></td>
+      <td class="sum_price"></td>
     </tr>
   </tbody>
 </table>

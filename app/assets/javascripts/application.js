@@ -45,5 +45,23 @@ $(function () {
             });
             $(".sum_price").text(total);
         }
+
+        var sales_sum_price = sales_sum();
+        function sales_sum(){
+            var sales_pricelist = $("[class=sales_price]").map(function(indes, val){
+                var sales_price = parseInt($(val).text());
+                if (sales_price >= 0 ) {
+                    return sales_price;
+                } else {
+                    return null;
+                }
+            });
+            var sales_total = 0;
+
+            sales_pricelist.each(function(index, val){
+                sales_total = sales_total + val;
+            });
+            $(".sales_sum_price").text(sales_total);
+        }
     });
 });
