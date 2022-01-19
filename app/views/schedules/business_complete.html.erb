@@ -19,6 +19,7 @@
   </thead>
   <tbody>
     <% @schedules.each do |schedule| %>
+    <% if Date.today.beginning_of_month..Date.today.next_month(3).end_of_month %>
     <tr>
       <td><%= schedule.human_resource.full_name %></td>
       <td><%= link_to schedule.start_time.strftime("%m/%d"), user_month_total_expenses_schedule_path(schedule), data: {"turbolinks" => false} %></td>
@@ -31,6 +32,7 @@
       <td><%= schedule.afternoon_end.strftime("%H:%M") %></td>
       <td class="price"><%= schedule.amount %></td>
     </tr>
+    <% end %>
     <% end %>
     <tr>
       <td><button type="button", id="total">合計</button></td>

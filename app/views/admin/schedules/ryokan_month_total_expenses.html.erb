@@ -18,6 +18,7 @@
   </thead>
   <tbody>
     <% @schedules.each do |schedule| %>
+    <% if Date.today.beginning_of_month..Date.today.next_month(3).end_of_month %>
     <tr>
       <td><%= schedule.ryokan.full_name %></td>
       <td><%= schedule.human_resource.full_name %></td>
@@ -31,6 +32,7 @@
       <td class="sales_price"><%= schedule.ryokan_amount %></td>
       <td class="price"><%= schedule.profit %></td>
     </tr>
+    <% end %>
     <% end %>
     <tr>
       <td><button type="button", id="total">合計</button></td>
