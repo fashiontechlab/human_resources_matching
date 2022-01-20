@@ -10,7 +10,7 @@
   </thead>
   <tbody>
     <% @schedules.each do |schedule| %>
-    <% if Date.today.last_month.beginning_of_month..Date.today.next_month.end_of_month %>
+    <% if Date.today.months_ago(2).beginning_of_month..Date.today.end_of_month %>
     <tr>
       <td><%= schedule.human_resource.full_name %></td>
       <td><%= schedule.start_time.strftime("%m/%d") %></td>

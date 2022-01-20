@@ -20,7 +20,7 @@
   </thead>
   <tbody>
     <% @schedules.each do |schedule| %>
-    <% if schedule.work_complete_status == true && Date.today.last_month.beginning_of_month..Date.today.next_month.end_of_month %>
+    <% if schedule.work_complete_status == true && Date.today.months_ago(2).beginning_of_month..Date.today.end_of_month %>
     <tr>
       <td><%= link_to schedule.human_resource.full_name, name_total_expenses_admin_schedule_path(schedule), data: {"turbolinks" => false} %></td>
       <td><%= link_to schedule.ryokan.full_name, ryokan_month_total_expenses_admin_schedule_path(schedule), data: {"turbolinks" => false} %></td>
