@@ -1,5 +1,5 @@
 <%= @schedule.ryokan.full_name %>さん
-<%= @schedule.human_resource.full_name %>さんから依頼した出勤日の取り消し通知です。
+<%= @schedule.human_resource.full_name %>さんから出勤依頼承認後の取り消し通知です。
 
 出勤日：<%= @schedule.start_time.strftime("%m/%d") %>
 名前：<%= @schedule.human_resource.full_name %>
@@ -10,6 +10,7 @@
 午後
 出勤時間：<%= @schedule.afternoon_start.strftime("%H:%M") %>
 退勤時間：<%= @schedule.afternoon_end.strftime("%H:%M") %>
+を取り消しさせてください。大変申し訳ございませんが、宜しくお願いいたします。
 
 プチプラ人材紹介のシステムでは、3日以内の取り消しは出来ない仕組みとなっております。
 3日以前のご依頼承認後の取り消しは可能となっております。ご理解の程、宜しくお願い致します。
