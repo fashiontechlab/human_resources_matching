@@ -28,10 +28,10 @@
         <% if schedule.start_time > Date.today.since(3.days) %>
           <td><%= link_to "取り消し", work_delete_schedule_path(schedule), method: :delete, data: { confirm: "本当に取り消しますか？" } %></td>
         <% end %>
-        <%# if schedule.start_time < Date.today %>
+        <% if schedule.start_time < Date.today %>
         <td><%= link_to "タイムカード", time_card_schedule_path(schedule) %></td>
     </tr>
-        <%# end %>
+        <% end %>
       <% end %>
     <% end %>
   </tbody>
