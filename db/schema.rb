@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_15_033206) do
+ActiveRecord::Schema.define(version: 2022_01_22_075601) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -103,14 +103,12 @@ ActiveRecord::Schema.define(version: 2022_01_15_033206) do
   end
 
   create_table "schedules", force: :cascade do |t|
-    t.string "allday"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "start_time"
     t.string "workday"
     t.datetime "start"
     t.datetime "end"
-    t.integer "staff_id"
     t.integer "member_id"
     t.boolean "status", default: true, null: false
     t.boolean "approval_status", default: false, null: false
@@ -129,9 +127,9 @@ ActiveRecord::Schema.define(version: 2022_01_15_033206) do
     t.boolean "work_complete_status", default: false, null: false
     t.string "ryokan_amount"
     t.string "profit"
+    t.string "total_ryokan_amount"
     t.index ["member_id"], name: "index_schedules_on_member_id"
     t.index ["ryokan_id"], name: "index_schedules_on_ryokan_id"
-    t.index ["staff_id"], name: "index_schedules_on_staff_id"
   end
 
   create_table "staffs", force: :cascade do |t|
