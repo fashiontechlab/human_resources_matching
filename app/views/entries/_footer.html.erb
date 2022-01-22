@@ -1,13 +1,11 @@
 <ul class="entry-footer">
   <% if current_member %>
   <% if current_member == entry.author %>
-    <%= menu_link_to "編集", [:edit, entry] %>
-    <%= menu_link_to "画像", [entry, :images] %>
-    <%= menu_link_to "削除", entry, method: :delete,
+    <%= link_to "編集", [:edit, entry] %>
+    <%= link_to "削除", entry, method: :delete,
         data: { comfirm: "本当に削除しますか？"} %>
     <% end %>
   <% end %>
-
   <li>
     <%= entry.author.name %> さんの投稿
   </li>

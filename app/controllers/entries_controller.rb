@@ -87,7 +87,6 @@ class EntriesController < ApplicationController
       :body,
       :posted_at,
       :status,
-      :ryokan_id
     )
   end
 end
