@@ -10,6 +10,15 @@ table.list th, table.attr th {
   font-weight: normal;
 }
 
+table.attr td  {
+  background-color: #eee;
+}
+
+table.attr :nth-child(odd) td {
+  background-color: #fff;
+}
+
+
 table.list td, table.list th,
 table.attr td, table.attr th {
   text-align: left;
