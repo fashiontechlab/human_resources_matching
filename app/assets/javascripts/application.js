@@ -48,7 +48,7 @@ $(function () {
 
         var sales_sum_price = sales_sum();
         function sales_sum(){
-            var sales_pricelist = $("[class=sales_price]").map(function(indes, val){
+            var sales_pricelist = $("[class=sales_price]").map(function(index, val){
                 var sales_price = parseInt($(val).text());
                 if (sales_price >= 0 ) {
                     return sales_price;
@@ -62,6 +62,24 @@ $(function () {
                 sales_total = sales_total + val;
             });
             $(".sales_sum_price").text(sales_total);
+        }
+
+        var system_sum_price = system_sum();
+        function system_sum(){
+            var system_pricelist = $("[class=system_price]").map(function(index, val){
+                var system_price = parseInt($(val).text());
+                if (system_price >= 0 ) {
+                    return system_price;
+                } else {
+                    return null;
+                }
+            });
+            var system_total = 0;
+
+            system_pricelist.each(function(index, val){
+                system_total = system_total + val;
+            });
+            $(".system_sum_price").text(system_total);
         }
     });
 });

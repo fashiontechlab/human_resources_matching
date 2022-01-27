@@ -21,6 +21,7 @@
 #  start                   :datetime
 #  start_time              :datetime
 #  status                  :boolean          default(TRUE), not null
+#  system_cost             :string
 #  total_ryokan_amount     :string
 #  work_complete_status    :boolean          default(FALSE), not null
 #  workday                 :string
@@ -49,6 +50,9 @@ class Schedule < ApplicationRecord
   validate :time_axis_confirm, on: :check_time_axis_confirm
 
   attribute :profit, :integer
+  attribute :system_cost, :integer
+  attribute :amount, :integer
+  attribute :ryokan_amount, :integer
 
   scope :past_day, -> { where("schedules.start_time > ?", DateTime.now)}
 

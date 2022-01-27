@@ -11,7 +11,8 @@
       <th>午後</th>
       <td>出勤時間</td>
       <td>退勤時間</td>
-      <td>経費</td>
+      <td>人件費</td>
+      <td>システム費</td>
     </tr>
   </thead>
   <tbody>
@@ -27,6 +28,7 @@
       <td><%= schedule.afternoon_start.strftime("%H:%M") %></td>
       <td><%= schedule.afternoon_end.strftime("%H:%M") %></td>
       <td class="price"><%= schedule.ryokan_amount %></td>
+      <td class="system_price"><%= schedule.system_cost %></td>
     </tr>
     <% end %>
     <% end %>
@@ -39,7 +41,8 @@
       <td></td>
       <td></td>
       <td></td>
-      <td class="sum_price"></td>
+      <td ><p class="sum_price"></p></td>
+      <td ><p class="system_sum_price"></p></td>
     </tr>
   </tbody>
 </table>
