@@ -20,12 +20,12 @@
   <thead>
     <div class="name_search">
     <%= search_form_for @q, url: search_ryokans_path do |f| %>
-      <%= f.label :human_resource_full_name_or_human_resource_kana_name, '名前で検索する' %>
+      <%= f.label :human_resource_full_name_or_human_resource_kana_name, '名前で検索' %>
       <%= f.search_field :human_resource_full_name_or_human_resource_kana_name_cont %>
       <%= f.submit "検索" %>
     </div>
     <div class="day_search">
-      <%= f.label :start_time_cont, '出勤日で検索する' %>
+      <%= f.label :start_time_cont, '日付で検索' %>
       <%= f.search_field :start_time_cont %>
       <%= f.submit "検索" %>
     <% end %>
