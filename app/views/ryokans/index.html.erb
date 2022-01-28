@@ -1,4 +1,4 @@
-<% @page_title = "出勤カレンダー" %>
+<% @page_title = "出勤予定カレンダー" %>
 <h1 class="title_name"><%= @page_title %></h1>
 
 <%= month_calendar events: @schedules do |date, schedules| %>
@@ -14,7 +14,7 @@
   <% end %>
 <% end %>
 
-<% @page_title = "出勤一覧" %>
+<% @page_title = "出勤予定の一覧" %>
 <h1 class="title_name"><%= @page_title %></h1>
 <table class='attr'>
   <thead>
@@ -42,7 +42,7 @@
         <td>出勤時間</td>
         <td>退勤時間</td>
         <td>依頼可否</td>
-        <td>勤務時間の交渉</td>
+        <td>勤務時間交渉</td>
       </tr>
     </div>
   </thead>
@@ -69,7 +69,7 @@
   </tbody>
 </table>
 <%= paginate @schedules %>
-<%= link_to "依頼済確認", request_confirmation_ryokans_path %><br>
-<%= link_to "交渉中確認", demand_confirmation_ryokans_path %><br>
-<%= link_to "勤務完了", work_complete_ryokans_path, data: {"turbolinks" => false} %>
+<%= link_to "出勤依頼の一覧", request_confirmation_ryokans_path %><br>
+<%= link_to "出勤時間交渉中の一覧", demand_confirmation_ryokans_path %><br>
+<%= link_to "勤務完了の一覧", work_complete_ryokans_path, data: {"turbolinks" => false} %>
 

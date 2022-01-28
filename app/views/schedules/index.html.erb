@@ -1,7 +1,7 @@
-<% @page_title = "出勤カレンダー" %>
+<% @page_title = "出勤予定カレンダー" %>
 <h1 class="title_name"><%= @page_title %></h1>
 
-<%= link_to "出勤表を作成する", new_schedule_path %>
+<%= link_to "出勤予定を作成する", new_schedule_path %>
 
 <%= month_calendar events: @schedules do |date, schedules| %>
   <%= date %>
@@ -13,7 +13,7 @@
   <% end %>
 <% end %>
 
-<% @page_title = "出勤一覧" %>
+<% @page_title = "出勤予定の一覧" %>
 <h1 class="title_name"><%= @page_title %></h1>
 <table class='attr'>
   <thead>
@@ -62,5 +62,5 @@
   </tbody>
 </table>
 <%= paginate @schedules %>
-<%= link_to "勤務予定表", work_schedules_path %><br>
-<%= link_to "勤務完了", business_complete_schedules_path, data: {"turbolinks" => false} %>
+<%= link_to "勤務予定の一覧", work_schedules_path %><br>
+<%= link_to "勤務完了の一覧", business_complete_schedules_path, data: {"turbolinks" => false} %>
