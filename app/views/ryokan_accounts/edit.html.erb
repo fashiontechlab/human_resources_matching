@@ -2,7 +2,7 @@
 
 <h1 class="title_name"><%= @page_title %></h1>
 
-<div class="toolbar"><%= link_to "アカウントに戻る", :ryokan_account %></div>
+<div class="toolbar"><%= link_to "アカウント情報に戻る", :ryokan_account %></div>
 
 <%= form_for @ryokan, url: :ryokan_account, method: :patch do |form| %>
 <%= render "shared/ryokan_form", form: form %>
