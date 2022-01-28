@@ -13,6 +13,7 @@
         <th>午後</th>
         <td>出勤時間</td>
         <td>退勤時間</td>
+        <td>システム費</td>
         <td>金額</td>
       </tr>
     </div>
@@ -30,12 +31,14 @@
       <td></td>
       <td><%= schedule.afternoon_start.strftime("%H:%M") %></td>
       <td><%= schedule.afternoon_end.strftime("%H:%M") %></td>
+      <td><%= schedule.system_cost %></td>
       <td class="price"><%= schedule.profit %></td>
     </tr>
     <% end %>
     <% end %>
     <tr>
       <td><button type="button", id="total">合計</button></td>
+      <td></td>
       <td></td>
       <td></td>
       <td></td>
