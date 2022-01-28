@@ -23,6 +23,7 @@ table.list td, table.list th,
 table.attr td, table.attr th {
   text-align: left;
   padding: 6px;
+  white-space: nowrap;
 }
 
 table.list th {
