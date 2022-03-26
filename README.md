@@ -17,6 +17,11 @@ $ git clone git@github.com:fashiontechlab/human_resources_matching.git
 $rails server
 ```
 
+```
+http://localhost:3000/
+
+```
+
 ## Developer
 fashiontechlabo
 
