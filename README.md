@@ -2,6 +2,7 @@
 
 ## Configuration
 ```
+Ubuntu version 20.04.4
 Ruby version 2.5.5p15
 Rails version 5.2.3
 mysql  Ver 8.0.28-0
