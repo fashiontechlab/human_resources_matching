@@ -13,6 +13,12 @@ $ git clone git@github.com:fashiontechlab/human_resources_matching.git
 ```
 
 ## Usage
+
+```
+$cd human_resources_matching
+
+```
+
 ```
 $rails server
 ```
