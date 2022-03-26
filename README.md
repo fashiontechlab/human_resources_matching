@@ -1,5 +1,3 @@
-# README
-
 # putipura_human_resources_matching
 
 ## Configuration
