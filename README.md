@@ -1,4 +1,4 @@
-# putipura_human_resources_matching
+# human_resources_matching
 
 ## Configuration
 ```
@@ -16,7 +16,6 @@ $ git clone git@github.com:fashiontechlab/human_resources_matching.git
 
 ```
 $cd human_resources_matching
-
 ```
 
 ```
