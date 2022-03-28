@@ -31,4 +31,4 @@ http://localhost:3000/
 fashiontechlabo
 
 ## Inquiry
-info@putipuratown.jpn.org
+fashiontechlabo@gmail.com
