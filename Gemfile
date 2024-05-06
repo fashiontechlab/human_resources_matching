@@ -62,3 +62,4 @@ gem 'momentjs-rails'
 gem 'simple_calendar', "~> 2.0"
 gem 'annotate'
 gem 'ransack'
+gem "mimemagic", "~> 0.3.10"
